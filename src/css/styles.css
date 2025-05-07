@@ -104,6 +104,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+section {
+  overflow: auto;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -10987,6 +10991,7 @@ textarea.form-control-lg {
   }
 }
 html {
+  scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
 }
 
@@ -11109,6 +11114,64 @@ p {
   margin-top: 30rem;
 }
 
+.features-container {
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.features-container > h2 {
+  color: #1C425D;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e3e6eb;
+  padding-bottom: 0.75rem;
+}
+
+.features-container > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-container > ul > li {
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  background-color: #f8f9fc;
+  border-left: 4px solid #CAAC7C;
+  border-radius: 0 5px 5px 0;
+  line-height: 1.6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.features-container > ul > li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.features-container > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+.features-container .highlight {
+  color: #1C425D;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    padding: 1rem;
+  }
+  
+  .features-container > ul > li {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+}
+
 .contact-container {
   width: 100%;
 }
@@ -11158,15 +11221,17 @@ p {
 
 .branch-link {
   display: block;
+  min-height: 7rem;
   padding: 12px 15px;
-  margin-bottom: 10px;
+  margin-bottom: 26px;
   color: #444;
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 6px;
   background-color: #f8f9fa;
   border-left: 3px solid #CAAC7C;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: larger;
 }
 
 .branch-link:hover {
@@ -11208,7 +11273,7 @@ p {
 }
 
 .about-container {
-  max-width: 900px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11232,6 +11297,7 @@ p {
 }
 
 .about-container > ul > li {
+  font-size: x-large;
   padding: 0.7rem;
   margin-bottom: 1rem;
   background-color: #f8f9fc;
@@ -11252,6 +11318,7 @@ p {
 }
 
 .about-container .highlight {
+  font-size: x-large;
   color: #1C425D;
   font-weight: 600;
 }

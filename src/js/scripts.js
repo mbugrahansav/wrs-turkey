@@ -75,13 +75,25 @@ window.addEventListener('DOMContentLoaded', event => {
   document.addEventListener('scroll', navbarShrink);
 
   //  Activate Bootstrap scrollspy on the main nav element
-  const mainNav = document.body.querySelector('#mainNav');
   if (mainNav) {
-    new bootstrap.ScrollSpy(document.body, {
-      target: '#mainNav',
-      rootMargin: '0px 0px -40%',
-    });
-  };
+    try {
+      // Bootstrap nesnesinin varlığını kontrol edin
+      if (typeof bootstrap !== 'undefined') {
+        // ScrollSpy'ı başlatın
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+          target: '#mainNav',
+          offset: 100, // rootMargin yerine offset kullanın (piksel cinsinden)
+        });
+        
+        // Debug için konsola yazdırın
+        console.log('ScrollSpy initialized:', scrollSpy);
+      } else {
+        console.error('Bootstrap object is not defined');
+      }
+    } catch (error) {
+      console.error('Error initializing ScrollSpy:', error);
+    }
+  }
 
   // Collapse responsive navbar when toggler is visible
   const navbarToggler = document.body.querySelector('.navbar-toggler');

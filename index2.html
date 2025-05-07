@@ -42,13 +42,13 @@
           <i class="fas fa-bars ms-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto py-4 py-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#services">Araç kiralama Yönetimi</a></li>
-            <li class="nav-item"><a class="nav-link" href="#features">Özelliklerimiz</a></li>
-            <li class="nav-item"><a class="nav-link" href="#locations">Şubelerimiz</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
-            <li class="nav-item"><a class="nav-link" href="#locations">Filomuz</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Bize Ulaşın</a></li>
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#services">Management</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#locations">Locations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#locations">Our Fleet</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
           </ul>
         </div>
       </div>
@@ -66,12 +66,12 @@
     <section class="page-section" id="services">
       <div class="container">
         <div class="text-center">
-          <h2 class="section-heading">Araç Kiralama Broker'ları ve OTA'lar için Kanal entegrasyon Yöneticisi</h2>
-          <h3 class="section-subheading text-muted">Türkiye'nin en güçlü ve en büyük araç kiralama şirketini sisteminize
-            entegre satışlarınızi arttırın.</h3>
+          <h2 class="section-heading">Channel Integration Manager for Car Rental Brokers and OTAs</h2>
+          <h3 class="section-subheading text-muted">Increase your sales by integrating Turkey's leading and most
+            powerful car rental company into your platform.</h3>
         </div>
         <div class="row text-center">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div id="btn-broker">
               <span class="fa-stack fa-4x" onclick="showForm('broker')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
@@ -79,9 +79,9 @@
                   style="position: relative; width: 6rem; margin: 0 0 1rem 0.3rem;" />
               </span>
             </div>
-            <h4 class="my-3">Broker Sistem Talep</h4>
+            <h4 class="my-3">Broker System Request</h4>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div id="btn-subagency">
               <span class="fa-stack fa-4x" onclick="showForm('subagency')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
@@ -89,27 +89,27 @@
                   style="position: relative; width: 6rem; margin: 0 0 0.5rem 0.2rem;" />
               </span>
             </div>
-            <h4 class="my-3">Alt Acenta Sistem Talep</h4>
+            <h4 class="my-3">Sub-Agency System Request</h4>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-3">
             <div id="btn-fleet">
-              <span class="fa-stack fa-4x" onclick="showForm('fleet')">
+              <span class="fa-stack fa-4x" onclick="showForm('subagency')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
                 <img src="./src/assets/img/icons/fleet-icon.png" alt="..." style="position: relative; width: 6rem;" />
               </span>
             </div>
-            <h4 class="my-3">Filo Talep</h4>
+            <h4 class="my-3">Vehicle Fleet Request</h4>
           </div>
-          <!-- <div class="col-md-3">
+          <div class="col-md-3">
             <div id="btn-rent">
-              <span class="fa-stack fa-4x" onclick="showForm('rent')">
+              <span class="fa-stack fa-4x" onclick="showForm('subagency')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
                 <img src="./src/assets/img/icons/rent-a-car-icon.png" alt="..."
                   style="position: relative; width: 5rem; margin-bottom: 0.5rem;" />
               </span>
             </div>
-            <h4 class="my-3">Araç Kirala</h4>
-          </div> -->
+            <h4 class="my-3">Rent a Car</h4>
+          </div>
         </div>
       </div>
 
@@ -295,16 +295,16 @@
     <section class="page-section bg-light" id="features">
       <div class="d-grid">
         <div class="text-center my-4">
-          <h2 class="section-heading ">ÖZELLİKLERİMİZ</h2>
+          <h2 class="section-heading text-uppercase">Features</h2>
           <h3 class="section-subheading text-muted">Go Further with ZiraatFilo and Turkey’s Youngest Vehicle Fleet
           </h3>
         </div>
-        <div class="row g-0 mb-4">
+        <div class="row g-0">
           <div class="col-md-6 d-flex">
             <img src="./src/assets/img/features/wrs-turkey-map.png" alt="..." style="max-height: 495px; /* Burada maksimum yüksekliği sınırlayın */
             width: 100%;
             object-fit: contain;
-            align-self: center;" />
+            align-self: center;"/>
           </div>
           <div class="col-md-6 w-40">
             <div class="about-container">
@@ -327,90 +327,56 @@
     </section>
     <!-- locations-->
     <section class="page-section" id="locations">
-      <div class="text-center my-4">
-        <h2 class="section-heading ">ŞUBELERİMİZ</h2>
-        </h3>
-      </div>
-      <div class="locations-container">
-        <div class="branches-grid">
-          <div class="branches-column">
-            <ul>
-  
-              <a class="branch-link" href="/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/ankara-yht-gari-subesi">Ankara YHT Garı Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç Kiralama</a>
-  
-            </ul>
-          </div>
-          <div class="branches-column">
-            <ul>
-  
-              <a class="branch-link" href="/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/ankara-yht-gari-subesi">Ankara YHT Garı Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç Kiralama</a>
-  
-            </ul>
-          </div>
-          <div class="branches-column">
-            <ul>
-  
-              <a class="branch-link" href="/tr/istanbul-levent-arac-kiralama">İstanbul Levent Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/istanbul-havalimani-arac-kiralama">İstanbul Havalimanı Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/istanbul-sabiha-gokcen-havalimani-arac-kiralama">İstanbul Sabiha Gökçen Havalimanı Araç
-                Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/ıstanbul-pendik-merkez-arac-kiralama">İstanbul Pendik Merkez Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/izmir-havalimani-arac-kiralama">İzmir Adnan Menderes Havalimanı Araç Kiralama</a>
-  
-            </ul>
-          </div>
-          <div class="branches-column">
-            <ul>
-  
-              <a class="branch-link" href="/tr/kayseri-kum-small-avm-subesi">Kayseri Araç Kiralama</a>
-  
-  
-              <a class="branch-link" href="/tr/adana-mersin-cukurova-uluslararasi-havalimani">Çukurova Uluslararası Havalimanı</a>
-  
-  
-              <a class="branch-link" href="/tr/mugla-dalaman-havalimani">Muğla Dalaman Havalimanı</a>
-  
-  
-              <a class="branch-link" href="/tr/mugla-milas-bodrum-havalimani">Muğla Milas Bodrum Havalimanı</a>
-  
-  
-              <a class="branch-link" href="/tr/trabzon-uluslararasi-havalimani">Trabzon Uluslararası Havalimanı</a>
-  
-            </ul>
-          </div>
-        </div>
+      <div class="container">
+        <ul class="collapsed collapse show" id="collapse">
+          <li class="">
+            <a href="/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/ankara-yht-gari-subesi">Ankara YHT Garı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-levent-arac-kiralama">İstanbul Levent Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-havalimani-arac-kiralama">İstanbul Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-sabiha-gokcen-havalimani-arac-kiralama">İstanbul Sabiha Gökçen Havalimanı Araç
+              Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/ıstanbul-pendik-merkez-arac-kiralama">İstanbul Pendik Merkez Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/izmir-havalimani-arac-kiralama">İzmir Adnan Menderes Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/kayseri-kum-small-avm-subesi">Kayseri Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/adana-mersin-cukurova-uluslararasi-havalimani">Çukurova Uluslararası Havalimanı</a>
+          </li>
+          <li class="">
+            <a href="/tr/mugla-dalaman-havalimani">Muğla Dalaman Havalimanı</a>
+          </li>
+          <li class="">
+            <a href="/tr/mugla-milas-bodrum-havalimani">Muğla Milas Bodrum Havalimanı</a>
+          </li>
+          <li class="">
+            <a href="/tr/trabzon-uluslararasi-havalimani">Trabzon Uluslararası Havalimanı</a>
+          </li>
+
+        </ul>
       </div>
 
     </section>
@@ -519,7 +485,7 @@
             </span>
           </div>
           <div class="w-90 text-center">
-            <div class="mb-3">
+            <div>
               <a class="btn btn-light btn-social mx-3" href="https://x.com/wrsturkey" aria-label="X" target="_blank"
                 rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
               <a class="btn btn-light btn-social mx-3" href="https://www.instagram.com/wrsturkey" aria-label="Instagram"

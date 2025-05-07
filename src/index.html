@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Agency - Start Bootstrap Theme</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome 6 CDN (en az bu olmalı) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="video-container" style="position: fixed; inset: 0; background: black; z-index: 9999;">
+    <video autoplay muted playsinline id="intro-video" style="width: 100%; height: 100%; object-fit: cover;">
+      <source src="./assets/video/wrs-turkey-packshot.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div id="page-top" style="display: none;">
+    <div class="sticky-logo" id="stickyLogo">
+      <a href="https://ziraatfilo.com.tr/" target="_blank" rel="noopener noreferrer">
+        <img src="./assets/img/logos/ziraatfilo-logo.png" alt="ZiraatFilo logo" />
+      </a>
+    </div>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="wrs-turkey-logo" href="#page-top"><img src="assets/img/logos/wrs-turkey.png" alt="..." /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#services">Management</a></li>
+            <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#locations">Locations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#locations">Our Fleet</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+      <div class="home-container">
+        <div class="d-flex gap-5rem justify-content-center">
+          <a class="btn btn-primary btn-xl" href="#contact">WRS Corp</a>
+          <a class="btn btn-primary btn-xl" href="#services">Car Rental Management</a>
+        </div>
+      </div>
+    </header>
+    <!-- Services-->
+    <section class="page-section" id="services">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading">Channel Integration Manager for Car Rental Brokers and OTAs</h2>
+          <h3 class="section-subheading text-muted">Increase your sales by integrating Turkey's leading and most
+            powerful car rental company into your platform.</h3>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-3">
+            <div id="btn-broker">
+              <span class="fa-stack fa-4x" onclick="showForm('broker')">
+                <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
+                <img src="./assets/img/icons/brokerage-icon.png" alt="..."
+                  style="position: relative; width: 6rem; margin: 0 0 1rem 0.3rem;" />
+              </span>
+            </div>
+            <h4 class="my-3">Broker System Request</h4>
+          </div>
+          <div class="col-md-3">
+            <div id="btn-subagency">
+              <span class="fa-stack fa-4x" onclick="showForm('subagency')">
+                <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
+                <img src="./assets/img/icons/sub-agency-icon.png" alt="..."
+                  style="position: relative; width: 6rem; margin: 0 0 0.5rem 0.2rem;" />
+              </span>
+            </div>
+            <h4 class="my-3">Sub-Agency System Request</h4>
+          </div>
+          <div class="col-md-3">
+            <div id="btn-fleet">
+              <span class="fa-stack fa-4x" onclick="showForm('subagency')">
+                <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
+                <img src="./assets/img/icons/fleet-icon.png" alt="..." style="position: relative; width: 6rem;" />
+              </span>
+            </div>
+            <h4 class="my-3">Vehicle Fleet Request</h4>
+          </div>
+          <div class="col-md-3">
+            <div id="btn-rent">
+              <span class="fa-stack fa-4x" onclick="showForm('subagency')">
+                <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
+                <img src="./assets/img/icons/rent-a-car-icon.png" alt="..."
+                  style="position: relative; width: 5rem; margin-bottom: 0.5rem;" />
+              </span>
+            </div>
+            <h4 class="my-3">Rent a Car</h4>
+          </div>
+        </div>
+      </div>
+
+      <div id="popup-overlay" class="popup-overlay d-none">
+        <div class="popup-content">
+          <button id="close-popup" class="close-btn">&times;</button>
+
+          <div id="broker-form" class="popup-form d-none">Broker System Request Form
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="companyName" class="form-label">Company Name</label>
+                  <input type="text" class="form-control" id="companyName" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="operatingCountries" class="form-label">Operating Countries</label>
+                  <input type="text" class="form-control" id="operatingCountries" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Contact Person Name</label>
+                  <input type="email" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Contact Email</label>
+                  <input type="tel" class="form-control" id="email" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Contact Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Mobile</label>
+                  <input type="tel" class="form-control" id="phone" />
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="message" class="form-label">Additional Information</label>
+                  <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit d-block ml-auto">Submit</button>
+            </form>
+          </div>
+
+          <div id="subagency-form" class="popup-form d-none">Sub-Agency System Request Form
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Agency Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="title" class="form-label">Agency Title</label>
+                  <input type="text" class="form-control" id="title" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="number" class="form-label">Agency License Number</label>
+                  <input type="text" class="form-control" id="number" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="countries" class="form-label">Operating Countries</label>
+                  <input type="text" class="form-control" id="countries" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cities" class="form-label">Operating Cities</label>
+                  <input type="text" class="form-control" id="cities" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Contact Person Name</label>
+                  <input type="email" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Contact Email</label>
+                  <input type="tel" class="form-control" id="email" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Contact Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Mobile</label>
+                  <input type="tel" class="form-control" id="phone" />
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="message" class="form-label">Additional Information</label>
+                  <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit d-block ml-auto">Submit</button>
+            </form>
+          </div>
+          <div id="fleet-form" class="popup-form d-none">Vehicle Fleet Request Form
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Agency Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="title" class="form-label">Agency Title</label>
+                  <input type="text" class="form-control" id="title" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="areaName" class="form-label">Area of Operation</label>
+                  <input type="text" class="form-control" id="areaName" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="countries" class="form-label">Operating Countries</label>
+                  <input type="text" class="form-control" id="countries" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cities" class="form-label">Operating Cities</label>
+                  <input type="text" class="form-control" id="cities" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="className" class="form-label">Vehicle Class Requested</label>
+                  <input type="text" class="form-control" id="className" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="number" class="form-label">Number of Vehicles Requested</label>
+                  <input type="text" class="form-control" id="number" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Contact Person Name</label>
+                  <input type="email" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Contact Email</label>
+                  <input type="tel" class="form-control" id="email" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Contact Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Mobile</label>
+                  <input type="tel" class="form-control" id="phone" />
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="message" class="form-label">Additional Information</label>
+                  <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit d-block ml-auto">Submit</button>
+            </form>
+          </div>
+          <div id="rent-form" class="popup-form d-none">Rent form içeriği
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="tel" class="form-control" id="email" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Mobile</label>
+                  <input type="tel" class="form-control" id="phone" />
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="message" class="form-label">Your Message</label>
+                  <textarea class="form-control" id="message" rows="4"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-submit d-block ml-auto">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- features Grid-->
+    <section class="page-section bg-light" id="features">
+      <div class="d-grid">
+        <div class="text-center my-4">
+          <h2 class="section-heading text-uppercase">Features</h2>
+          <h3 class="section-subheading text-muted">Go Further with ZiraatFilo and Turkey’s Youngest Vehicle Fleet
+          </h3>
+        </div>
+        <div class="row g-0">
+          <div class="col-md-6 d-flex">
+            <img src="./assets/img/features/wrs-turkey-map.png" alt="..." style="max-height: 495px; /* Burada maksimum yüksekliği sınırlayın */
+            width: 100%;
+            object-fit: contain;
+            align-self: center;"/>
+          </div>
+          <div class="col-md-6 w-40">
+            <div class="about-container">
+              <h2>Araç Kiralama Brokerleri API Bağlantısı</h2>
+              <ul>
+                <li>API bağlantısı, brokerların web sitesindeki fiyatlarınızı ve uygun araçları gerçek zamanlı satışa
+                  sunmanızı sağlar.</li>
+                <li>Detaylı raporlama sistemi ile anlık verierinizi tek ekranda görebilirsiniz.</li>
+                <li>Satış ekibi ile hızlı iletişim kurmanızı ve hızlı aksiyon almanızı sağlar. Anından istek, iptal ve
+                  değişiklik işlemlerini yönetebilirsiniz.</li>
+                <li>Dönemlik promosyonlardan ve kampanya tekliflerinden hızlı ve etkin yararlanmanız ile
+                  satışlarınızın
+                  armasını güçlendirir.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <!-- locations-->
+    <section class="page-section" id="locations">
+      <div class="container">
+        <ul class="collapsed collapse show" id="collapse">
+          <li class="">
+            <a href="/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/ankara-yht-gari-subesi">Ankara YHT Garı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-levent-arac-kiralama">İstanbul Levent Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-havalimani-arac-kiralama">İstanbul Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/istanbul-sabiha-gokcen-havalimani-arac-kiralama">İstanbul Sabiha Gökçen Havalimanı Araç
+              Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/ıstanbul-pendik-merkez-arac-kiralama">İstanbul Pendik Merkez Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/izmir-havalimani-arac-kiralama">İzmir Adnan Menderes Havalimanı Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/kayseri-kum-small-avm-subesi">Kayseri Araç Kiralama</a>
+          </li>
+          <li class="">
+            <a href="/tr/adana-mersin-cukurova-uluslararasi-havalimani">Çukurova Uluslararası Havalimanı</a>
+          </li>
+          <li class="">
+            <a href="/tr/mugla-dalaman-havalimani">Muğla Dalaman Havalimanı</a>
+          </li>
+          <li class="">
+            <a href="/tr/mugla-milas-bodrum-havalimani">Muğla Milas Bodrum Havalimanı</a>
+          </li>
+          <li class="">
+            <a href="/tr/trabzon-uluslararasi-havalimani">Trabzon Uluslararası Havalimanı</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </section>
+    <!-- about-->
+    <section class="page-section bg-light" id="about">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">About</h2>
+        </h3>
+      </div>
+      <div class="about-container">
+        <h2>Ziraat Filo</h2>
+        <ul>
+          <li><span class="highlight">2001 yılında</span> operasyonel kiralama hizmetleri sunmak amacıyla kurulan
+            ZiraatFİLO, tüketicilerin artan talepleri doğrultusunda 2011 yılında bireysel müşterilere yönelik günlük
+            araç kiralama hizmetine başlamıştır.</li>
+
+          <li>"<span class="highlight">Yepyeni bir araç kiralama deneyimi</span>" vizyonuyla, kısa süre içinde önemli
+            atılımlar gerçekleştiren marka, hızla büyüyerek her geçen gün genişleyen hizmet noktaları ve portföyündeki
+            <span class="highlight">10.000 aracıyla</span> müşterilerine kaliteden ödün vermeden hizmet sunmaya devam
+            etmektedir.
+          </li>
+
+          <li>Ziraat Filo Yönetimi ve Mobilite Çözümler A.Ş, <span class="highlight">2019 Ağustos</span> itibarıyla
+            Ziraat GSYO çatısı altında faaliyet göstermektedir. Şu anda <span class="highlight">8 ilde 14 şubesi</span>
+            ile hizmet veren ZiraatFİLO, hizmet alanını genişletmek ve müşteri memnuniyetini artırmak için çalışmalarını
+            sürdürmektedir.</li>
+
+          <li>Türkiye'nin <span class="highlight">ilk yerli günlük araç kiralama markası</span> olan ZiraatFİLO, güler
+            yüzlü hizmet anlayışı, ulaşılabilir fiyat politikası, güçlü araç filosu ve üstün hizmet kalitesi ile araç
+            kiralama sektöründe kendine özgü bir fark yaratmaktadır.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Contact-->
+    <section class="page-section d-flex" id="contact">
+      <div class="contact-container">
+        <div class="text-center mb-4 mt-4">
+          <h2 class="section-heading text-uppercase">Contact Us</h2>
+        </div>
+        <div class="d-grid place-items-center">
+          <div class="w-90">
+            <form id="contactForm">
+              <div class="row align-items-stretch mb-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <!-- Name input-->
+                    <input class="form-control" id="name" type="text" placeholder="Full Name *"
+                      data-sb-validations="required" />
+                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                  </div>
+                  <div class="form-group">
+                    <!-- Email address input-->
+                    <input class="form-control" id="email" type="email" placeholder="Email *"
+                      data-sb-validations="required,email" />
+                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                  </div>
+                  <div class="form-group mb-md-0">
+                    <!-- Phone number input-->
+                    <input class="form-control" id="phone" type="tel" placeholder="Phone *"
+                      data-sb-validations="required" />
+                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group form-group-textarea mb-md-0">
+                    <!-- Message input-->
+                    <textarea class="form-control" id="message" placeholder="Your Message *"
+                      data-sb-validations="required"></textarea>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Submit success message-->
+              <!---->
+              <!-- This is what your users will see when the form-->
+              <!-- has successfully submitted-->
+              <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center text-white mb-3">
+                  <div class="fw-bolder">Form submission successful!</div>
+                  To activate this form, sign up at
+                  <br />
+                  <a
+                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+              </div>
+              <!-- Submit error message-->
+              <!---->
+              <!-- This is what your users will see when there is-->
+              <!-- an error submitting the form-->
+              <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error sending message!</div>
+              </div>
+              <!-- Submit Button-->
+              <div class="text-end"><button class="btn btn-primary btn-l text-uppercase disabled" id="submitButton"
+                  type="submit">Send Message</button></div>
+            </form>
+          </div>
+          <div class="w-90">
+            <h3 class="section-heading">Contact Information</h3>
+            <span style="color: white;">
+              Company Name: WRS Turkey Turizm A.Ş <br>
+              Adress: Barbaros Mah. Gelincik Sok. A Blok, Bulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL <br>
+              Email: carrental@wrsturkey.com <br>
+              Phone: +90 850 840 07 99
+            </span>
+          </div>
+          <div class="w-90 text-center">
+            <div>
+              <a class="btn btn-light btn-social mx-3" href="https://x.com/wrsturkey" aria-label="X" target="_blank"
+                rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+              <a class="btn btn-light btn-social mx-3" href="https://www.instagram.com/wrsturkey" aria-label="Instagram"
+                target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-light btn-social mx-3" href="https://www.linkedin.com/in/wrs-turkey-611837363"
+                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer" id="footer">
+      <div class="container py-1">
+        <div class="text-center">Copyright &copy; Simgesel Media 2025</div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </div>
+</body>
+
+</html>

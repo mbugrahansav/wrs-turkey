@@ -1,49 +1,128 @@
+/*!
+* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+*/
 //
 // Scripts
 // 
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
+  const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+  const videoContainer = document.getElementById('video-container');
+  const video = document.getElementById('intro-video');
+  const pageTop = document.getElementById('page-top');
 
-    };
+  function showPage() {
+    videoContainer.classList.add('fade-out');
+    setTimeout(() => {
+      videoContainer.style.display = 'none';
+      pageTop.style.display = 'block';
+      document.body.style.overflow = 'auto';
+    }, 1000); // transition süresiyle eşit olmalı
+  }
 
-    // Shrink the navbar 
-    navbarShrink();
+  if (hasSeenIntro) {
+    videoContainer.style.display = 'none';
+    pageTop.style.display = 'block';
+    document.body.style.overflow = 'auto';
+  } else {
+    localStorage.setItem('hasSeenIntro', 'true');
+    video.addEventListener('ended', showPage);
+    document.body.style.overflow = 'hidden';
+  }
 
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
+  const logo = document.getElementById("stickyLogo");
+  const footer = document.getElementById("footer");
 
-    //  Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            rootMargin: '0px 0px -40%',
-        });
-    };
+  function updateLogoPosition() {
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
+    if (footerTop < windowHeight) {
+      const overlap = windowHeight - footerTop - 10; // 20px boşluk
+      logo.style.bottom = `${overlap}px`;
+    } else {
+      logo.style.bottom = '10px';
+    }
+  }
+
+  window.addEventListener('scroll', updateLogoPosition);
+  window.addEventListener('resize', updateLogoPosition);
+
+  // İlk çağrı
+  updateLogoPosition();
+
+  // Navbar shrink function
+  var navbarShrink = function () {
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    if (!navbarCollapsible) {
+      return;
+    }
+    if (window.scrollY === 0) {
+      navbarCollapsible.classList.remove('navbar-shrink')
+    } else {
+      navbarCollapsible.classList.add('navbar-shrink')
+    }
+
+  };
+
+  // Shrink the navbar 
+  navbarShrink();
+
+  // Shrink the navbar when page is scrolled
+  document.addEventListener('scroll', navbarShrink);
+
+  //  Activate Bootstrap scrollspy on the main nav element
+  const mainNav = document.body.querySelector('#mainNav');
+  if (mainNav) {
+    new bootstrap.ScrollSpy(document.body, {
+      target: '#mainNav',
+      rootMargin: '0px 0px -40%',
     });
+  };
+
+  // Collapse responsive navbar when toggler is visible
+  const navbarToggler = document.body.querySelector('.navbar-toggler');
+  const responsiveNavItems = [].slice.call(
+    document.querySelectorAll('#navbarResponsive .nav-link')
+  );
+  responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItem.addEventListener('click', () => {
+      if (window.getComputedStyle(navbarToggler).display !== 'none') {
+        navbarToggler.click();
+      }
+    });
+  });
+
+
+  const formMap = {
+    'btn-broker': 'broker-form',
+    'btn-subagency': 'subagency-form',
+    'btn-fleet': 'fleet-form',
+    'btn-rent': 'rent-form'
+  };
+
+  const popupOverlay = document.getElementById('popup-overlay');
+  const closePopupBtn = document.getElementById('close-popup');
+
+  Object.keys(formMap).forEach(buttonId => {
+    const button = document.getElementById(buttonId);
+    if (button) {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.popup-form').forEach(el => el.classList.add('d-none'));
+        const formId = formMap[buttonId];
+        document.getElementById(formId).classList.remove('d-none');
+        document.body.classList.add("overflow-hidden");
+        popupOverlay.classList.remove('d-none');
+      });
+    }
+  });
+
+  closePopupBtn.addEventListener('click', () => {
+    popupOverlay.classList.add('d-none');
+    document.body.classList.remove("overflow-hidden");
+  });
 
 });

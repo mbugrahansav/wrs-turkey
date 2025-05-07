@@ -2,9 +2,9 @@
   "name": "wrs-turkey",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "live-server src"
+    "start": "live-server"
   },
   "repository": {
     "type": "git",

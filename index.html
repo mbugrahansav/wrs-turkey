@@ -8,20 +8,20 @@
   <meta name="author" content="" />
   <title>Agency - Start Bootstrap Theme</title>
   <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="./src/assets/favicon.ico" />
   <!-- Font Awesome 6 CDN (en az bu olmalı) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
   <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
+  <link href="./src/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
   <div id="video-container" style="position: fixed; inset: 0; background: black; z-index: 9999;">
     <video autoplay muted playsinline id="intro-video" style="width: 100%; height: 100%; object-fit: cover;">
-      <source src="./assets/video/wrs-turkey-packshot.mp4" type="video/mp4" />
+      <source src="./src/assets/video/wrs-turkey-packshot.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </div>
@@ -29,13 +29,13 @@
   <div id="page-top" style="display: none;">
     <div class="sticky-logo" id="stickyLogo">
       <a href="https://ziraatfilo.com.tr/" target="_blank" rel="noopener noreferrer">
-        <img src="./assets/img/logos/ziraatfilo-logo.png" alt="ZiraatFilo logo" />
+        <img src="./src/assets/img/logos/ziraatfilo-logo.png" alt="ZiraatFilo logo" />
       </a>
     </div>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="wrs-turkey-logo" href="#page-top"><img src="assets/img/logos/wrs-turkey.png" alt="..." /></a>
+        <a class="wrs-turkey-logo" href="#page-top"><img src="./src/assets/img/logos/wrs-turkey.png" alt="..." /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -75,7 +75,7 @@
             <div id="btn-broker">
               <span class="fa-stack fa-4x" onclick="showForm('broker')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
-                <img src="./assets/img/icons/brokerage-icon.png" alt="..."
+                <img src="./src/assets/img/icons/brokerage-icon.png" alt="..."
                   style="position: relative; width: 6rem; margin: 0 0 1rem 0.3rem;" />
               </span>
             </div>
@@ -85,7 +85,7 @@
             <div id="btn-subagency">
               <span class="fa-stack fa-4x" onclick="showForm('subagency')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
-                <img src="./assets/img/icons/sub-agency-icon.png" alt="..."
+                <img src="./src/assets/img/icons/sub-agency-icon.png" alt="..."
                   style="position: relative; width: 6rem; margin: 0 0 0.5rem 0.2rem;" />
               </span>
             </div>
@@ -95,7 +95,7 @@
             <div id="btn-fleet">
               <span class="fa-stack fa-4x" onclick="showForm('subagency')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
-                <img src="./assets/img/icons/fleet-icon.png" alt="..." style="position: relative; width: 6rem;" />
+                <img src="./src/assets/img/icons/fleet-icon.png" alt="..." style="position: relative; width: 6rem;" />
               </span>
             </div>
             <h4 class="my-3">Vehicle Fleet Request</h4>
@@ -104,7 +104,7 @@
             <div id="btn-rent">
               <span class="fa-stack fa-4x" onclick="showForm('subagency')">
                 <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 2.2em;"></i>
-                <img src="./assets/img/icons/rent-a-car-icon.png" alt="..."
+                <img src="./src/assets/img/icons/rent-a-car-icon.png" alt="..."
                   style="position: relative; width: 5rem; margin-bottom: 0.5rem;" />
               </span>
             </div>
@@ -301,7 +301,7 @@
         </div>
         <div class="row g-0">
           <div class="col-md-6 d-flex">
-            <img src="./assets/img/features/wrs-turkey-map.png" alt="..." style="max-height: 495px; /* Burada maksimum yüksekliği sınırlayın */
+            <img src="./src/assets/img/features/wrs-turkey-map.png" alt="..." style="max-height: 495px; /* Burada maksimum yüksekliği sınırlayın */
             width: 100%;
             object-fit: contain;
             align-self: center;"/>
@@ -507,7 +507,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="./src/js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

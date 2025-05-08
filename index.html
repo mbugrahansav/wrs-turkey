@@ -15,6 +15,8 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
   <!-- Core theme CSS (includes Bootstrap)-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
   <link href="./src/css/styles.css" rel="stylesheet" />
 </head>
 
@@ -47,7 +49,8 @@
             <li class="nav-item"><a class="nav-link" href="#features">Özelliklerimiz</a></li>
             <li class="nav-item"><a class="nav-link" href="#locations">Şubelerimiz</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
-            <li class="nav-item"><a class="nav-link" href="#fleet">Filomuz</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://ziraatfilo.com.tr/tr/filo"
+                target="_blank">Filomuz</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Bize Ulaşın</a></li>
           </ul>
         </div>
@@ -66,8 +69,9 @@
     <section class="page-section" id="management">
       <div class="container mb-5">
         <div class="section-title mt-5">
-          <h2>Araç Kiralama Broker'ları ve OTA'lar için Kanal Entegrasyon Yöneticisi</h2>
-          <p>Türkiye'nin en güçlü ve en büyük araç kiralama şirketini sisteminize entegre ederek satışlarınızı artırın.</p>
+          <h2 style="font-style: italic;">Araç Kiralama Broker'ları ve OTA'lar İçin Kanal Entegrasyon Yöneticisi</h2>
+          <p>Türkiye'nin en güçlü ve en büyük araç kiralama şirketini sisteminize entegre ederek satışlarınızı artırın.
+          </p>
         </div>
         <div class="row text-center my-8">
           <div class="col-md-4 card-container">
@@ -111,7 +115,8 @@
               <div class="mt-5">
                 <span class="fa-stack fa-4x">
                   <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 3.2em;"></i>
-                  <img src="./src/assets/img/icons/fleet-icon.png" alt="..." style="position: relative; width: 10rem;" />
+                  <img src="./src/assets/img/icons/fleet-icon.png" alt="..."
+                    style="position: relative; width: 10rem;" />
                 </span>
               </div>
               <h3 class="mt-5">Filo Talep</h3>
@@ -355,10 +360,9 @@
   <!-- features -->
   <section class="page-section bg-light" id="features">
     <div class="mb-5">
-      <div class="text-center my-5">
-        <h2 class="section-heading ">ÖZELLİKLERİMİZ</h2>
-        <h3 class="section-subheading text-muted">Go Further with ZiraatFilo and Turkey’s Youngest Vehicle Fleet
-        </h3>
+      <div class="features-section-title mt-5">
+        <h2 class="section-heading">ÖZELLİKLERİMİZ</h2>
+        <p>Türkiye'nin en genç araç filosuna sahip ZiraatFilo ile hep daha ileri.</p>
       </div>
       <div class="row g-0" style="margin-top: 5vh;">
         <div class="col-md-6 d-flex">
@@ -505,74 +509,43 @@
   <section class="page-section d-flex" id="contact" style="min-height: auto;">
     <div class="contact-container">
       <div class="text-center mb-4 mt-4">
-        <h2 class="section-heading text-uppercase">Contact Us</h2>
+        <h2 class="section-heading">BİZE ULAŞIN</h2>
       </div>
       <div class="d-grid place-items-center">
         <div class="w-90">
-          <form id="contactForm">
+          <form id="contactForm" action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
             <div class="row align-items-stretch mb-4">
               <div class="col-md-6">
                 <div class="form-group">
-                  <!-- Name input-->
-                  <input class="form-control" id="name" type="text" placeholder="Full Name *"
-                    data-sb-validations="required" />
-                  <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                  <input class="form-control" id="name" type="text" name="ad_soyad" placeholder="Ad Soyad *"
+                    required />
                 </div>
                 <div class="form-group">
-                  <!-- Email address input-->
-                  <input class="form-control" id="email" type="email" placeholder="Email *"
-                    data-sb-validations="required,email" />
-                  <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                  <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                  <input class="form-control" id="email" type="email" name="email" placeholder="Email *" required />
                 </div>
                 <div class="form-group mb-md-0">
-                  <!-- Phone number input-->
-                  <input class="form-control" id="phone" type="tel" placeholder="Phone *"
-                    data-sb-validations="required" />
-                  <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                  <input class="form-control" id="phone" type="tel" name="telefon" placeholder="Telefon *" required />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group form-group-textarea mb-md-0">
-                  <!-- Message input-->
-                  <textarea class="form-control" id="message" placeholder="Your Message *"
-                    data-sb-validations="required"></textarea>
-                  <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                  <textarea class="form-control" id="message" name="mesaj" placeholder="Mesajınız *"
+                    required></textarea>
                 </div>
               </div>
-            </div>
-            <!-- Submit success message-->
-            <!---->
-            <!-- This is what your users will see when the form-->
-            <!-- has successfully submitted-->
-            <div class="d-none" id="submitSuccessMessage">
-              <div class="text-center text-white mb-3">
-                <div class="fw-bolder">Form submission successful!</div>
-                To activate this form, sign up at
-                <br />
-                <a
-                  href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+              <div class="text-end mt-4">
+                <button class="btn btn-primary btn-l" id="submitButton" type="submit">GÖNDER</button>
               </div>
             </div>
-            <!-- Submit error message-->
-            <!---->
-            <!-- This is what your users will see when there is-->
-            <!-- an error submitting the form-->
-            <div class="d-none" id="submitErrorMessage">
-              <div class="text-center text-danger mb-3">Error sending message!</div>
-            </div>
-            <!-- Submit Button-->
-            <div class="text-end"><button class="btn btn-primary btn-l text-uppercase disabled" id="submitButton"
-                type="submit">Send Message</button></div>
           </form>
         </div>
         <div class="w-90">
-          <h3 class="section-heading">Contact Information</h3>
+          <h3 class="section-heading">İletişim Bilgileri</h3>
           <span style="color: white;">
-            Company Name: WRS Turkey Turizm A.Ş <br>
-            Adress: Barbaros Mah. Gelincik Sok. A Blok, Bulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL <br>
+            Şirket Ünvanı: WRS Turkey Turizm A.Ş <br>
+            Adres: Barbaros Mah. Gelincik Sok. A Blok, Bulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL <br>
             Email: carrental@wrsturkey.com <br>
-            Phone: +90 850 840 07 99
+            Telefon: +90 850 840 07 99
           </span>
         </div>
         <div class="w-90 text-center">

@@ -33,6 +33,22 @@ window.addEventListener('DOMContentLoaded', event => {
     document.body.style.overflow = 'hidden';
   }
 
+  const input = document.querySelector("#phone");
+  if (!input) return;
+
+  const iti = window.intlTelInput(input, {
+    initialCountry: "auto",
+    geoIpLookup: callback => {
+      fetch('https://ipapi.co/json')
+        .then(res => res.json())
+        .then(data => callback(data.country_code))
+        .catch(() => callback("us"));
+    },
+    separateDialCode: true,
+    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+  });
+
+
   const logo = document.getElementById("stickyLogo");
   const footer = document.getElementById("footer");
 

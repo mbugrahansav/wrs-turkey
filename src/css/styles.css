@@ -12,6 +12,7 @@
  */
 :root {
   --primary-color: #CAAB7C;
+  --secondary-color: #1D425D;
   --dark-color: #333333;
   --light-color: #f8f9fa;
   --accent-color: #0a58ca;
@@ -669,7 +670,7 @@ progress {
 }
 @media (min-width: 1400px) {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1320px;
+    max-width: 1470px;
   }
 }
 .row {
@@ -11333,7 +11334,7 @@ p {
 
 .about-container .highlight {
   font-size: x-large;
-  color: #1C425D;
+  color: var(--secondary-color);
   font-weight: 600;
 }
 
@@ -11746,6 +11747,46 @@ section#contact form#contactForm :-ms-input-placeholder {
   max-width: 800px;
   margin: 0 auto;
   font-style: italic;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 20px auto;
+}
+
+.features-section-title {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.features-section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+.features-section-title p {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.features-section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin: 20px auto;
 }
 
 .section-title:after {

@@ -2778,7 +2778,8 @@ textarea.form-control-lg {
   --bs-btn-font-size: 1rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
-  --bs-btn-color: #212529;
+  --bs-btn-color: #CAAB7C;
+  --bs-btn-hover-color: #caac7bb3;
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
   --bs-btn-border-color: transparent;
@@ -2855,7 +2856,7 @@ textarea.form-control-lg {
   --bs-btn-bg: #CAAB7C;
   --bs-btn-border-color: #CAAB7C;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #d9af6f;
+  --bs-btn-hover-bg: #caac7bb3;
   --bs-btn-hover-border-color: #cca000;
   --bs-btn-focus-shadow-rgb: 255, 208, 38;
   --bs-btn-active-color: #fff;
@@ -3736,6 +3737,15 @@ textarea.form-control-lg {
 }
 .tab-content > .active {
   display: block;
+}
+
+.fa-stack {
+  display: inline-block;
+  height: 3em;
+  line-height: 3em;
+  position: relative;
+  vertical-align: middle;
+  width: 3.5em;
 }
 
 .navbar {

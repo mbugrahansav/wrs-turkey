@@ -11,6 +11,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
+  --primary-color: #CAAB7C;
+  --dark-color: #333333;
+  --light-color: #f8f9fa;
+  --accent-color: #0a58ca;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -2779,7 +2783,7 @@ textarea.form-control-lg {
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
   --bs-btn-color: #CAAB7C;
-  --bs-btn-hover-color: #caac7bb3;
+  /* --bs-btn-hover-color: #caac7bb3; */
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
   --bs-btn-border-color: transparent;
@@ -11714,4 +11718,130 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+.integration-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 20px auto;
+}
+
+.integration-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.integration-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 20px;
+}
+
+.card-icon img {
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+
+.integration-card h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.integration-card p {
+  text-align: center;
+  color: #666;
+  padding: 0 25px 20px;
+  margin-bottom: 0;
+}
+
+.integration-card .btn-container {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.integration-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.integration-btn:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Diagonal design element */
+.diagonal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(201,168,117,0.15) 0%, rgba(255,255,255,0) 70%);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+      font-size: 2rem;
+  }
+  
+  .card-container {
+      margin-bottom: 30px;
+  }
 }

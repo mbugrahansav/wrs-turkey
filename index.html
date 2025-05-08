@@ -62,17 +62,67 @@
         </div>
       </div>
     </header>
-    <!-- Services-->
+    <!-- Management-->
     <section class="page-section" id="management">
       <div class="container mb-5">
-        <div class="text-center my-5">
-          <h2 class="section-heading">Araç Kiralama Broker'ları ve OTA'lar için Kanal entegrasyon Yöneticisi</h2>
-          <h3 class="section-subheading text-muted mt-4">Türkiye'nin en güçlü ve en büyük araç kiralama şirketini
-            sisteminize
-            entegre satışlarınızi arttırın.</h3>
+        <div class="section-title mt-5">
+          <h2>Araç Kiralama Broker'ları ve OTA'lar için Kanal Entegrasyon Yöneticisi</h2>
+          <p>Türkiye'nin en güçlü ve en büyük araç kiralama şirketini sisteminize entegre ederek satışlarınızı artırın.</p>
         </div>
-        <div class="row text-center my-10">
-          <div class="col-md-4">
+        <div class="row text-center my-8">
+          <div class="col-md-4 card-container">
+            <div class="integration-card">
+              <div class="diagonal-bg"></div>
+              <div class="mt-5">
+                <span class="fa-stack fa-4x">
+                  <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 3.2em;"></i>
+                  <img src="./src/assets/img/icons/brokerage-icon.png" alt="..."
+                    style="position: relative; width: 9rem; margin: 0 0 1rem 0.3rem;" />
+                </span>
+              </div>
+              <h3 class="mt-5">Broker Sistem Talep</h3>
+              <p>Mevcut broker sisteminizi hızlıca bağlayın ve Türkiye'nin tüm araç filosuna anında erişim sağlayın.</p>
+              <div class="my-5" id="btn-broker">
+                <button class="btn btn-primary btn-l">Fromu Doldurun</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 card-container">
+            <div class="integration-card">
+              <div class="diagonal-bg"></div>
+              <div class="mt-5">
+                <span class="fa-stack fa-4x">
+                  <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 3.2em;"></i>
+                  <img src="./src/assets/img/icons/sub-agency-icon.png" alt="..."
+                    style="position: relative; width: 10rem; margin: 0 0 0.5rem 0.2rem;" />
+                </span>
+              </div>
+              <h3 class="mt-5">Alt Acenta Sistem Talep</h3>
+              <p>Alt acentelerinize güvenli ve hızlı bir şekilde erişim sağlayın, tüm rezervasyonları tek bir
+                platformdan yönetin.</p>
+              <div class="my-5" id="btn-subagency">
+                <button class="btn btn-primary btn-l">Formu Doldurun</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 card-container">
+            <div class="integration-card">
+              <div class="diagonal-bg"></div>
+              <div class="mt-5">
+                <span class="fa-stack fa-4x">
+                  <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 3.2em;"></i>
+                  <img src="./src/assets/img/icons/fleet-icon.png" alt="..." style="position: relative; width: 10rem;" />
+                </span>
+              </div>
+              <h3 class="mt-5">Filo Talep</h3>
+              <p>Araç filonuzu tek bir platformdan yönetin, raporlayın ve verimliliğinizi artırın.</p>
+              <div class="my-5" id="btn-fleet">
+                <button class="btn btn-primary btn-l">Formu Doldurun</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-4">
             <div class="btn" id="btn-broker">
                 <span class="fa-stack fa-4x" onclick="showForm('broker')">
                 <i class="fas fa-circle fa-stack-2x" style="font-size: 3.2em;"></i>
@@ -81,8 +131,8 @@
               </span>
             </div>
             <h4 class="my-4">Broker Sistem Talep</h4>
-          </div>
-          <div class="col-md-4">
+          </div> -->
+        <!-- <div class="col-md-4">
             <div class="btn" id="btn-subagency">
               <span class="fa-stack fa-4x" onclick="showForm('subagency')">
                 <i class="fas fa-circle fa-stack-2x" style="font-size: 3.2em;"></i>
@@ -91,8 +141,8 @@
               </span>
             </div>
             <h4 class="my-4">Alt Acenta Sistem Talep</h4>
-          </div>
-          <div class="col-md-4">
+          </div> -->
+        <!-- <div class="col-md-4">
             <div class="btn" id="btn-fleet">
               <span class="fa-stack fa-4x" onclick="showForm('fleet')">
                 <i class="fas fa-circle fa-stack-2x" style="font-size: 3.2em;"></i>
@@ -100,8 +150,8 @@
               </span>
             </div>
             <h4 class="my-4">Filo Talep</h4>
-          </div>
-          <!-- <div class="col-md-3">
+          </div> -->
+        <!-- <div class="col-md-3">
             <div class="btn" id="btn-rent">
               <span class="fa-stack fa-4x" onclick="showForm('rent')">
                 <i class="fas fa-circle fa-stack-2x" style="font-size: 2.2em;"></i>
@@ -111,443 +161,444 @@
             </div>
             <h4 class="my-4">Araç Kirala</h4>
           </div> -->
-        </div>
+      </div>
+  </div>
+
+  <div id="popup-overlay" class="popup-overlay d-none">
+    <div class="popup-content">
+      <button id="close-popup" class="close-btn">&times;</button>
+      <div id="broker-form" class="popup-form d-none">
+        <h4>Broker Sistem Talep Formu</h4>
+        <form action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="companyName" class="form-label">Firma Adı</label>
+              <input class="form-control" type="text" name="firma_adi" id="companyName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="countries" class="form-label">Faaliyet Gösterdiği Ülkeler</label>
+              <input class="form-control" type="text" name="faaliyet_gosterdigi_ulkeler" id="countries" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedName" class="form-label">Yetkili Adı</label>
+              <input class="form-control" type="text" name="yetkili_adi" id="authorizedName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedEmail" class="form-label">Yetkili Email</label>
+              <input class="form-control" type="email" name="yetkili_email" id="authorizedEmail" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedPhone" class="form-label">Yetkili Telefon</label>
+              <input class="form-control" type="tel" name="yetkili_telefon" id="authorizedPhone" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="gsmNumber" class="form-label">GSM</label>
+              <input class="form-control" class="form-control" type="tel" name="gsm" id="gsmNumber">
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="messageText" class="form-label">Açıklama</label>
+              <textarea class="form-control" name="aciklama" id="messageText" rows="4"></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary btn-submit d-block ml-auto" type="submit">Gönder</button>
+            </div>
+          </div>
+        </form>
       </div>
 
-      <div id="popup-overlay" class="popup-overlay d-none">
-        <div class="popup-content">
-          <button id="close-popup" class="close-btn">&times;</button>
-          <div id="broker-form" class="popup-form d-none">
-            <h4>Broker Sistem Talep Formu</h4>
-            <form action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="companyName" class="form-label">Firma Adı</label>
-                  <input class="form-control" type="text" name="firma_adi" id="companyName" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="countries" class="form-label">Faaliyet Gösterdiği Ülkeler</label>
-                  <input class="form-control" type="text" name="faaliyet_gosterdigi_ulkeler" id="countries" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedName" class="form-label">Yetkili Adı</label>
-                  <input class="form-control" type="text" name="yetkili_adi" id="authorizedName" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedEmail" class="form-label">Yetkili Email</label>
-                  <input class="form-control" type="email" name="yetkili_email" id="authorizedEmail" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedPhone" class="form-label">Yetkili Telefon</label>
-                  <input class="form-control" type="tel" name="yetkili_telefon" id="authorizedPhone" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="gsmNumber" class="form-label">GSM</label>
-                  <input class="form-control" class="form-control" type="tel" name="gsm" id="gsmNumber">
-                </div>
-                <div class="col-md-12 mb-3">
-                  <label for="messageText" class="form-label">Açıklama</label>
-                  <textarea class="form-control" name="aciklama" id="messageText" rows="4"></textarea>
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-primary btn-submit d-block ml-auto" type="submit">Gönder</button>
-                </div>
-              </div>
-            </form>
+      <div id="subagency-form" class="popup-form d-none">
+        <h4>Sub-Agency System Request Form</h4>
+        <form action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="agencyName" class="form-label">Acente Adı</label>
+              <input class="form-control" type="text" name="acente_adi" id="agencyName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="agencyTitle" class="form-label">Acente Ünvanı</label>
+              <input class="form-control" type="text" name="acente_unvani" id="agencyTitle" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="agencyLicenseNumber" class="form-label">Acente Belge Numarası</label>
+              <input class="form-control" type="text" name="acente_belge_numarasi" id="agencyLicenseNumber" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="countries" class="form-label">Faaliyet Gösterdiği Ülke</label>
+              <input class="form-control" type="text" name="faaliyet_gosterdigi_ulke" id="countries" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cities" class="form-label">Faaliyet Gösterdiği Şehirler</label>
+              <input class="form-control" type="text" name="faaliyet_gosterdigi_sehirler" id="cities" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedName" class="form-label">Yetkili Adı</label>
+              <input class="form-control" type="text" name="yetkili_adi" id="authorizedName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedEmail" class="form-label">Yetkili Email</label>
+              <input class="form-control" type="email" name="yetkili_email" id="authorizedEmail" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedPhone" class="form-label">Yetkili Telefon</label>
+              <input class="form-control" type="tel" name="yetkili_telefon" id="authorizedPhone" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="gsmNumber" class="form-label">GSM</label>
+              <input class="form-control" class="form-control" type="tel" name="gsm" id="gsmNumber">
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="messageText" class="form-label">Açıklama</label>
+              <textarea class="form-control" name="aciklama" id="messageText" rows="4"></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary btn-submit d-block ml-auto" type="submit">Gönder</button>
+            </div>
           </div>
-
-          <div id="subagency-form" class="popup-form d-none">
-            <h4>Sub-Agency System Request Form</h4>
-            <form action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="agencyName" class="form-label">Acente Adı</label>
-                  <input class="form-control" type="text" name="acente_adi" id="agencyName" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="agencyTitle" class="form-label">Acente Ünvanı</label>
-                  <input class="form-control" type="text" name="acente_unvani" id="agencyTitle" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="agencyLicenseNumber" class="form-label">Acente Belge Numarası</label>
-                  <input class="form-control" type="text" name="acente_belge_numarasi" id="agencyLicenseNumber" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="countries" class="form-label">Faaliyet Gösterdiği Ülke</label>
-                  <input class="form-control" type="text" name="faaliyet_gosterdigi_ulke" id="countries" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="cities" class="form-label">Faaliyet Gösterdiği Şehirler</label>
-                  <input class="form-control" type="text" name="faaliyet_gosterdigi_sehirler" id="cities" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedName" class="form-label">Yetkili Adı</label>
-                  <input class="form-control" type="text" name="yetkili_adi" id="authorizedName" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedEmail" class="form-label">Yetkili Email</label>
-                  <input class="form-control" type="email" name="yetkili_email" id="authorizedEmail" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedPhone" class="form-label">Yetkili Telefon</label>
-                  <input class="form-control" type="tel" name="yetkili_telefon" id="authorizedPhone" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="gsmNumber" class="form-label">GSM</label>
-                  <input class="form-control" class="form-control" type="tel" name="gsm" id="gsmNumber">
-                </div>
-                <div class="col-md-12 mb-3">
-                  <label for="messageText" class="form-label">Açıklama</label>
-                  <textarea class="form-control" name="aciklama" id="messageText" rows="4"></textarea>
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-primary btn-submit d-block ml-auto" type="submit">Gönder</button>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <div id="fleet-form" class="popup-form d-none">
-            <h4>Vehicle Fleet Request Form</h4>
-            <form action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="companyName" class="form-label">Firma Adı</label>
-                  <input class="form-control" type="text" name="firma_adi" id="companyName" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="companyTitle" class="form-label">Firma Ünvanı</label>
-                  <input class="form-control" type="text" name="firma_unvani" id="companyTitle" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="areaofOperation" class="form-label">Faailet Alanı</label>
-                  <input class="form-control" type="text" name="faaliyet_alani" id="areaofOperation" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="countries" class="form-label">Faaliyet Gösterdiği Ülke</label>
-                  <input class="form-control" type="text" name="faaliyet_gosterdigi_ulkeler" id="countries" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="cities" class="form-label">Faaliyet Gösterdiği Şehirler</label>
-                  <input class="form-control" type="text" name="faaliyet_gosterdigi_sehirler" id="cities" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="vehicleClassRequested" class="form-label">Talep Edilen Araç Sınıfı</label>
-                  <input class="form-control" type="text" name="talep_edilen_arac_sinifi" id="vehicleClassRequested" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="vehiclesRequested" class="form-label">Talep Edilen Araç Sayısı</label>
-                  <input class="form-control" type="text" name="talep_edilen_arac_sayisi" id="vehiclesRequested" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedName" class="form-label">Yetkili Adı</label>
-                  <input class="form-control" type="text" name="yetkili_adi" id="authorizedName" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedEmail" class="form-label">Yetkili Email</label>
-                  <input class="form-control" type="email" name="yetkili_email" id="authorizedEmail" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="authorizedPhone" class="form-label">Yetkili Telefon</label>
-                  <input class="form-control" type="tel" name="yetkili_telefon" id="authorizedPhone" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="gsmNumber" class="form-label">GSM</label>
-                  <input class="form-control" class="form-control" type="tel" name="gsm" id="gsmNumber">
-                </div>
-                <div class="col-md-12 mb-3">
-                  <label for="messageText" class="form-label">Açıklama</label>
-                  <textarea class="form-control" name="aciklama" id="messageText" rows="4"></textarea>
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-primary btn-submit d-block ml-auto" type="submit">Gönder</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div id="rent-form" class="popup-form d-none">Rent form içeriği
-            <form>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="name" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="name" required />
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="name" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="name" required />
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="tel" class="form-control" id="email" required />
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="phone" class="form-label">Phone Number</label>
-                  <input type="tel" class="form-control" id="phone" />
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="phone" class="form-label">Mobile</label>
-                  <input type="tel" class="form-control" id="phone" />
-                </div>
-                <div class="col-md-12 mb-3">
-                  <label for="message" class="form-label">Your Message</label>
-                  <textarea class="form-control" id="message" rows="4"></textarea>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary btn-submit d-block ml-auto">Submit</button>
-            </form>
-          </div>
-        </div>
+        </form>
       </div>
 
-    </section>
+      <div id="fleet-form" class="popup-form d-none">
+        <h4>Vehicle Fleet Request Form</h4>
+        <form action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="companyName" class="form-label">Firma Adı</label>
+              <input class="form-control" type="text" name="firma_adi" id="companyName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="companyTitle" class="form-label">Firma Ünvanı</label>
+              <input class="form-control" type="text" name="firma_unvani" id="companyTitle" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="areaofOperation" class="form-label">Faailet Alanı</label>
+              <input class="form-control" type="text" name="faaliyet_alani" id="areaofOperation" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="countries" class="form-label">Faaliyet Gösterdiği Ülke</label>
+              <input class="form-control" type="text" name="faaliyet_gosterdigi_ulkeler" id="countries" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cities" class="form-label">Faaliyet Gösterdiği Şehirler</label>
+              <input class="form-control" type="text" name="faaliyet_gosterdigi_sehirler" id="cities" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="vehicleClassRequested" class="form-label">Talep Edilen Araç Sınıfı</label>
+              <input class="form-control" type="text" name="talep_edilen_arac_sinifi" id="vehicleClassRequested"
+                required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="vehiclesRequested" class="form-label">Talep Edilen Araç Sayısı</label>
+              <input class="form-control" type="text" name="talep_edilen_arac_sayisi" id="vehiclesRequested" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedName" class="form-label">Yetkili Adı</label>
+              <input class="form-control" type="text" name="yetkili_adi" id="authorizedName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedEmail" class="form-label">Yetkili Email</label>
+              <input class="form-control" type="email" name="yetkili_email" id="authorizedEmail" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="authorizedPhone" class="form-label">Yetkili Telefon</label>
+              <input class="form-control" type="tel" name="yetkili_telefon" id="authorizedPhone" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="gsmNumber" class="form-label">GSM</label>
+              <input class="form-control" class="form-control" type="tel" name="gsm" id="gsmNumber">
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="messageText" class="form-label">Açıklama</label>
+              <textarea class="form-control" name="aciklama" id="messageText" rows="4"></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary btn-submit d-block ml-auto" type="submit">Gönder</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="rent-form" class="popup-form d-none">Rent form içeriği
+        <form>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="name" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="name" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="name" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="tel" class="form-control" id="email" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Mobile</label>
+              <input type="tel" class="form-control" id="phone" />
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="4"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit d-block ml-auto">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-    <!-- features -->
-    <section class="page-section bg-light" id="features">
-      <div class="mb-5">
-        <div class="text-center my-5">
-          <h2 class="section-heading ">ÖZELLİKLERİMİZ</h2>
-          <h3 class="section-subheading text-muted">Go Further with ZiraatFilo and Turkey’s Youngest Vehicle Fleet
-          </h3>
-        </div>
-        <div class="row g-0" style="margin-top: 5vh;">
-          <div class="col-md-6 d-flex">
-            <img src="./src/assets/img/features/wrs-turkey-map.png" alt="..." style="max-height: 495px; /* Burada maksimum yüksekliği sınırlayın */
+  </section>
+
+  <!-- features -->
+  <section class="page-section bg-light" id="features">
+    <div class="mb-5">
+      <div class="text-center my-5">
+        <h2 class="section-heading ">ÖZELLİKLERİMİZ</h2>
+        <h3 class="section-subheading text-muted">Go Further with ZiraatFilo and Turkey’s Youngest Vehicle Fleet
+        </h3>
+      </div>
+      <div class="row g-0" style="margin-top: 5vh;">
+        <div class="col-md-6 d-flex">
+          <img src="./src/assets/img/features/wrs-turkey-map.png" alt="..." style="max-height: 495px; /* Burada maksimum yüksekliği sınırlayın */
             width: 100%;
             object-fit: contain;
             align-self: center;" />
-          </div>
-          <div class="col-md-6 w-40">
-            <div class="features-container">
-              <h2>Araç Kiralama Brokerleri API Bağlantısı</h2>
-              <ul>
-                <li>API bağlantısı, brokerların web sitesindeki fiyatlarınızı ve uygun araçları gerçek zamanlı satışa
-                  sunmanızı sağlar.</li>
-                <li>Detaylı raporlama sistemi ile anlık verierinizi tek ekranda görebilirsiniz.</li>
-                <li>Satış ekibi ile hızlı iletişim kurmanızı ve hızlı aksiyon almanızı sağlar. Anından istek, iptal ve
-                  değişiklik işlemlerini yönetebilirsiniz.</li>
-                <li>Dönemlik promosyonlardan ve kampanya tekliflerinden hızlı ve etkin yararlanmanız ile
-                  satışlarınızın
-                  armasını güçlendirir.</li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- locations-->
-    <section class="page-section" id="locations">
-      <div class="mb-5">
-        <div class="text-center my-5">
-          <h2 class="section-heading ">ŞUBELERİMİZ</h2>
-          </h3>
-        </div>
-        <div class="locations-container">
-          <div class="branches-grid">
-            <div class="branches-column">
-              <ul>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
-                <a class="branch-link" target="_blank" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi">Ankara
-                  YHT Garı Araç Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç
-                  Kiralama</a>
-              </ul>
-            </div>
-            <div class="branches-column">
-              <ul>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
-                <a class="branch-link" target="_blank" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi">Ankara
-                  YHT Garı Araç Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç
-                  Kiralama</a>
-              </ul>
-            </div>
-            <div class="branches-column">
-              <ul>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/istanbul-levent-arac-kiralama">İstanbul Levent Araç Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/istanbul-havalimani-arac-kiralama">İstanbul Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/istanbul-sabiha-gokcen-havalimani-arac-kiralama">
-                  İstanbul Sabiha Gökçen Havalimanı Araç Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/ıstanbul-pendik-merkez-arac-kiralama">İstanbul Pendik Merkez Araç
-                  Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/izmir-havalimani-arac-kiralama">İzmir Adnan Menderes Havalimanı
-                  Araç Kiralama</a>
-              </ul>
-            </div>
-            <div class="branches-column">
-              <ul>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/kayseri-kum-small-avm-subesi">Kayseri Araç Kiralama</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.trtradana-mersin-cukurova-uluslararasi-havalimani">
-                  ÇukurovaUluslararası Havalimanı</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/mugla-dalaman-havalimani">Muğla Dalaman Havalimanı</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/mugla-milas-bodrum-havalimani">Muğla Milas Bodrum Havalimanı</a>
-                <a class="branch-link" target="_blank"
-                  href="https://ziraatfilo.com.tr/tr/trabzon-uluslararasi-havalimani">Trabzon Uluslararası
-                  Havalimanı</a>
-              </ul>
-            </div>
+        <div class="col-md-6 w-40">
+          <div class="features-container">
+            <h2>Araç Kiralama Brokerleri API Bağlantısı</h2>
+            <ul>
+              <li>API bağlantısı, brokerların web sitesindeki fiyatlarınızı ve uygun araçları gerçek zamanlı satışa
+                sunmanızı sağlar.</li>
+              <li>Detaylı raporlama sistemi ile anlık verierinizi tek ekranda görebilirsiniz.</li>
+              <li>Satış ekibi ile hızlı iletişim kurmanızı ve hızlı aksiyon almanızı sağlar. Anından istek, iptal ve
+                değişiklik işlemlerini yönetebilirsiniz.</li>
+              <li>Dönemlik promosyonlardan ve kampanya tekliflerinden hızlı ve etkin yararlanmanız ile
+                satışlarınızın
+                armasını güçlendirir.</li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-    <!-- about-->
-    <section class="page-section bg-light" id="about">
-      <div class="mb-5">
-        <div class="text-center my-5">
-          <h2 class="section-heading ">HAKKIMIZDA</h2>
-          </h3>
-        </div>
-        <div class="about-container">
-          <h2>Ziraat Filo</h2>
-          <ul>
-            <li><span class="highlight">2001 yılında</span> operasyonel kiralama hizmetleri sunmak amacıyla kurulan
-              ZiraatFİLO, tüketicilerin artan talepleri doğrultusunda 2011 yılında bireysel müşterilere yönelik günlük
-              araç kiralama hizmetine başlamıştır.</li>
+    </div>
+  </section>
 
-            <li>"<span class="highlight">Yepyeni bir araç kiralama deneyimi</span>" vizyonuyla, kısa süre içinde önemli
-              atılımlar gerçekleştiren marka, hızla büyüyerek her geçen gün genişleyen hizmet noktaları ve portföyündeki
-              <span class="highlight">10.000 aracıyla</span> müşterilerine kaliteden ödün vermeden hizmet sunmaya devam
-              etmektedir.
-            </li>
-
-            <li>Ziraat Filo Yönetimi ve Mobilite Çözümler A.Ş, <span class="highlight">2019 Ağustos</span> itibarıyla
-              Ziraat GSYO çatısı altında faaliyet göstermektedir. Şu anda <span class="highlight">8 ilde 14
-                şubesi</span>
-              ile hizmet veren ZiraatFİLO, hizmet alanını genişletmek ve müşteri memnuniyetini artırmak için
-              çalışmalarını
-              sürdürmektedir.</li>
-
-            <li>Türkiye'nin <span class="highlight">ilk yerli günlük araç kiralama markası</span> olan ZiraatFİLO, güler
-              yüzlü hizmet anlayışı, ulaşılabilir fiyat politikası, güçlü araç filosu ve üstün hizmet kalitesi ile araç
-              kiralama sektöründe kendine özgü bir fark yaratmaktadır.</li>
-          </ul>
+  <!-- locations-->
+  <section class="page-section" id="locations">
+    <div class="mb-5">
+      <div class="text-center my-5">
+        <h2 class="section-heading ">ŞUBELERİMİZ</h2>
+        </h3>
+      </div>
+      <div class="locations-container">
+        <div class="branches-grid">
+          <div class="branches-column">
+            <ul>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç
+                Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç
+                Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
+              <a class="branch-link" target="_blank" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi">Ankara
+                YHT Garı Araç Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç
+                Kiralama</a>
+            </ul>
+          </div>
+          <div class="branches-column">
+            <ul>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama">Ankara Havalimanı Araç
+                Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama">Antalya Havalimanı Araç
+                Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama">Ankara Şehir Araç Kiralama</a>
+              <a class="branch-link" target="_blank" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi">Ankara
+                YHT Garı Araç Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama">İstanbul Ataşehir Araç
+                Kiralama</a>
+            </ul>
+          </div>
+          <div class="branches-column">
+            <ul>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/istanbul-levent-arac-kiralama">İstanbul Levent Araç Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/istanbul-havalimani-arac-kiralama">İstanbul Havalimanı Araç
+                Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/istanbul-sabiha-gokcen-havalimani-arac-kiralama">
+                İstanbul Sabiha Gökçen Havalimanı Araç Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/ıstanbul-pendik-merkez-arac-kiralama">İstanbul Pendik Merkez Araç
+                Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/izmir-havalimani-arac-kiralama">İzmir Adnan Menderes Havalimanı
+                Araç Kiralama</a>
+            </ul>
+          </div>
+          <div class="branches-column">
+            <ul>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/kayseri-kum-small-avm-subesi">Kayseri Araç Kiralama</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.trtradana-mersin-cukurova-uluslararasi-havalimani">
+                ÇukurovaUluslararası Havalimanı</a>
+              <a class="branch-link" target="_blank" href="https://ziraatfilo.com.tr/tr/mugla-dalaman-havalimani">Muğla
+                Dalaman Havalimanı</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/mugla-milas-bodrum-havalimani">Muğla Milas Bodrum Havalimanı</a>
+              <a class="branch-link" target="_blank"
+                href="https://ziraatfilo.com.tr/tr/trabzon-uluslararasi-havalimani">Trabzon Uluslararası
+                Havalimanı</a>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- Contact-->
-    <section class="page-section d-flex" id="contact" style="min-height: auto;">
-      <div class="contact-container">
-        <div class="text-center mb-4 mt-4">
-          <h2 class="section-heading text-uppercase">Contact Us</h2>
-        </div>
-        <div class="d-grid place-items-center">
-          <div class="w-90">
-            <form id="contactForm">
-              <div class="row align-items-stretch mb-4">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <!-- Name input-->
-                    <input class="form-control" id="name" type="text" placeholder="Full Name *"
-                      data-sb-validations="required" />
-                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                  </div>
-                  <div class="form-group">
-                    <!-- Email address input-->
-                    <input class="form-control" id="email" type="email" placeholder="Email *"
-                      data-sb-validations="required,email" />
-                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                  </div>
-                  <div class="form-group mb-md-0">
-                    <!-- Phone number input-->
-                    <input class="form-control" id="phone" type="tel" placeholder="Phone *"
-                      data-sb-validations="required" />
-                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                  </div>
+    </div>
+  </section>
+  <!-- about-->
+  <section class="page-section bg-light" id="about">
+    <div class="mb-5">
+      <div class="text-center my-5">
+        <h2 class="section-heading ">HAKKIMIZDA</h2>
+        </h3>
+      </div>
+      <div class="about-container">
+        <h2>Ziraat Filo</h2>
+        <ul>
+          <li><span class="highlight">2001 yılında</span> operasyonel kiralama hizmetleri sunmak amacıyla kurulan
+            ZiraatFİLO, tüketicilerin artan talepleri doğrultusunda 2011 yılında bireysel müşterilere yönelik günlük
+            araç kiralama hizmetine başlamıştır.</li>
+
+          <li>"<span class="highlight">Yepyeni bir araç kiralama deneyimi</span>" vizyonuyla, kısa süre içinde önemli
+            atılımlar gerçekleştiren marka, hızla büyüyerek her geçen gün genişleyen hizmet noktaları ve portföyündeki
+            <span class="highlight">10.000 aracıyla</span> müşterilerine kaliteden ödün vermeden hizmet sunmaya devam
+            etmektedir.
+          </li>
+
+          <li>Ziraat Filo Yönetimi ve Mobilite Çözümler A.Ş, <span class="highlight">2019 Ağustos</span> itibarıyla
+            Ziraat GSYO çatısı altında faaliyet göstermektedir. Şu anda <span class="highlight">8 ilde 14
+              şubesi</span>
+            ile hizmet veren ZiraatFİLO, hizmet alanını genişletmek ve müşteri memnuniyetini artırmak için
+            çalışmalarını
+            sürdürmektedir.</li>
+
+          <li>Türkiye'nin <span class="highlight">ilk yerli günlük araç kiralama markası</span> olan ZiraatFİLO, güler
+            yüzlü hizmet anlayışı, ulaşılabilir fiyat politikası, güçlü araç filosu ve üstün hizmet kalitesi ile araç
+            kiralama sektöründe kendine özgü bir fark yaratmaktadır.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Contact-->
+  <section class="page-section d-flex" id="contact" style="min-height: auto;">
+    <div class="contact-container">
+      <div class="text-center mb-4 mt-4">
+        <h2 class="section-heading text-uppercase">Contact Us</h2>
+      </div>
+      <div class="d-grid place-items-center">
+        <div class="w-90">
+          <form id="contactForm">
+            <div class="row align-items-stretch mb-4">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- Name input-->
+                  <input class="form-control" id="name" type="text" placeholder="Full Name *"
+                    data-sb-validations="required" />
+                  <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group form-group-textarea mb-md-0">
-                    <!-- Message input-->
-                    <textarea class="form-control" id="message" placeholder="Your Message *"
-                      data-sb-validations="required"></textarea>
-                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                  </div>
+                <div class="form-group">
+                  <!-- Email address input-->
+                  <input class="form-control" id="email" type="email" placeholder="Email *"
+                    data-sb-validations="required,email" />
+                  <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                  <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                </div>
+                <div class="form-group mb-md-0">
+                  <!-- Phone number input-->
+                  <input class="form-control" id="phone" type="tel" placeholder="Phone *"
+                    data-sb-validations="required" />
+                  <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                 </div>
               </div>
-              <!-- Submit success message-->
-              <!---->
-              <!-- This is what your users will see when the form-->
-              <!-- has successfully submitted-->
-              <div class="d-none" id="submitSuccessMessage">
-                <div class="text-center text-white mb-3">
-                  <div class="fw-bolder">Form submission successful!</div>
-                  To activate this form, sign up at
-                  <br />
-                  <a
-                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+              <div class="col-md-6">
+                <div class="form-group form-group-textarea mb-md-0">
+                  <!-- Message input-->
+                  <textarea class="form-control" id="message" placeholder="Your Message *"
+                    data-sb-validations="required"></textarea>
+                  <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                 </div>
               </div>
-              <!-- Submit error message-->
-              <!---->
-              <!-- This is what your users will see when there is-->
-              <!-- an error submitting the form-->
-              <div class="d-none" id="submitErrorMessage">
-                <div class="text-center text-danger mb-3">Error sending message!</div>
-              </div>
-              <!-- Submit Button-->
-              <div class="text-end"><button class="btn btn-primary btn-l text-uppercase disabled" id="submitButton"
-                  type="submit">Send Message</button></div>
-            </form>
-          </div>
-          <div class="w-90">
-            <h3 class="section-heading">Contact Information</h3>
-            <span style="color: white;">
-              Company Name: WRS Turkey Turizm A.Ş <br>
-              Adress: Barbaros Mah. Gelincik Sok. A Blok, Bulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL <br>
-              Email: carrental@wrsturkey.com <br>
-              Phone: +90 850 840 07 99
-            </span>
-          </div>
-          <div class="w-90 text-center">
-            <div class="mb-3">
-              <a class="btn btn-light btn-social mx-3" href="https://x.com/wrsturkey" aria-label="X" target="_blank"
-                rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
-              <a class="btn btn-light btn-social mx-3" href="https://www.instagram.com/wrsturkey" aria-label="Instagram"
-                target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-              <a class="btn btn-light btn-social mx-3" href="https://www.linkedin.com/in/wrs-turkey-611837363"
-                aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             </div>
+            <!-- Submit success message-->
+            <!---->
+            <!-- This is what your users will see when the form-->
+            <!-- has successfully submitted-->
+            <div class="d-none" id="submitSuccessMessage">
+              <div class="text-center text-white mb-3">
+                <div class="fw-bolder">Form submission successful!</div>
+                To activate this form, sign up at
+                <br />
+                <a
+                  href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+              </div>
+            </div>
+            <!-- Submit error message-->
+            <!---->
+            <!-- This is what your users will see when there is-->
+            <!-- an error submitting the form-->
+            <div class="d-none" id="submitErrorMessage">
+              <div class="text-center text-danger mb-3">Error sending message!</div>
+            </div>
+            <!-- Submit Button-->
+            <div class="text-end"><button class="btn btn-primary btn-l text-uppercase disabled" id="submitButton"
+                type="submit">Send Message</button></div>
+          </form>
+        </div>
+        <div class="w-90">
+          <h3 class="section-heading">Contact Information</h3>
+          <span style="color: white;">
+            Company Name: WRS Turkey Turizm A.Ş <br>
+            Adress: Barbaros Mah. Gelincik Sok. A Blok, Bulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL <br>
+            Email: carrental@wrsturkey.com <br>
+            Phone: +90 850 840 07 99
+          </span>
+        </div>
+        <div class="w-90 text-center">
+          <div class="mb-3">
+            <a class="btn btn-light btn-social mx-3" href="https://x.com/wrsturkey" aria-label="X" target="_blank"
+              rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="btn btn-light btn-social mx-3" href="https://www.instagram.com/wrsturkey" aria-label="Instagram"
+              target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-light btn-social mx-3" href="https://www.linkedin.com/in/wrs-turkey-611837363"
+              aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
+      </div>
 
-      </div>
-    </section>
-    <!-- Footer-->
-    <footer class="footer" id="footer">
-      <div class="container py-1">
-        <div class="text-center">Copyright &copy; Simgesel Media 2025</div>
-      </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="./src/js/scripts.js"></script>
+    </div>
+  </section>
+  <!-- Footer-->
+  <footer class="footer" id="footer">
+    <div class="container py-1">
+      <div class="text-center">Copyright &copy; Simgesel Media 2025</div>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="./src/js/scripts.js"></script>
   </div>
 </body>
 

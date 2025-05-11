@@ -17,10 +17,14 @@ window.addEventListener('DOMContentLoaded', event => {
   if (hasSeenIntro) {
     videoContainer.style.display = 'none';
     pageTop.style.display = 'block';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'hidden';
+    enableNavbarShrink();
   } else {
     localStorage.setItem('hasSeenIntro', 'true');
-    video.addEventListener('ended', showPage);
+    video.addEventListener('ended', () => {
+      showPage();
+      enableNavbarShrink();
+    });
     document.body.style.overflow = 'hidden';
   }
 
@@ -39,46 +43,34 @@ window.addEventListener('DOMContentLoaded', event => {
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
   });
 
+  // Navbar Shrink Function
+  function navbarShrink() {
+    const navbar = document.getElementById('mainNav');
+    const pageTop = document.getElementById('page-top');
 
-  const logo = document.getElementById("stickyLogo");
-  const footer = document.getElementById("footer");
+    if (!navbar || !pageTop) return;
 
-  function updateLogoPosition() {
-    const footerTop = footer.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (footerTop < windowHeight) {
-      const overlap = windowHeight - footerTop - 10;
-      logo.style.bottom = `${overlap}px`;
+    if (pageTop.scrollTop === 0) {
+      navbar.classList.remove('navbar-shrink');
     } else {
-      logo.style.bottom = '10px';
+      navbar.classList.add('navbar-shrink');
     }
   }
 
-  window.addEventListener('scroll', updateLogoPosition);
-  window.addEventListener('resize', updateLogoPosition);
+  // Videodan sonra çağır
+  function enableNavbarShrink() {
+    const pageTop = document.getElementById('page-top');
+    if (!pageTop) return;
 
-  updateLogoPosition();
+    pageTop.addEventListener('scroll', navbarShrink);
+    navbarShrink(); // ilk durumu kontrol et
+  }
 
-  // Navbar shrink function
-  var navbarShrink = function () {
-    const navbarCollapsible = document.body.querySelector('#mainNav');
-    if (!navbarCollapsible) {
-      return;
-    }
-    if (window.scrollY === 0) {
-      navbarCollapsible.classList.remove('navbar-shrink')
-    } else {
-      navbarCollapsible.classList.add('navbar-shrink')
-    }
-
-  };
-
-  // Shrink the navbar 
+  // Sayfa ilk yüklendiğinde kontrol et
   navbarShrink();
 
-  // Shrink the navbar when page is scrolled
-  document.addEventListener('scroll', navbarShrink);
+  // Artık scroll event'i window yerine pageTop'a dinleniyor
+  document.getElementById('page-top').addEventListener('scroll', navbarShrink);
 
   //  Activate Bootstrap scrollspy on the main nav element
   const mainNav = document.body.querySelector('#mainNav');

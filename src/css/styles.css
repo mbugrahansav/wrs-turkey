@@ -12884,7 +12884,7 @@ p {
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #CAAC7C;
+  color: #CAAC7C !important;
 }
 
 @media (min-width: 992px) {
@@ -12893,7 +12893,7 @@ p {
     padding-bottom: 1.5rem;
     border: none;
     background-color: transparent;
-    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
   }
 
   #mainNav .navbar-brand {
@@ -12907,9 +12907,14 @@ p {
   }
 
   #mainNav.navbar-shrink {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background-color: #212529;
+    transition: all 0.4s;
+  }
+
+  #mainNav.navbar-shrink .nav-link {
+    color: #ADCEE8 !important;
   }
 
   #mainNav.navbar-shrink .navbar-brand {

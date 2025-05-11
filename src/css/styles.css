@@ -4192,7 +4192,7 @@ fieldset:disabled .btn {
   --bs-nav-tabs-border-color: #dee2e6;
   --bs-nav-tabs-border-radius: 0.375rem;
   --bs-nav-tabs-link-hover-border-color: #e9ecef #e9ecef #dee2e6;
-  --bs-nav-tabs-link-active-color: #495057;
+  --bs-nav-tabs-link-active-color: #CAAC7B;
   --bs-nav-tabs-link-active-bg: #fff;
   --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
@@ -5293,6 +5293,12 @@ fieldset:disabled .btn {
   display: flex;
   padding-left: 0;
   list-style: none;
+}
+
+#page-top {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .page-link {
@@ -12986,10 +12992,6 @@ p {
     padding: 0.75rem;
     margin-bottom: 1rem;
   }
-}
-
-.contact-container {
-  width: 100%;
 }
 
 .locations-container {

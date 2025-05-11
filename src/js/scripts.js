@@ -1,12 +1,3 @@
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
   const hasSeenIntro = localStorage.getItem('hasSeenIntro');
@@ -20,7 +11,7 @@ window.addEventListener('DOMContentLoaded', event => {
       videoContainer.style.display = 'none';
       pageTop.style.display = 'block';
       document.body.style.overflow = 'auto';
-    }, 1000); // transition süresiyle eşit olmalı
+    }, 1000);
   }
 
   if (hasSeenIntro) {
@@ -57,7 +48,7 @@ window.addEventListener('DOMContentLoaded', event => {
     const windowHeight = window.innerHeight;
 
     if (footerTop < windowHeight) {
-      const overlap = windowHeight - footerTop - 10; // 20px boşluk
+      const overlap = windowHeight - footerTop - 10;
       logo.style.bottom = `${overlap}px`;
     } else {
       logo.style.bottom = '10px';
@@ -67,7 +58,6 @@ window.addEventListener('DOMContentLoaded', event => {
   window.addEventListener('scroll', updateLogoPosition);
   window.addEventListener('resize', updateLogoPosition);
 
-  // İlk çağrı
   updateLogoPosition();
 
   // Navbar shrink function
@@ -91,25 +81,13 @@ window.addEventListener('DOMContentLoaded', event => {
   document.addEventListener('scroll', navbarShrink);
 
   //  Activate Bootstrap scrollspy on the main nav element
+  const mainNav = document.body.querySelector('#mainNav');
   if (mainNav) {
-    try {
-      // Bootstrap nesnesinin varlığını kontrol edin
-      if (typeof bootstrap !== 'undefined') {
-        // ScrollSpy'ı başlatın
-        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-          target: '#mainNav',
-          offset: 100, // rootMargin yerine offset kullanın (piksel cinsinden)
-        });
-        
-        // Debug için konsola yazdırın
-        console.log('ScrollSpy initialized:', scrollSpy);
-      } else {
-        console.error('Bootstrap object is not defined');
-      }
-    } catch (error) {
-      console.error('Error initializing ScrollSpy:', error);
-    }
-  }
+    new bootstrap.ScrollSpy(document.getElementById('page-top'), {
+      target: '#mainNav',
+      offset: 70
+    });
+  };
 
   // Collapse responsive navbar when toggler is visible
   const navbarToggler = document.body.querySelector('.navbar-toggler');

@@ -4369,9 +4369,123 @@ fieldset:disabled .btn {
   pointer-events: none;
 }
 
-.wrs-turkey-logo>img {
-  max-width: 35%;
+.language-selector {
+  position: relative;
+}
+
+.language-trigger {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.language-trigger:hover {
+  background-color: #f9f9f9;
+}
+
+.language-trigger img {
+  width: 24px;
+  height: 16px;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+
+.language-trigger .dropdown-icon {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 125%;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.language-selector.active .language-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-selector.active .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.language-option:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.language-option:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.language-option:hover {
+  background-color: #f5f5f5;
+}
+
+.language-option img {
+  width: 24px;
+  height: 16px;
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.language-option-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.language-code {
+  font-size: 12px;
+  color: #888;
+}
+
+.wrs-turkey-logo {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 11vw;
+}
+
+.wrs-turkey-logo img {
+  display: block;
+  width: auto;
   height: auto;
+  max-width: 100%;
 }
 
 .sticky-logo {
@@ -4483,7 +4597,6 @@ fieldset:disabled .btn {
 .navbar-collapse {
   white-space: nowrap;
   flex-basis: 100%;
-  flex-grow: 1;
   align-items: center;
 }
 
@@ -12811,6 +12924,11 @@ p {
   line-height: 1.75;
 }
 
+.page-section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
 
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
@@ -12911,6 +13029,15 @@ p {
     padding-bottom: 0.5rem;
     background-color: #212529;
     transition: all 0.4s;
+  }
+
+  #mainNav.navbar-shrink .language-trigger #currentLangCode,
+  #mainNav.navbar-shrink .language-trigger svg {
+    color: #ffffff99;
+  }
+
+  #mainNav.navbar-shrink .language-trigger {
+    border-color: #ffffff99;
   }
 
   #mainNav.navbar-shrink .nav-link {
@@ -13622,7 +13749,6 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .section-title {
-  margin-bottom: 50px;
   position: relative;
 }
 

@@ -4369,6 +4369,61 @@ fieldset:disabled .btn {
   pointer-events: none;
 }
 
+.button-container {
+  display: flex;
+  position: relative;
+  height: 40px;
+  width: 100px;
+  /* 4 buton toplam genişliği */
+}
+
+/* Temel button stilleri */
+.button {
+  position: relative;
+  width: 25px;
+  height: 40px;
+  background-color: #3498db;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.button-expanded {
+  width: 100px !important;
+  background-color: #2980b9;
+  z-index: 10;
+}
+
+/* Icon stilleri */
+.icon {
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  z-index: 2;
+}
+
+/* Button label stilleri - başlangıçta gizli */
+.button-label {
+  position: absolute;
+  left: 30px;
+  /* İkon genişliği + padding */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.button-label-visible {
+  opacity: 1;
+}
+
+.button-hidden {
+  display: none;
+}
+
 .language-selector {
   position: relative;
 }

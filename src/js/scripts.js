@@ -3,120 +3,120 @@ let currentLang = localStorage.getItem('selectedLanguage') || "tr";
 
 loadLanguage(currentLang);
 
-        const languageSelector = document.querySelector('.language-selector');
-        const languageTrigger = document.querySelector('.language-trigger');
-        const languageOptions = document.querySelectorAll('.language-option');
-        const currentFlag = document.getElementById('currentFlag');
-        const currentLangCode = document.getElementById('currentLangCode');
+const languageSelector = document.querySelector('.language-selector');
+const languageTrigger = document.querySelector('.language-trigger');
+const languageOptions = document.querySelectorAll('.language-option');
+const currentFlag = document.getElementById('currentFlag');
+const currentLangCode = document.getElementById('currentLangCode');
 
-        // Dropdown toggle
-        languageTrigger.addEventListener('click', () => {
-            languageSelector.classList.toggle('active');
-        });
+// Dropdown toggle
+languageTrigger.addEventListener('click', () => {
+  languageSelector.classList.toggle('active');
+});
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!languageSelector.contains(event.target)) {
-                languageSelector.classList.remove('active');
+// Close dropdown when clicking outside
+document.addEventListener('click', (event) => {
+  if (!languageSelector.contains(event.target)) {
+    languageSelector.classList.remove('active');
+  }
+});
+
+// Dil seçicisini güncelleme fonksiyonu
+function updateLanguageSelector(lang) {
+  const option = document.querySelector(`.language-option[data-lang="${lang}"]`);
+  if (option) {
+    const selectedFlag = option.querySelector('img').src;
+    const selectedLangName = option.querySelector('.language-code').textContent;
+
+    currentFlag.src = selectedFlag;
+    currentLangCode.textContent = selectedLangName;
+  }
+}
+
+// Language selection
+languageOptions.forEach(option => {
+  option.addEventListener('click', () => {
+    const selectedLang = option.getAttribute('data-lang');
+    const selectedFlag = option.querySelector('img').src;
+    const selectedLangName = option.querySelector('.language-code').textContent;
+
+    // Update current language display
+    currentFlag.src = selectedFlag;
+    currentLangCode.textContent = selectedLangName;
+
+    // Close dropdown
+    languageSelector.classList.remove('active');
+
+    // Dil değiştirme
+    loadLanguage(selectedLang);
+    currentLang = selectedLang;
+
+    // Tarayıcı hafızasına kaydet
+    localStorage.setItem('selectedLanguage', selectedLang);
+
+    // Landing page dil değişimi için custom event yayınla
+    const event = new CustomEvent('languageChanged', { detail: { language: selectedLang } });
+    document.dispatchEvent(event);
+  });
+});
+
+function loadLanguage(lang) {
+  fetch(`src/lang/${lang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      // ID'ye göre metinleri güncelle
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const elements = document.querySelectorAll(`#${key}, [data-i18n="${key}"]`);
+          elements.forEach(element => {
+            if (element) {
+              // Button için innerText, diğerleri için innerHTML kullan
+              if (element.tagName === 'BUTTON') {
+                element.innerText = data[key];
+              } else {
+                element.innerHTML = data[key];
+              }
             }
-        });
-
-        // Dil seçicisini güncelleme fonksiyonu
-        function updateLanguageSelector(lang) {
-            const option = document.querySelector(`.language-option[data-lang="${lang}"]`);
-            if (option) {
-                const selectedFlag = option.querySelector('img').src;
-                const selectedLangName = option.querySelector('.language-code').textContent;
-                
-                currentFlag.src = selectedFlag;
-                currentLangCode.textContent = selectedLangName;
-            }
+          });
         }
+      }
 
-        // Language selection
-        languageOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const selectedLang = option.getAttribute('data-lang');
-                const selectedFlag = option.querySelector('img').src;
-                const selectedLangName = option.querySelector('.language-code').textContent;
-
-                // Update current language display
-                currentFlag.src = selectedFlag;
-                currentLangCode.textContent = selectedLangName;
-
-                // Close dropdown
-                languageSelector.classList.remove('active');
-
-                // Dil değiştirme
-                loadLanguage(selectedLang);
-                currentLang = selectedLang;
-                
-                // Tarayıcı hafızasına kaydet
-                localStorage.setItem('selectedLanguage', selectedLang);
-                
-                // Landing page dil değişimi için custom event yayınla
-                const event = new CustomEvent('languageChanged', { detail: { language: selectedLang } });
-                document.dispatchEvent(event);
-            });
-        });
-
-        function loadLanguage(lang) {
-            fetch(`src/lang/${lang}.json`)
-                .then(res => res.json())
-                .then(data => {
-                    // ID'ye göre metinleri güncelle
-                    for (const key in data) {
-                        if (data.hasOwnProperty(key)) {
-                            const elements = document.querySelectorAll(`#${key}, [data-i18n="${key}"]`);
-                            elements.forEach(element => {
-                                if (element) {
-                                    // Button için innerText, diğerleri için innerHTML kullan
-                                    if (element.tagName === 'BUTTON') {
-                                        element.innerText = data[key];
-                                    } else {
-                                        element.innerHTML = data[key];
-                                    }
-                                }
-                            });
-                        }
-                    }
-                    
-                    // data-i18n özniteliğine göre güncelle
-                    document.querySelectorAll('[data-i18n]').forEach(el => {
-                        const key = el.getAttribute('data-i18n');
-                        if (data[key]) {
-                            // Button için innerText, diğerleri için textContent kullan
-                            if (el.tagName === 'BUTTON') {
-                                el.innerText = data[key];
-                            } else {
-                                el.textContent = data[key];
-                            }
-                        }
-                    });
-                    
-                    // Globale kaydet (başka scriptler kullanabilir)
-                    window.i18nData = data;
-                })
-                .catch(err => {
-                    console.error(`Dil dosyası yüklenirken hata oluştu (${lang}):`, err);
-                });
+      // data-i18n özniteliğine göre güncelle
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (data[key]) {
+          // Button için innerText, diğerleri için textContent kullan
+          if (el.tagName === 'BUTTON') {
+            el.innerText = data[key];
+          } else {
+            el.textContent = data[key];
+          }
         }
-        
-        // Diğer sayfalarda kullanılabilecek public API
-        window.i18n = {
-            changeLanguage: function(lang) {
-                loadLanguage(lang);
-                currentLang = lang;
-                localStorage.setItem('selectedLanguage', lang);
-                updateLanguageSelector(lang);
-            },
-            getCurrentLanguage: function() {
-                return currentLang;
-            },
-            translate: function(key) {
-                return window.i18nData && window.i18nData[key] ? window.i18nData[key] : key;
-            }
-        };
+      });
+
+      // Globale kaydet (başka scriptler kullanabilir)
+      window.i18nData = data;
+    })
+    .catch(err => {
+      console.error(`Dil dosyası yüklenirken hata oluştu (${lang}):`, err);
+    });
+}
+
+// Diğer sayfalarda kullanılabilecek public API
+window.i18n = {
+  changeLanguage: function (lang) {
+    loadLanguage(lang);
+    currentLang = lang;
+    localStorage.setItem('selectedLanguage', lang);
+    updateLanguageSelector(lang);
+  },
+  getCurrentLanguage: function () {
+    return currentLang;
+  },
+  translate: function (key) {
+    return window.i18nData && window.i18nData[key] ? window.i18nData[key] : key;
+  }
+};
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -165,7 +165,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   });
 
-  
+  const buttons = document.querySelectorAll('.button');
+
+  // Her buton için hover olaylarını ekle
+  buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+      // Tüm diğer butonları gizle
+      buttons.forEach(otherButton => {
+        if (otherButton !== button) {
+          otherButton.classList.add('button-hidden');
+        }
+      });
+
+      // Hover edilen butonu genişlet
+      button.classList.add('button-expanded');
+
+      // Label'ı görünür yap
+      button.querySelector('.button-label').classList.add('button-label-visible');
+    });
+
+    button.addEventListener('mouseleave', () => {
+      // Tüm butonları tekrar göster
+      buttons.forEach(otherButton => {
+        otherButton.classList.remove('button-hidden');
+      });
+
+      // Butonun genişliğini normal haline getir
+      button.classList.remove('button-expanded');
+
+      // Label'ı gizle
+      button.querySelector('.button-label').classList.remove('button-label-visible');
+    });
+  });
 
   const input = document.querySelector("#phone");
   if (!input) return;

@@ -1,91 +1,83 @@
 console.log("JS yüklendi");
-let currentLang = localStorage.getItem('selectedLanguage') || "tr";
 
+let currentLang = localStorage.getItem('selectedLanguage') || "tr";
 loadLanguage(currentLang);
 
-const languageSelector = document.querySelector('.language-selector');
-const languageTrigger = document.querySelector('.language-trigger');
-const languageOptions = document.querySelectorAll('.language-option');
-const currentFlag = document.getElementById('currentFlag');
-const currentLangCode = document.getElementById('currentLangCode');
+document.querySelectorAll('.language-selector').forEach(languageSelector => {
+  const languageTrigger = languageSelector.querySelector('.language-trigger');
+  const languageOptions = languageSelector.querySelectorAll('.language-option');
+  const currentFlag = languageSelector.querySelector('.currentFlag');
 
-// Dropdown toggle
-languageTrigger.addEventListener('click', () => {
-  languageSelector.classList.toggle('active');
-});
+  // Dropdown toggle
+  languageTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    languageSelector.classList.toggle('active');
+  });
 
-// Close dropdown when clicking outside
-document.addEventListener('click', (event) => {
-  if (!languageSelector.contains(event.target)) {
-    languageSelector.classList.remove('active');
-  }
-});
+  // Option click
+  languageOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const selectedLang = option.getAttribute('data-lang');
+      const selectedFlag = option.querySelector('img').src;
+      const selectedLangName = option.querySelector('.language-code').textContent;
 
-// Dil seçicisini güncelleme fonksiyonu
-function updateLanguageSelector(lang) {
-  const option = document.querySelector(`.language-option[data-lang="${lang}"]`);
-  if (option) {
-    const selectedFlag = option.querySelector('img').src;
-    const selectedLangName = option.querySelector('.language-code').textContent;
+      currentFlag.src = selectedFlag;
+      languageSelector.classList.remove('active');
 
-    currentFlag.src = selectedFlag;
-    currentLangCode.textContent = selectedLangName;
-  }
-}
+      loadLanguage(selectedLang);
+      currentLang = selectedLang;
+      localStorage.setItem('selectedLanguage', selectedLang);
 
-// Language selection
-languageOptions.forEach(option => {
-  option.addEventListener('click', () => {
-    const selectedLang = option.getAttribute('data-lang');
-    const selectedFlag = option.querySelector('img').src;
-    const selectedLangName = option.querySelector('.language-code').textContent;
-
-    // Update current language display
-    currentFlag.src = selectedFlag;
-    currentLangCode.textContent = selectedLangName;
-
-    // Close dropdown
-    languageSelector.classList.remove('active');
-
-    // Dil değiştirme
-    loadLanguage(selectedLang);
-    currentLang = selectedLang;
-
-    // Tarayıcı hafızasına kaydet
-    localStorage.setItem('selectedLanguage', selectedLang);
-
-    // Landing page dil değişimi için custom event yayınla
-    const event = new CustomEvent('languageChanged', { detail: { language: selectedLang } });
-    document.dispatchEvent(event);
+      const event = new CustomEvent('languageChanged', { detail: { language: selectedLang } });
+      document.dispatchEvent(event);
+    });
   });
 });
+
+// Dışarı tıklanınca dropdown kapanır
+document.addEventListener('click', (event) => {
+  document.querySelectorAll('.language-selector').forEach(languageSelector => {
+    if (!languageSelector.contains(event.target)) {
+      languageSelector.classList.remove('active');
+    }
+  });
+});
+
+function updateLanguageSelector(lang) {
+  document.querySelectorAll('.language-selector').forEach(languageSelector => {
+    const option = languageSelector.querySelector(`.language-option[data-lang="${lang}"]`);
+    if (option) {
+      const selectedFlag = option.querySelector('img').src;
+      const selectedLangName = option.querySelector('.language-code').textContent;
+      const currentFlag = languageSelector.querySelector('.currentFlag');
+
+      if (currentFlag) {
+        currentFlag.src = selectedFlag;
+      }
+    }
+  });
+}
 
 function loadLanguage(lang) {
   fetch(`src/lang/${lang}.json`)
     .then(res => res.json())
     .then(data => {
-      // ID'ye göre metinleri güncelle
       for (const key in data) {
         if (data.hasOwnProperty(key)) {
           const elements = document.querySelectorAll(`#${key}, [data-i18n="${key}"]`);
           elements.forEach(element => {
-            if (element) {
-              // Button için innerText, diğerleri için innerHTML kullan
-              if (element.tagName === 'BUTTON') {
-                element.innerText = data[key];
-              } else {
-                element.innerHTML = data[key];
-              }
+            if (element.tagName === 'BUTTON') {
+              element.innerText = data[key];
+            } else {
+              element.innerHTML = data[key];
             }
           });
         }
       }
 
-      // data-i18n özniteliğine göre güncelle
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (data[key]) {
-          // Button için innerText, diğerleri için textContent kullan
           if (el.tagName === 'BUTTON') {
             el.innerText = data[key];
           } else {
@@ -94,7 +86,6 @@ function loadLanguage(lang) {
         }
       });
 
-      // Globale kaydet (başka scriptler kullanabilir)
       window.i18nData = data;
     })
     .catch(err => {
@@ -165,36 +156,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   });
 
-  const buttons = document.querySelectorAll('.button');
+  const dropdown = document.querySelector('.dropdown');
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
 
-  // Her buton için hover olaylarını ekle
-  buttons.forEach(button => {
-    button.addEventListener('mouseenter', () => {
-      // Tüm diğer butonları gizle
-      buttons.forEach(otherButton => {
-        if (otherButton !== button) {
-          otherButton.classList.add('button-hidden');
-        }
-      });
+  dropdownToggle.addEventListener('click', function () {
+    dropdown.classList.toggle('dropdown-open');
+  });
 
-      // Hover edilen butonu genişlet
-      button.classList.add('button-expanded');
+  // Dropdown dışına tıklandığında menüyü kapat
+  document.addEventListener('click', function (event) {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove('dropdown-open');
+    }
+  });
 
-      // Label'ı görünür yap
-      button.querySelector('.button-label').classList.add('button-label-visible');
-    });
-
-    button.addEventListener('mouseleave', () => {
-      // Tüm butonları tekrar göster
-      buttons.forEach(otherButton => {
-        otherButton.classList.remove('button-hidden');
-      });
-
-      // Butonun genişliğini normal haline getir
-      button.classList.remove('button-expanded');
-
-      // Label'ı gizle
-      button.querySelector('.button-label').classList.remove('button-label-visible');
+  // Dropdown öğelerine tıklandığında
+  const dropdownItems = document.querySelectorAll('.dropdown-item');
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      alert(`"${this.textContent}" formuna tıklandı!`);
+      dropdown.classList.remove('dropdown-open');
     });
   });
 
@@ -259,32 +241,74 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const formMap = {
-    'btn-broker': 'broker-form',
-    'btn-subagency': 'subagency-form',
-    'btn-fleet': 'fleet-form',
-  };
+  /* // Navbar dropdown için gerekli elementler
+  const dropdownform = document.querySelector('.dropdownform');
+  const dropdownformToggle = document.querySelector('.dropdownform-toggle');
 
+  // Form popup için gerekli elementler
   const popupOverlay = document.getElementById('popup-overlay');
   const closePopupBtn = document.getElementById('close-popup');
+  const forms = document.querySelectorAll('.popup-form');
 
-  Object.keys(formMap).forEach(buttonId => {
-    const button = document.getElementById(buttonId);
-    if (button) {
-      button.addEventListener('click', () => {
-        console.log("selam");
-        document.querySelectorAll('.popup-form').forEach(el => el.classList.add('d-none'));
-        const formId = formMap[buttonId];
-        document.getElementById(formId).classList.remove('d-none');
-        document.body.classList.add("overflow-hidden");
-        popupOverlay.classList.remove('d-none');
-      });
+  // Dropdown açılıp kapanması
+  dropdownformToggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    dropdown.classList.toggle('dropdownform-open');
+  });
+
+  // Dropdown dışına tıklandığında menüyü kapat
+  document.addEventListener('click', function (event) {
+    if (!dropdownform.contains(event.target)) {
+      dropdownform.classList.remove('dropdownform-open');
     }
   });
 
-  closePopupBtn.addEventListener('click', () => {
-    popupOverlay.classList.add('d-none');
-    document.body.classList.remove("overflow-hidden");
+  // Dropdown öğelerine tıklandığında ilgili formu aç
+  const dropdownformItems = document.querySelectorAll('.dropdownform-item');
+  dropdownformItems.forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // Önce dropdown'ı kapat
+      dropdownform.classList.remove('dropdownform-open');
+
+      // İlgili form ID'sini al
+      const formId = this.getAttribute('data-form');
+
+      // Tüm formları gizle
+      forms.forEach(form => {
+        form.classList.add('d-none');
+      });
+
+      // İlgili formu göster
+      const selectedForm = document.getElementById(formId);
+      if (selectedForm) {
+        selectedForm.classList.remove('d-none');
+        popupOverlay.classList.remove('d-none');
+      }
+    });
   });
+
+  // Popup kapatma tuşu
+  closePopupBtn.addEventListener('click', function () {
+    popupOverlay.classList.add('d-none');
+
+    // Tüm formları gizle
+    forms.forEach(form => {
+      form.classList.add('d-none');
+    });
+  });
+
+  // Popup dışına tıklandığında kapat
+  popupOverlay.addEventListener('click', function (e) {
+    if (e.target === popupOverlay) {
+      popupOverlay.classList.add('d-none');
+
+      // Tüm formları gizle
+      forms.forEach(form => {
+        form.classList.add('d-none');
+      });
+    }
+  }); */
 
 });

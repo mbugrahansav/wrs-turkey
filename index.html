@@ -43,8 +43,7 @@
         </button>
         <div class="language-selector">
           <div class="language-trigger">
-            <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" id="currentFlag">
-            <span id="currentLangCode">TR</span>
+            <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" class="currentFlag">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="dropdown-icon">
@@ -110,47 +109,24 @@
             <li class="nav-item"><a class="nav-link" data-i18n="nav_contact" href="#contact"></a></li>
           </ul>
         </div>
-        <div class="button-container">
-          <!-- Buton 1 -->
-          <button class="button" id="button-1">
-            <span class="icon">
-              <img alt="..." src="./src/assets/img/icons/form-icon-1.png"
-                    style="position: relative; width: 1.5rem;" />
-            </span>
-            <span class="button-label">Broker Sistem Talep Formu</span>
+        <div class="dropdown">
+          <button class="dropdown-toggle" data-i18n="form_fill">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="dropdown-icon">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </button>
-
-          <!-- Buton 2 -->
-          <button class="button" id="button-2">
-            <span class="icon">
-              <img alt="..." src="./src/assets/img/icons/form-icon-2.png"
-                    style="position: relative; width: 1.5rem;" />
-            </span>
-            <span class="button-label">Projeler</span>
-          </button>
-
-          <!-- Buton 3 -->
-          <button class="button" id="button-3">
-            <span class="icon">
-              <img alt="..." src="./src/assets/img/icons/form-icon-3.png"
-                    style="position: relative; width: 1.5rem;" />
-            </span>
-            <span class="button-label">İletişim</span>
-          </button>
-
-          <!-- Buton 4 -->
-          <button class="button" id="button-4">
-            <span class="icon">
-              <img alt="..." src="./src/assets/img/icons/form-icon-4.png"
-                    style="position: relative; width: 1.5rem;" />
-            </span>
-            <span class="button-label">Hakkında</span>
-          </button>
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item" data-form="broker-form" data-i18n="form_broker"></a>
+            <a href="#" class="dropdown-item" data-form="subagency-form" data-i18n="form_sub_agency"></a>
+            <a href="#" class="dropdown-item" data-form="fleet-form" data-i18n="form_fill_fleet"></a>
+            <a href="#" class="dropdown-item" data-form="feedback-form" data-i18n="form_fill_rent"></a>
+          </div>
         </div>
         <div class="language-selector">
           <div class="language-trigger">
-            <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" id="currentFlag">
-            <span id="currentLangCode">TR</span>
+            <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" class="currentFlag">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="dropdown-icon">
@@ -196,10 +172,6 @@
               </div>
               <h3 class="mt-5" data-i18n="broker_title"></h3>
               <p data-i18n="broker_desc"></p>
-              <div class="my-5">
-                <button id="btn-broker" class="btn btn-primary btn-l" data-i18n="form_fill"
-                  onclick="console.log('inline tıklandı')"></button>
-              </div>
             </div>
           </div>
           <div class="col-md-4 card-container">
@@ -214,9 +186,6 @@
               </div>
               <h3 class="mt-5" data-i18n="subagency_title"></h3>
               <p data-i18n="subagency_desc"></p>
-              <div class="my-5" id="btn-subagency">
-                <button class="btn btn-primary btn-l" data-i18n="form_fill"></button>
-              </div>
             </div>
           </div>
           <div class="col-md-4 card-container">
@@ -231,9 +200,6 @@
               </div>
               <h3 class="mt-5" data-i18n="fleet_title"></h3>
               <p data-i18n="fleet_desc"></p>
-              <div class="my-5" id="btn-fleet">
-                <button class="btn btn-primary btn-l" data-i18n="form_fill"></button>
-              </div>
             </div>
           </div>
         </div>

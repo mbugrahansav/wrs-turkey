@@ -3698,30 +3698,10 @@ fieldset:disabled .btn {
 
 .dropup,
 .dropend,
-.dropdown,
 .dropstart,
 .dropup-center,
 .dropdown-center {
   position: relative;
-}
-
-.dropdown-toggle {
-  white-space: nowrap;
-}
-
-.dropdown-toggle::after {
-  display: inline-block;
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid;
-  border-right: 0.3em solid transparent;
-  border-bottom: 0;
-  border-left: 0.3em solid transparent;
-}
-
-.dropdown-toggle:empty::after {
-  margin-left: 0;
 }
 
 .dropdown-menu {
@@ -4372,14 +4352,12 @@ fieldset:disabled .btn {
 }
 
 .navbar-dark {
-  background: linear-gradient(
-    to right,
-    rgba(29, 66, 95, 1) 0%,
-    rgba(29, 66, 95, 0.95) 30%,
-    rgba(29, 66, 95, 0.8) 50%,
-    rgba(29, 66, 95, 0.4) 80%,
-    rgba(29, 66, 95, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(29, 66, 95, 1) 0%,
+      rgba(29, 66, 95, 0.95) 30%,
+      rgba(29, 66, 95, 0.8) 50%,
+      rgba(29, 66, 95, 0.4) 80%,
+      rgba(29, 66, 95, 0) 100%);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(4px);
 }
@@ -4410,54 +4388,99 @@ fieldset:disabled .btn {
   pointer-events: none;
 }
 
-.button-container {
-  display: flex;
+.dropdown {
   position: relative;
-  height: 40px;
-  width: 100px;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #09354B;
+  border-radius: 30px;
 }
 
-.button {
-  position: relative;
-  width: 25px;
-  height: 40px;
-  background-color: transparent;
+#mainNav.navbar-shrink .dropdown {
+  background: white;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
   border: none;
   cursor: pointer;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
+  transition: color 0.2s;
+  color: white;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.95rem;
+  letter-spacing: 0.0625em;
 }
 
-.button-expanded {
-  width: 100px !important;
-  background-color: transparent;
-  z-index: 10;
+#mainNav.navbar-shrink .dropdown-toggle {
+  color: #1C425D;
 }
 
-.icon {
-  font-size: 16px;
-  position: absolute;
-  left: 5px;
-  z-index: 2;
+.dropdown:hover {
+  background: transparent;
+  border: solid 1px #1C425D;
 }
 
-.button-label {
-  position: absolute;
-  left: 30px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
+#mainNav.navbar-shrink .dropdown:hover {
+  background: transparent;
+  border: solid 1px white;
 }
 
-.button-label-visible {
-  opacity: 1;
+.dropdown:hover .dropdown-toggle {
+  color: #CAAC7C;
 }
 
-.button-hidden {
+#mainNav.navbar-shrink .dropdown:hover  .dropdown-toggle {
+  color: #CAAC7C;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.dropdown-content {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  z-index: 100;
+  transform: translateY(10px);
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.dropdown-open .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-open .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #1C425D;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.95rem;
+  letter-spacing: 0.0625em;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f7f9fc;
+  color: #CAAC7C;
 }
 
 .language-selector {
@@ -4470,7 +4493,7 @@ fieldset:disabled .btn {
   background-color: transparent;
   border: 1px solid #e0e0e0;
   border-radius: 30px;
-  padding: 4px 10px;
+  padding: 7px 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -4481,9 +4504,8 @@ fieldset:disabled .btn {
 }
 
 .language-trigger img {
-  width: 24px;
-  height: 16px;
-  margin-right: 5px;
+  width: 33px;
+  height: 22px;
   border-radius: 4px;
 }
 
@@ -4499,7 +4521,7 @@ fieldset:disabled .btn {
   position: absolute;
   top: 110%;
   left: 0;
-  width: 125%;
+  width: 152%;
   background-color: white;
   border-radius: 7px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -4575,7 +4597,7 @@ fieldset:disabled .btn {
 }
 
 .wrs-turkey-logo img {
-  
+
   display: block;
   width: auto;
   height: auto;
@@ -13076,12 +13098,11 @@ p {
 
 .btn-xxl {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  padding: 1.25rem 3rem;
+  padding: 1.25rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.8rem;
-  font-weight: bolder;
-  width: 25vw;
-  white-space: nowrap;
+  font-size: 1.9rem;
+  font-weight: bold;
+  min-width: 32rem;
 }
 
 .btn-social {
@@ -13158,7 +13179,6 @@ p {
     background-image: url('../assets/img/logos/wrs-turkey-white.png');
   }
 
-  #mainNav.navbar-shrink .language-trigger #currentLangCode,
   #mainNav.navbar-shrink .language-trigger svg {
     color: #ffffff99;
   }
@@ -13167,7 +13187,6 @@ p {
     border-color: #ffffff99;
   }
 
-  .navbar-dark .language-trigger #currentLangCode,
   .navbar-dark .language-trigger svg {
     color: white;
   }
@@ -13176,7 +13195,6 @@ p {
     border-color: white;
   }
 
-  .navbar-dark .language-trigger:hover #currentLangCode,
   .navbar-dark .language-trigger:hover svg {
     color: black;
   }

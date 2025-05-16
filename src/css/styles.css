@@ -110,6 +110,12 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+#page-top {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
 section {
   overflow: auto;
 }
@@ -3365,6 +3371,23 @@ fieldset:disabled .btn {
   --bs-btn-disabled-border-color: #198754;
 }
 
+.btn-landing {
+  background-color: rgba(202, 171, 124, 0.2);
+  border: 2px solid #CAAB7C;
+  color: white;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.btn-landing:hover {
+  background-color: rgba(202, 171, 124, 0.7);
+}
+
 .btn-info {
   --bs-btn-color: #fff;
   --bs-btn-bg: #0dcaf0;
@@ -4348,6 +4371,24 @@ fieldset:disabled .btn {
   color: var(--bs-navbar-brand-hover-color);
 }
 
+.navbar-dark {
+  background: linear-gradient(
+    to right,
+    rgba(29, 66, 95, 1) 0%,
+    rgba(29, 66, 95, 0.95) 30%,
+    rgba(29, 66, 95, 0.8) 50%,
+    rgba(29, 66, 95, 0.4) 80%,
+    rgba(29, 66, 95, 0) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.navbar-dark .wrs-turkey-logo {
+  background-image: url("../assets/img/logos/wrs-turkey-white.png");
+  width: 240px;
+}
+
 #video-container {
   position: fixed;
   top: 0;
@@ -4374,18 +4415,16 @@ fieldset:disabled .btn {
   position: relative;
   height: 40px;
   width: 100px;
-  /* 4 buton toplam genişliği */
 }
 
-/* Temel button stilleri */
 .button {
   position: relative;
   width: 25px;
   height: 40px;
-  background-color: #3498db;
+  background-color: transparent;
   border: none;
   cursor: pointer;
-  color: white;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4394,11 +4433,10 @@ fieldset:disabled .btn {
 
 .button-expanded {
   width: 100px !important;
-  background-color: #2980b9;
+  background-color: transparent;
   z-index: 10;
 }
 
-/* Icon stilleri */
 .icon {
   font-size: 16px;
   position: absolute;
@@ -4406,11 +4444,9 @@ fieldset:disabled .btn {
   z-index: 2;
 }
 
-/* Button label stilleri - başlangıçta gizli */
 .button-label {
   position: absolute;
   left: 30px;
-  /* İkon genişliği + padding */
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
@@ -4530,13 +4566,16 @@ fieldset:disabled .btn {
 }
 
 .wrs-turkey-logo {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 11vw;
+  background-image: url("../assets/img/logos/wrs-turkey.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 80px;
 }
 
 .wrs-turkey-logo img {
+  
   display: block;
   width: auto;
   height: auto;
@@ -5463,11 +5502,6 @@ fieldset:disabled .btn {
   list-style: none;
 }
 
-#page-top {
-  height: 100vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
 
 .page-link {
   position: relative;
@@ -9249,8 +9283,24 @@ fieldset:disabled .btn {
   gap: 2rem !important;
 }
 
+.gap-6 {
+  gap: 2.5rem !important;
+}
+
+.gap-7 {
+  gap: 3rem !important;
+}
+
+.gap-8 {
+  gap: 3.5rem !important;
+}
+
 .gap-5rem {
   gap: 5rem !important
+}
+
+.gap-15rem {
+  gap: 15rem !important
 }
 
 .font-monospace {
@@ -9279,6 +9329,18 @@ fieldset:disabled .btn {
 
 .fs-6 {
   font-size: 1rem !important;
+}
+
+.fs-7 {
+  font-size: 2rem !important;
+}
+
+.fs-8 {
+  font-size: 3rem !important;
+}
+
+.fs-9 {
+  font-size: 4rem !important;
 }
 
 .fst-italic {
@@ -13012,6 +13074,16 @@ p {
   font-weight: 700;
 }
 
+.btn-xxl {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  padding: 1.25rem 3rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.8rem;
+  font-weight: bolder;
+  width: 25vw;
+  white-space: nowrap;
+}
+
 .btn-social {
   height: 2.5rem;
   width: 2.5rem;
@@ -13023,8 +13095,6 @@ p {
 }
 
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   background-color: #212529;
 }
 
@@ -13062,8 +13132,7 @@ p {
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    height: 9vh;
     border: none;
     background-color: transparent;
     transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
@@ -13080,10 +13149,13 @@ p {
   }
 
   #mainNav.navbar-shrink {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    background-color: #212529;
+    height: 7vh;
+    background-color: #09354B;
     transition: all 0.4s;
+  }
+
+  #mainNav.navbar-shrink .wrs-turkey-logo {
+    background-image: url('../assets/img/logos/wrs-turkey-white.png');
   }
 
   #mainNav.navbar-shrink .language-trigger #currentLangCode,
@@ -13095,8 +13167,22 @@ p {
     border-color: #ffffff99;
   }
 
+  .navbar-dark .language-trigger #currentLangCode,
+  .navbar-dark .language-trigger svg {
+    color: white;
+  }
+
+  .navbar-dark .language-trigger {
+    border-color: white;
+  }
+
+  .navbar-dark .language-trigger:hover #currentLangCode,
+  .navbar-dark .language-trigger:hover svg {
+    color: black;
+  }
+
   #mainNav.navbar-shrink .nav-link {
-    color: #ADCEE8 !important;
+    color: white !important;
   }
 
   #mainNav.navbar-shrink .navbar-brand {
@@ -13345,14 +13431,29 @@ header.masthead {
   display: flex;
   justify-content: center;
   color: #fff;
-  background-image: url("../assets/img/background/wrs-turkey-bg.jpg");
+  background-image: url("../assets/img/background/wrs-turkey-bg-2.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
 }
 
+header.landing {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-image: url("../assets/img/background/wrs-turkey-bg-2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
 
+.landing-container {
+  margin-left: 8vw;
+}
 
 header.masthead .masthead-subheading {
   font-size: 1.5rem;

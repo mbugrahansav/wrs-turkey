@@ -32,13 +32,52 @@
   </div>
 
   <div id="landing">
-    <header class="masthead">
-      <div class="home-container">
-        <div class="d-flex gap-5rem justify-content-center">
-          <a class="btn btn-primary btn-xl" data-i18n="header_btn_1" href="#contact"></a>
-          <a class="btn btn-primary btn-xl" id="btn-management" data-i18n="header_btn_2" href="#management"></a>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+      <div class="container">
+        <div class="wrs-turkey-logo">
         </div>
-      </div>
+        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+          class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+          Menu
+          <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="language-selector">
+          <div class="language-trigger">
+            <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" id="currentFlag">
+            <span id="currentLangCode">TR</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="dropdown-icon">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </div>
+          <div class="language-dropdown">
+            <div class="language-option" data-lang="tr">
+              <img src="https://flagcdn.com/w320/tr.png" alt="Turkish Flag">
+              <div class="language-option-text">
+                <span class="language-name">Türkçe</span>
+                <span class="language-code">TR</span>
+              </div>
+            </div>
+            <div class="language-option" data-lang="en">
+              <img src="https://flagcdn.com/w320/gb.png" alt="English Flag">
+              <div class="language-option-text">
+                <span class="language-name">English</span>
+                <span class="language-code">EN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <header class="landing">
+      <div class="landing-container d-grid gap-15rem">
+        <div>
+          <h1 class="fs-9">Dünyanın Her Yerinde, <br> Güvenle Yola Çıkın</h1>
+        </div>
+        <div class="d-flex gap-6">
+          <a class="btn btn-landing btn-xxl" data-i18n="header_btn_1" href="#contact"></a>
+          <a class="btn btn-landing btn-xxl" id="btn-management" data-i18n="header_btn_2" href="#management"></a>
+        </div>
     </header>
   </div>
 
@@ -50,9 +89,11 @@
       </a>
     </div>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
       <div class="container">
-        <a class="wrs-turkey-logo" href="#page-top"><img alt="..." src="./src/assets/img/logos/wrs-turkey.png" /></a>
+        <a href="#page-top">
+          <div class="wrs-turkey-logo"></div>
+        </a>
         <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
           class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
           Menu
@@ -72,25 +113,37 @@
         <div class="button-container">
           <!-- Buton 1 -->
           <button class="button" id="button-1">
-            <span class="icon">🏠</span>
-            <span class="button-label">Ana Sayfa</span>
+            <span class="icon">
+              <img alt="..." src="./src/assets/img/icons/form-icon-1.png"
+                    style="position: relative; width: 1.5rem;" />
+            </span>
+            <span class="button-label">Broker Sistem Talep Formu</span>
           </button>
 
           <!-- Buton 2 -->
           <button class="button" id="button-2">
-            <span class="icon">📁</span>
+            <span class="icon">
+              <img alt="..." src="./src/assets/img/icons/form-icon-2.png"
+                    style="position: relative; width: 1.5rem;" />
+            </span>
             <span class="button-label">Projeler</span>
           </button>
 
           <!-- Buton 3 -->
           <button class="button" id="button-3">
-            <span class="icon">📞</span>
+            <span class="icon">
+              <img alt="..." src="./src/assets/img/icons/form-icon-3.png"
+                    style="position: relative; width: 1.5rem;" />
+            </span>
             <span class="button-label">İletişim</span>
           </button>
 
           <!-- Buton 4 -->
           <button class="button" id="button-4">
-            <span class="icon">ℹ️</span>
+            <span class="icon">
+              <img alt="..." src="./src/assets/img/icons/form-icon-4.png"
+                    style="position: relative; width: 1.5rem;" />
+            </span>
             <span class="button-label">Hakkında</span>
           </button>
         </div>
@@ -121,6 +174,7 @@
             </div>
           </div>
         </div>
+      </div>
     </nav>
     <!-- Management-->
     <section class="page-section" id="management">

@@ -83,6 +83,8 @@
   --bs-link-hover-color: #cca000;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff4cc;
+  --navbar-height: 9vh;
+  --navbar-shrink-height: 7vh;
 }
 
 *,
@@ -4323,17 +4325,34 @@ fieldset:disabled .btn {
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
 
-.navbar>.container,
-.navbar>.container-fluid,
-.navbar>.container-sm,
-.navbar>.container-md,
-.navbar>.container-lg,
-.navbar>.container-xl,
-.navbar>.container-xxl {
-  display: flex;
-  flex-wrap: inherit;
-  align-items: center;
-  justify-content: space-between;
+@media(min-width: 982px) {
+  .navbar>.container,
+  .navbar>.container-fluid,
+  .navbar>.container-sm,
+  .navbar>.container-md,
+  .navbar>.container-lg,
+  .navbar>.container-xl,
+  .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+@media(max-width: 480px) {
+  .navbar>.container,
+  .navbar>.container-fluid,
+  .navbar>.container-sm,
+  .navbar>.container-md,
+  .navbar>.container-lg,
+  .navbar>.container-xl,
+  .navbar>.container-xxl {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .navbar-brand {
@@ -4389,11 +4408,27 @@ fieldset:disabled .btn {
 }
 
 .dropdown {
+  width: fit-content;
   position: relative;
   display: inline-block;
   padding: 0.4rem 0.8rem;
   background: #09354B;
   border-radius: 30px;
+}
+
+@media (max-width: 480px) {
+
+  .wrs-turkey-logo {
+    background-image: url("../assets/img/logos/wrs-turkey-white.png") !important;
+  }
+
+  .dropdown {
+    background: white !important;
+  }
+
+  .dropdown-toggle {
+    color: black !important;
+  }
 }
 
 #mainNav.navbar-shrink .dropdown {
@@ -4432,7 +4467,7 @@ fieldset:disabled .btn {
   color: #CAAC7C;
 }
 
-#mainNav.navbar-shrink .dropdown:hover  .dropdown-toggle {
+#mainNav.navbar-shrink .dropdown:hover .dropdown-toggle {
   color: #CAAC7C;
 }
 
@@ -4499,10 +4534,6 @@ fieldset:disabled .btn {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.language-trigger:hover {
-  background-color: #f9f9f9;
-}
-
 .language-trigger img {
   width: 33px;
   height: 22px;
@@ -4520,7 +4551,7 @@ fieldset:disabled .btn {
 .language-dropdown {
   position: absolute;
   top: 110%;
-  left: 0;
+  right: 0;
   width: 152%;
   background-color: white;
   border-radius: 7px;
@@ -4585,6 +4616,24 @@ fieldset:disabled .btn {
 .language-code {
   font-size: 12px;
   color: #888;
+}
+
+@media (min-width: 982px) {
+  .navbar-collapse-dropdowns {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-trigger {
+    width: fit-content;
+  }
+
+  .navbar-collapse-dropdowns {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .wrs-turkey-logo {
@@ -4714,6 +4763,15 @@ fieldset:disabled .btn {
   white-space: nowrap;
   flex-basis: 100%;
   align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .nabvar-collapse {
+    padding-bottom: 1rem;
+    display: grid;
+    gap: 9px;
+  }
 }
 
 .navbar-toggler {
@@ -4899,6 +4957,7 @@ fieldset:disabled .btn {
   .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    gap: 3rem;
   }
 
   .navbar-expand-lg .navbar-toggler {
@@ -13066,7 +13125,8 @@ p {
 .page-section {
   display: flex;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - var(--navbar-height));
+  padding-top: var(--navbar-height);
 }
 
 .page-section h2.section-heading,
@@ -13120,6 +13180,7 @@ p {
 }
 
 #mainNav .navbar-toggler {
+  color: white;
   padding: 0.75rem;
   font-size: 0.75rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -13151,9 +13212,19 @@ p {
   color: #CAAC7C !important;
 }
 
+@media (max-width: 480px) {
+  #mainNav {
+    background-color: #09354B;
+  }
+
+  #mainNav .navbar-nav .nav-item .nav-link {
+    color: white;
+  }
+}
+
 @media (min-width: 992px) {
   #mainNav {
-    height: 9vh;
+    height: var(--navbar-height);
     border: none;
     background-color: transparent;
     transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
@@ -13170,7 +13241,7 @@ p {
   }
 
   #mainNav.navbar-shrink {
-    height: 7vh;
+    height: var(--navbar-shrink-height);
     background-color: #09354B;
     transition: all 0.4s;
   }
@@ -13180,11 +13251,11 @@ p {
   }
 
   #mainNav.navbar-shrink .language-trigger svg {
-    color: #ffffff99;
+    color: white;
   }
 
   #mainNav.navbar-shrink .language-trigger {
-    border-color: #ffffff99;
+    border-color: white;
   }
 
   .navbar-dark .language-trigger svg {
@@ -13193,10 +13264,6 @@ p {
 
   .navbar-dark .language-trigger {
     border-color: white;
-  }
-
-  .navbar-dark .language-trigger:hover svg {
-    color: black;
   }
 
   #mainNav.navbar-shrink .nav-link {
@@ -13225,6 +13292,12 @@ p {
   display: grid;
   align-items: center;
   margin-top: 30rem;
+}
+
+@media (max-width: 480px) {
+  .features-container {
+    width: 100vw;
+  }
 }
 
 .features-container {
@@ -13370,10 +13443,6 @@ p {
 @media (max-width: 480px) {
   .branches-grid {
     grid-template-columns: 1fr;
-  }
-
-  body {
-    padding: 20px;
   }
 
   .branches-section {

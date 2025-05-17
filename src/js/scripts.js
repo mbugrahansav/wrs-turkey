@@ -156,10 +156,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   });
 
+  // Navbar dropdown için gerekli elementler
   const dropdown = document.querySelector('.dropdown');
   const dropdownToggle = document.querySelector('.dropdown-toggle');
 
-  dropdownToggle.addEventListener('click', function () {
+  // Form popup için gerekli elementler
+  const popupOverlay = document.getElementById('popup-overlay');
+  const closePopupBtn = document.getElementById('close-popup');
+  const forms = document.querySelectorAll('.popup-form');
+
+  // Dropdown açılıp kapanması
+  dropdownToggle.addEventListener('click', function (e) {
+    e.preventDefault();
     dropdown.classList.toggle('dropdown-open');
   });
 
@@ -170,14 +178,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Dropdown öğelerine tıklandığında
+  // Dropdown öğelerine tıklandığında ilgili formu aç
   const dropdownItems = document.querySelectorAll('.dropdown-item');
   dropdownItems.forEach(item => {
     item.addEventListener('click', function (e) {
       e.preventDefault();
-      alert(`"${this.textContent}" formuna tıklandı!`);
+
+      // Önce dropdown'ı kapat
       dropdown.classList.remove('dropdown-open');
+
+      // İlgili form ID'sini al
+      const formId = this.getAttribute('data-form');
+
+      // Tüm formları gizle
+      forms.forEach(form => {
+        form.classList.add('d-none');
+      });
+
+      // İlgili formu göster
+      const selectedForm = document.getElementById(formId);
+      if (selectedForm) {
+        selectedForm.classList.remove('d-none');
+        popupOverlay.classList.remove('d-none');
+      }
     });
+  });
+
+  // Popup kapatma tuşu
+  closePopupBtn.addEventListener('click', function () {
+    popupOverlay.classList.add('d-none');
+
+    // Tüm formları gizle
+    forms.forEach(form => {
+      form.classList.add('d-none');
+    });
+  });
+
+  // Popup dışına tıklandığında kapat
+  popupOverlay.addEventListener('click', function (e) {
+    if (e.target === popupOverlay) {
+      popupOverlay.classList.add('d-none');
+
+      // Tüm formları gizle
+      forms.forEach(form => {
+        form.classList.add('d-none');
+      });
+    }
   });
 
   const input = document.querySelector("#phone");
@@ -240,75 +286,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  /* // Navbar dropdown için gerekli elementler
-  const dropdownform = document.querySelector('.dropdownform');
-  const dropdownformToggle = document.querySelector('.dropdownform-toggle');
-
-  // Form popup için gerekli elementler
-  const popupOverlay = document.getElementById('popup-overlay');
-  const closePopupBtn = document.getElementById('close-popup');
-  const forms = document.querySelectorAll('.popup-form');
-
-  // Dropdown açılıp kapanması
-  dropdownformToggle.addEventListener('click', function (e) {
-    e.preventDefault();
-    dropdown.classList.toggle('dropdownform-open');
-  });
-
-  // Dropdown dışına tıklandığında menüyü kapat
-  document.addEventListener('click', function (event) {
-    if (!dropdownform.contains(event.target)) {
-      dropdownform.classList.remove('dropdownform-open');
-    }
-  });
-
-  // Dropdown öğelerine tıklandığında ilgili formu aç
-  const dropdownformItems = document.querySelectorAll('.dropdownform-item');
-  dropdownformItems.forEach(item => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      // Önce dropdown'ı kapat
-      dropdownform.classList.remove('dropdownform-open');
-
-      // İlgili form ID'sini al
-      const formId = this.getAttribute('data-form');
-
-      // Tüm formları gizle
-      forms.forEach(form => {
-        form.classList.add('d-none');
-      });
-
-      // İlgili formu göster
-      const selectedForm = document.getElementById(formId);
-      if (selectedForm) {
-        selectedForm.classList.remove('d-none');
-        popupOverlay.classList.remove('d-none');
-      }
-    });
-  });
-
-  // Popup kapatma tuşu
-  closePopupBtn.addEventListener('click', function () {
-    popupOverlay.classList.add('d-none');
-
-    // Tüm formları gizle
-    forms.forEach(form => {
-      form.classList.add('d-none');
-    });
-  });
-
-  // Popup dışına tıklandığında kapat
-  popupOverlay.addEventListener('click', function (e) {
-    if (e.target === popupOverlay) {
-      popupOverlay.classList.add('d-none');
-
-      // Tüm formları gizle
-      forms.forEach(form => {
-        form.classList.add('d-none');
-      });
-    }
-  }); */
 
 });

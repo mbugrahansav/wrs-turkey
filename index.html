@@ -99,7 +99,7 @@
           <i class="fas fa-bars ms-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav py-4 py-lg-0">
+          <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" data-i18n="nav_management" href="#management"></a></li>
             <li class="nav-item"><a class="nav-link" data-i18n="nav_features" href="#features"></a></li>
             <li class="nav-item"><a class="nav-link" data-i18n="nav_locations" href="#locations"></a></li>
@@ -108,44 +108,47 @@
                 target="_blank"></a></li>
             <li class="nav-item"><a class="nav-link" data-i18n="nav_contact" href="#contact"></a></li>
           </ul>
-        </div>
-        <div class="dropdown">
-          <button class="dropdown-toggle" data-i18n="form_fill">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="dropdown-icon">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </button>
-          <div class="dropdown-content">
-            <a href="#" class="dropdown-item" data-form="broker-form" data-i18n="form_broker"></a>
-            <a href="#" class="dropdown-item" data-form="subagency-form" data-i18n="form_sub_agency"></a>
-            <a href="#" class="dropdown-item" data-form="fleet-form" data-i18n="form_fill_fleet"></a>
-            <a href="#" class="dropdown-item" data-form="feedback-form" data-i18n="form_fill_rent"></a>
-          </div>
-        </div>
-        <div class="language-selector">
-          <div class="language-trigger">
-            <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" class="currentFlag">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="dropdown-icon">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </div>
-          <div class="language-dropdown">
-            <div class="language-option" data-lang="tr">
-              <img src="https://flagcdn.com/w320/tr.png" alt="Turkish Flag">
-              <div class="language-option-text">
-                <span class="language-name">Türkçe</span>
-                <span class="language-code">TR</span>
+          <div class="navbar-collapse-dropdowns">
+            <div class="dropdown">
+              <button class="dropdown-toggle">
+                <span data-i18n="form_fill"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="dropdown-icon">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item" data-form="broker-form" data-i18n="form_broker"></a>
+                <a href="#" class="dropdown-item" data-form="subagency-form" data-i18n="form_sub_agency"></a>
+                <a href="#" class="dropdown-item" data-form="fleet-form" data-i18n="form_fill_fleet"></a>
+                <a href="#" class="dropdown-item" data-form="feedback-form" data-i18n="form_fill_rent"></a>
               </div>
             </div>
-            <div class="language-option" data-lang="en">
-              <img src="https://flagcdn.com/w320/gb.png" alt="English Flag">
-              <div class="language-option-text">
-                <span class="language-name">English</span>
-                <span class="language-code">EN</span>
+            <div class="language-selector">
+              <div class="language-trigger">
+                <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" class="currentFlag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="dropdown-icon">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </div>
+              <div class="language-dropdown">
+                <div class="language-option" data-lang="tr">
+                  <img src="https://flagcdn.com/w320/tr.png" alt="Turkish Flag">
+                  <div class="language-option-text">
+                    <span class="language-name">Türkçe</span>
+                    <span class="language-code">TR</span>
+                  </div>
+                </div>
+                <div class="language-option" data-lang="en">
+                  <img src="https://flagcdn.com/w320/gb.png" alt="English Flag">
+                  <div class="language-option-text">
+                    <span class="language-name">English</span>
+                    <span class="language-code">EN</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

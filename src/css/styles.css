@@ -83,8 +83,6 @@
   --bs-link-hover-color: #cca000;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff4cc;
-  --navbar-height: 9vh;
-  --navbar-shrink-height: 7vh;
 }
 
 *,
@@ -149,10 +147,6 @@ h1,
   line-height: 1.2;
 }
 
-h1,
-.h1 {
-  font-size: calc(1.375rem + 1.5vw);
-}
 
 @media (min-width: 1200px) {
 
@@ -160,55 +154,22 @@ h1,
   .h1 {
     font-size: 2.5rem;
   }
-}
 
-h2,
-.h2 {
-  font-size: calc(1.325rem + 0.9vw);
-}
-
-@media (min-width: 1200px) {
 
   h2,
   .h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
-}
-
-h3,
-.h3 {
-  font-size: calc(1.3rem + 0.6vw);
-}
-
-@media (min-width: 1200px) {
 
   h3,
   .h3 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
-}
-
-h4,
-.h4 {
-  font-size: calc(1.275rem + 0.3vw);
-}
-
-@media (min-width: 1200px) {
 
   h4,
   .h4 {
     font-size: 1.5rem;
   }
-}
-
-h5,
-.h5 {
-  font-size: 1.25rem;
-}
-
-h6,
-.h6 {
-  font-size: 1rem;
 }
 
 p {
@@ -4325,7 +4286,8 @@ fieldset:disabled .btn {
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
 
-@media(min-width: 982px) {
+@media(min-width: 992px) {
+
   .navbar>.container,
   .navbar>.container-fluid,
   .navbar>.container-sm,
@@ -4340,7 +4302,8 @@ fieldset:disabled .btn {
   }
 }
 
-@media(max-width: 480px) {
+@media(max-width: 980px) {
+
   .navbar>.container,
   .navbar>.container-fluid,
   .navbar>.container-sm,
@@ -4411,12 +4374,13 @@ fieldset:disabled .btn {
   width: fit-content;
   position: relative;
   display: inline-block;
-  padding: 0.4rem 0.8rem;
+  height: 2rem;
+  padding: 0.4rem 0.5rem;
   background: #09354B;
   border-radius: 30px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 980px) {
 
   .wrs-turkey-logo {
     background-image: url("../assets/img/logos/wrs-turkey-white.png") !important;
@@ -4445,8 +4409,7 @@ fieldset:disabled .btn {
   transition: color 0.2s;
   color: white;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
-  letter-spacing: 0.0625em;
+  font-size: 0.75rem;
 }
 
 #mainNav.navbar-shrink .dropdown-toggle {
@@ -4618,19 +4581,25 @@ fieldset:disabled .btn {
   color: #888;
 }
 
-@media (min-width: 982px) {
+@media (min-width: 992px) {
   .navbar-collapse-dropdowns {
     display: flex;
     gap: 1rem;
+    align-items: center;
+  }
+
+  .language-selector {
+    margin-left: 5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 980px) {
   .language-trigger {
     width: fit-content;
   }
 
   .navbar-collapse-dropdowns {
+    margin-top: 0.7rem;
     display: flex;
     justify-content: space-between;
   }
@@ -4763,7 +4732,6 @@ fieldset:disabled .btn {
   white-space: nowrap;
   flex-basis: 100%;
   align-items: center;
-  padding-bottom: 0.5rem;
 }
 
 @media (min-width: 480px) {
@@ -8733,6 +8701,10 @@ fieldset:disabled .btn {
   height: auto !important;
 }
 
+.min-h-auto {
+  min-height: auto !important;
+}
+
 .mh-100 {
   max-height: 100% !important;
 }
@@ -9100,6 +9072,10 @@ fieldset:disabled .btn {
   margin-right: 3rem !important;
 }
 
+.me-6 {
+  margin-right: 5rem !important
+}
+
 .me-auto {
   margin-right: auto !important;
 }
@@ -9154,6 +9130,10 @@ fieldset:disabled .btn {
 
 .ms-5 {
   margin-left: 3rem !important;
+}
+
+.ms-6 {
+  margin-left: 5rem !important;
 }
 
 .ms-auto {
@@ -13125,13 +13105,12 @@ p {
 .page-section {
   display: flex;
   align-items: center;
-  min-height: calc(100vh - var(--navbar-height));
-  padding-top: var(--navbar-height);
+  min-height: 100vh
 }
 
 .page-section h2.section-heading,
 .page-section .section-heading.h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .page-section h3.section-subheading,
@@ -13140,6 +13119,37 @@ p {
   font-weight: 400;
   font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.btn-xs {
+  padding: 0.3rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  width: 15%;
+
+}
+
+@media (max-width: 980px) {
+  .btn-xs {
+    font-size: 0.8rem;
+    font-weight: 700;
+    width: 30%;
+  }
+}
+
+.btn-s {
+  padding: 0.4rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.btn-m {
+  padding: 0.5rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .btn-l {
@@ -13202,7 +13212,7 @@ p {
 
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #1C425D;
   letter-spacing: 0.0625em;
 }
@@ -13212,7 +13222,7 @@ p {
   color: #CAAC7C !important;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 980px) {
   #mainNav {
     background-color: #09354B;
   }
@@ -13224,7 +13234,7 @@ p {
 
 @media (min-width: 992px) {
   #mainNav {
-    height: var(--navbar-height);
+    height: 9vh;
     border: none;
     background-color: transparent;
     transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
@@ -13241,7 +13251,7 @@ p {
   }
 
   #mainNav.navbar-shrink {
-    height: var(--navbar-shrink-height);
+    height: 7vh;
     background-color: #09354B;
     transition: all 0.4s;
   }
@@ -13294,15 +13304,20 @@ p {
   margin-top: 30rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 980px) {
   .features-container {
     width: 100vw;
+  }
+
+  .features-map-image>img {
+    width: 95% !important;
   }
 }
 
 .features-container {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
+  padding-bottom: 1.25rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -13331,6 +13346,7 @@ p {
   line-height: 1.6;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .features-container>ul>li:hover {
@@ -13345,6 +13361,12 @@ p {
 .features-container .highlight {
   color: #1C425D;
   font-weight: 600;
+}
+
+.features-map-image>img {
+  width: 55%;
+  object-fit: contain;
+  align-self: center;
 }
 
 @media (max-width: 768px) {
@@ -13403,7 +13425,7 @@ p {
 
 .branch-link {
   display: block;
-  min-height: 7rem;
+  min-height: 5rem;
   padding: 12px 15px;
   margin-bottom: 26px;
   color: #444;
@@ -13413,7 +13435,7 @@ p {
   background-color: #f8f9fa;
   border-left: 3px solid #CAAC7C;
   font-weight: 600;
-  font-size: larger;
+  font-size: medium;
 }
 
 .branch-link:hover {
@@ -13450,8 +13472,15 @@ p {
   }
 }
 
+@media (max-width: 480px) {
+  .about-container>ul>li,
+  .about-container .highlight {
+    font-size: small !important;
+  }
+}
+
 .about-container {
-  max-width: 1600px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13475,7 +13504,7 @@ p {
 }
 
 .about-container>ul>li {
-  font-size: x-large;
+  font-size: large;
   padding: 0.7rem;
   margin-bottom: 1rem;
   background-color: #f8f9fc;
@@ -13496,13 +13525,42 @@ p {
 }
 
 .about-container .highlight {
-  font-size: x-large;
+  font-size: large;
   color: var(--secondary-color);
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 992px) {
+  .contact-info-container {
+    margin-top: -3.5rem;
+  }
+}
+
+.contact-info {
+  font-size: 0.9rem;
+}
+
+.contact-form-button {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 980px) {
+
+  .contact-info-heading {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+  font-size: 0.7rem;
+  }
+
+  .contact-form-button {
+    margin-top: 0.5rem;
+  }
+
   .about-container {
+    margin: 0 !important;
+    max-width: 100% !important;
     padding: 1rem;
   }
 
@@ -13913,6 +13971,12 @@ header.masthead .masthead-heading {
   height: 2.75rem;
 }
 
+@media (max-width: 980px) {
+  section#contact form#contactForm .form-group {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
 section#contact {
   background-color: #212529;
   background-image: url("../assets/img/map-image.png");
@@ -13926,11 +13990,6 @@ section#contact .section-heading {
 
 section#contact form#contactForm .form-group {
   margin-bottom: 1.5rem;
-}
-
-section#contact form#contactForm .form-group input,
-section#contact form#contactForm .form-group textarea {
-  padding: 0.8rem;
 }
 
 section#contact form#contactForm .form-group input.form-control {
@@ -13996,7 +14055,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
   color: var(--dark-color);
@@ -14140,12 +14199,8 @@ section#contact form#contactForm :-ms-input-placeholder {
   z-index: -1;
 }
 
-@media (max-width: 768px) {
-  .section-title h2 {
-    font-size: 2rem;
-  }
-
+@media (min-width: 992px) {
   .card-container {
-    margin-bottom: 30px;
+    width: 25%;
   }
 }

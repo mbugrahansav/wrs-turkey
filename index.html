@@ -162,43 +162,42 @@
           <h2 data-i18n="management_title" style="font-style: italic;"></h2>
           <p data-i18n="management_desc"></p>
         </div>
-        <div class="row text-center">
-          <div class="col-md-4 card-container">
+        <div class="row text-center justify-content-center">
+          <div class="col-md-4 col-sm-12 card-container">
             <div class="integration-card">
               <div class="diagonal-bg"></div>
               <div class="mt-5">
-                <span class="fa-stack fa-4x">
+                <span class="fa-stack fa-3x">
                   <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 3.2em;"></i>
                   <img alt="..." src="./src/assets/img/icons/brokerage-icon.png"
-                    style="position: relative; width: 9rem; margin: 0 0 1rem 0.3rem;" />
+                    style="position: relative; width: 7rem; margin: 0 0 1rem 0.3rem;" />
                 </span>
               </div>
               <h3 class="mt-5" data-i18n="broker_title"></h3>
               <p data-i18n="broker_desc"></p>
             </div>
           </div>
-          <div class="col-md-4 card-container">
+          <div class="col-md-4 col-sm-12 card-container">
             <div class="integration-card">
               <div class="diagonal-bg"></div>
               <div class="mt-5">
-                <span class="fa-stack fa-4x">
+                <span class="fa-stack fa-3x">
                   <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 3.2em;"></i>
                   <img alt="..." src="./src/assets/img/icons/sub-agency-icon.png"
-                    style="position: relative; width: 10rem; margin: 0 0 0.5rem 0.2rem;" />
+                    style="position: relative; width: 7rem; margin: 0 0 0.5rem 0.2rem;" />
                 </span>
               </div>
               <h3 class="mt-5" data-i18n="subagency_title"></h3>
               <p data-i18n="subagency_desc"></p>
             </div>
           </div>
-          <div class="col-md-4 card-container">
+          <div class="col-md-4 col-sm-12 card-container">
             <div class="integration-card">
               <div class="diagonal-bg"></div>
               <div class="mt-5">
-                <span class="fa-stack fa-4x">
+                <span class="fa-stack fa-3x">
                   <i class="fas fa-circle fa-stack-2x text-primary" style="font-size: 3.2em;"></i>
-                  <img alt="..." src="./src/assets/img/icons/fleet-icon.png"
-                    style="position: relative; width: 10rem;" />
+                  <img alt="..." src="./src/assets/img/icons/fleet-icon.png" style="position: relative; width: 8rem;" />
                 </span>
               </div>
               <h3 class="mt-5" data-i18n="fleet_title"></h3>
@@ -370,16 +369,13 @@
     <!-- features -->
     <section class="page-section bg-light" id="features">
       <div class="container">
-        <div class="features-section-title mt-5">
+        <div class="features-section-title">
           <h2 class="section-heading" data-i18n="features_heading"></h2>
           <p data-i18n="features_desc"></p>
         </div>
         <div class="row g-0" style="margin-top: 5vh;">
-          <div class="col-md-6 d-flex">
-            <img alt="..." src="./src/assets/img/features/wrs-turkey-map.png" style="max-height: 495px; /* Burada maksimum yüksekliği sınırlayın */
-            width: 100%;
-            object-fit: contain;
-            align-self: center;" />
+          <div class="features-map-image col-md-6 d-flex justify-content-center">
+            <img alt="..." src="./src/assets/img/features/wrs-turkey-map.png"/>
           </div>
           <div class="col-md-6 w-40">
             <div class="features-container">
@@ -496,7 +492,7 @@
       </div>
     </section>
     <!-- Contact-->
-    <section class="page-section h-auto" id="contact">
+    <section class="page-section min-h-auto pt-0" id="contact">
       <div class="container">
         <div class="text-center mb-4 mt-4">
           <h2 class="section-heading" data-i18n="contact_heading"></h2>
@@ -526,19 +522,21 @@
                       required=""></textarea>
                   </div>
                 </div>
-                <div class="text-end mt-4">
-                  <button class="btn btn-primary btn-l" data-i18n="form_submit" id="submitButton"
-                    type="submit"></button>
+                <div class="contact-form-button text-end">
+                  <button class="btn btn-primary btn-xs" data-i18n="form_submit" id="submitButton" type="submit">
+                  </button>
                 </div>
               </div>
             </form>
           </div>
-          <div class="w-90">
-            <h3 class="section-heading" data-i18n="contact_info_heading"></h3>
-            <span style="color: white;" data-i18n="contact_company"></span><br>
-            <span style="color: white;" data-i18n="contact_address"></span><br>
-            <span style="color: white;" data-i18n="contact_mail"></span><br>
-            <span style="color: white;" data-i18n="contact_tel"></span>
+          <div class="contact-info-container w-90">
+            <h3 class="section-heading contact-info-heading" data-i18n="contact_info_heading"></h3>
+            <div class="contact-info">
+              <span style="color: white;" data-i18n="contact_company"></span><br>
+              <span style="color: white;" data-i18n="contact_address"></span><br>
+              <span style="color: white;" data-i18n="contact_mail"></span><br>
+              <span style="color: white;" data-i18n="contact_tel"></span>
+            </div>
           </div>
           <div class="w-90 text-center">
             <div class="mb-3">

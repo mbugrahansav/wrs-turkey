@@ -663,11 +663,11 @@ progress {
   width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 2%;
+  margin-left: 2%;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
 
   .container-sm,
   .container {
@@ -715,7 +715,7 @@ progress {
   .container {
     max-width: 1470px;
   }
-}
+} */
 
 .row {
   --bs-gutter-x: 1.5rem;
@@ -2244,7 +2244,7 @@ progress {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
   .table-responsive-xxl {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -2307,7 +2307,7 @@ progress {
   .form-control {
     font-size: 0.8rem;
   }
-  
+
   .footer {
     font-size: 0.6rem !important;
   }
@@ -6696,7 +6696,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
   .modal-fullscreen-xxl-down {
     width: 100vw;
     max-width: none;
@@ -7755,7 +7755,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
   .offcanvas-xxl {
     position: fixed;
     bottom: 0;
@@ -7772,13 +7772,13 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) and (prefers-reduced-motion: reduce) {
+@media (max-width: 1399px) and (prefers-reduced-motion: reduce) {
   .offcanvas-xxl {
     transition: none;
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
   .offcanvas-xxl.offcanvas-start {
     top: 0;
     left: 0;
@@ -7788,7 +7788,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
   .offcanvas-xxl.offcanvas-end {
     top: 0;
     right: 0;
@@ -7798,7 +7798,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
   .offcanvas-xxl.offcanvas-top {
     top: 0;
     right: 0;
@@ -7810,7 +7810,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
   .offcanvas-xxl.offcanvas-bottom {
     right: 0;
     left: 0;
@@ -7821,7 +7821,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
 
   .offcanvas-xxl.showing,
   .offcanvas-xxl.show:not(.hiding) {
@@ -7829,7 +7829,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 1399.98px) {
+@media (max-width: 1399px) {
 
   .offcanvas-xxl.showing,
   .offcanvas-xxl.hiding,
@@ -13194,11 +13194,11 @@ p {
 
 .btn-xxl {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  padding: 1.25rem;
+  padding: 1rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.9rem;
+  font-size: 1.3rem;
   font-weight: bold;
-  min-width: 32rem;
+  min-width: 22rem;
 }
 
 .btn-social {
@@ -13336,6 +13336,99 @@ p {
   margin-top: 30rem;
 }
 
+@media (max-width: 1399px) {
+
+  #mainNav .container {
+    margin-left: 2rem !important;
+  }
+
+  .language-selector {
+    margin-left: 0 !important;
+  }
+
+  .landing-container {
+    gap: 10rem !important;
+  }
+
+  #landing-header>h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .btn-xxl {
+    font-size: 1.1rem !important;
+    min-width: 19rem !important;
+  }
+
+  .section-title>h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .section-title>p {
+    font-size: 0.9rem !important;
+  }
+
+  .talep-icon {
+    font-size: 2.7em !important;
+  }
+
+  #broker-icon {
+  width: 6.3rem !important;
+  margin: 0 0 2.5rem 0.5rem !important;
+}
+
+  #sub-agency-icon {
+    width: 6.5rem !important;
+    margin: 0 0 2rem 0.1rem !important;
+  }
+
+  #fleet-icon {
+    width: 6.5rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .integration-card h3 {
+    font-size: 1.3rem !important;
+  }
+
+  .integration-card p {
+    font-size: 0.9rem !important;
+  }
+
+  h2.section-heading {
+    font-size: 1.8rem !important;
+  }
+
+  h3.section-heading {
+    font-size: 1.2rem !important;
+  }
+
+  .features-box {
+    width: 50%;
+  }
+
+  .features-map-image>img {
+    width: 75% !important;
+  }
+
+  .branch-link {
+    font-size: 0.9rem !important;
+  }
+
+  .about-container>ul>li,
+  .about-container .highlight {
+    font-size: 0.9rem !important;
+  }
+
+  .contact-info {
+    font-size: 0.8rem !important;
+  }
+
+  .btn-social {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}
+
 @media (max-width: 980px) {
   .features-container {
     width: 100vw;
@@ -13449,9 +13542,8 @@ p {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.branch-column {
-  display: flex;
-  flex-direction: column;
+.branches-column>ul {
+  list-style: none;
 }
 
 .branch-link {
@@ -13471,7 +13563,7 @@ p {
 
 @media (max-width: 980px) {
   .branch-link {
-    margin-bottom: 12px
+    margin-bottom: 1rem
   }
 }
 
@@ -13480,10 +13572,6 @@ p {
   border-left-color: #2980b9;
   color: #2980b9;
   transform: translateX(5px);
-}
-
-.branch-link:last-child {
-  margin-bottom: 0;
 }
 
 /* Responsive tasarım */
@@ -13508,6 +13596,7 @@ p {
 }
 
 @media (max-width: 480px) {
+
   .about-container>ul>li,
   .about-container .highlight {
     font-size: small !important;
@@ -13586,7 +13675,7 @@ p {
   }
 
   .contact-info {
-  font-size: 0.7rem;
+    font-size: 0.7rem;
   }
 
   .contact-form-button {
@@ -13632,7 +13721,9 @@ header.landing {
 }
 
 .landing-container {
+  display: grid;
   margin-left: 8vw;
+  gap: 15rem;
 }
 
 header.masthead .masthead-subheading {
@@ -14124,7 +14215,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  color: var(--dark-color);
   margin-bottom: 15px;
 }
 
@@ -14169,6 +14259,27 @@ section#contact form#contactForm :-ms-input-placeholder {
 .integration-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.talep-icon {
+  font-size: 3.2em;
+}
+
+#broker-icon {
+  position: relative;
+  width: 7rem;
+  margin: 0 0 1rem 0.3rem;
+}
+
+#sub-agency-icon {
+  position: relative;
+  width: 7rem;
+  margin: 0 0 0.5rem 0.2rem;
+}
+
+#fleet-icon {
+  position: relative;
+  width: 8rem;
 }
 
 .card-icon {

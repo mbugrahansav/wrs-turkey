@@ -31,54 +31,57 @@
     </video>
   </div>
 
-  <div id="landing">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
-      <div class="container">
-        <div class="wrs-turkey-logo">
-        </div>
-        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
-          class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="language-selector">
-          <div class="language-trigger">
-            <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" class="currentFlag">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="dropdown-icon">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
+  <section id="/">
+    <div id="landing">
+      <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+        <div class="container justify-content-between px-5">
+          <div class="wrs-turkey-logo">
           </div>
-          <div class="language-dropdown">
-            <div class="language-option" data-lang="tr">
-              <img src="https://flagcdn.com/w320/tr.png" alt="Turkish Flag">
-              <div class="language-option-text">
-                <span class="language-name">Türkçe</span>
-                <span class="language-code">TR</span>
+          <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+          </button>
+          <div class="language-selector">
+            <div class="language-trigger">
+              <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" class="currentFlag">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="dropdown-icon">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+            <div class="language-dropdown">
+              <div class="language-option" data-lang="tr">
+                <img src="https://flagcdn.com/w320/tr.png" alt="Turkish Flag">
+                <div class="language-option-text">
+                  <span class="language-name">Türkçe</span>
+                  <span class="language-code">TR</span>
+                </div>
+              </div>
+              <div class="language-option" data-lang="en">
+                <img src="https://flagcdn.com/w320/gb.png" alt="English Flag">
+                <div class="language-option-text">
+                  <span class="language-name">English</span>
+                  <span class="language-code">EN</span>
+                </div>
               </div>
             </div>
-            <div class="language-option" data-lang="en">
-              <img src="https://flagcdn.com/w320/gb.png" alt="English Flag">
-              <div class="language-option-text">
-                <span class="language-name">English</span>
-                <span class="language-code">EN</span>
-              </div>
-            </div>
           </div>
-        </div>
-    </nav>
-    <header class="landing">
-      <div class="landing-container d-grid gap-15rem">
-        <div>
-          <h1 class="fs-9">Dünyanın Her Yerinde, <br> Güvenle Yola Çıkın</h1>
-        </div>
-        <div class="d-flex gap-6">
-          <a class="btn btn-landing btn-xxl" data-i18n="header_btn_1" href="#contact"></a>
-          <a class="btn btn-landing btn-xxl" id="btn-management" data-i18n="header_btn_2" href="#management"></a>
-        </div>
-    </header>
-  </div>
+      </nav>
+      <header class="landing">
+        <div class="landing-container d-grid gap-15rem">
+          <div>
+            <h1 class="fs-9">Dünyanın Her Yerinde, <br> Güvenle Yola Çıkın</h1>
+          </div>
+          <div class="d-flex gap-6">
+            <a class="btn btn-landing btn-xxl" id="btn-contact" data-i18n="header_btn_1"></a>
+            <a class="btn btn-landing btn-xxl" id="btn-management" data-i18n="header_btn_2"></a>
+          </div>
+      </header>
+    </div>
+  </section>
+
 
   <div data-bs-offset="70" data-bs-spy="scroll" data-bs-target="#mainNav" id="page-top" style="display: none;"
     tabindex="0">
@@ -90,7 +93,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
       <div class="container">
-        <a href="#page-top">
+        <a href="/">
           <div class="wrs-turkey-logo"></div>
         </a>
         <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
@@ -375,7 +378,7 @@
         </div>
         <div class="row g-0" style="margin-top: 5vh;">
           <div class="features-map-image col-md-6 d-flex justify-content-center">
-            <img alt="..." src="./src/assets/img/features/wrs-turkey-map.png"/>
+            <img alt="..." src="./src/assets/img/features/wrs-turkey-map.png" />
           </div>
           <div class="col-md-6 w-40">
             <div class="features-container">
@@ -396,77 +399,78 @@
       <div class="container">
         <div class="text-center my-5">
           <h2 class="section-heading" data-i18n="locations_heading"></h2>
-
         </div>
         <div class="locations-container">
           <div class="branches-grid">
             <div class="branches-column">
               <ul>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama"
-                  target="_blank">Ankara Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama"
-                  target="_blank">Antalya Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama"
-                  target="_blank">Ankara Şehir Araç Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi" target="_blank">Ankara
-                  YHT Garı Araç Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama"
-                  target="_blank">İstanbul Ataşehir Araç
-                  Kiralama</a>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama"
+                    target="_blank">Ankara Havalimanı Araç
+                    Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama"
+                    target="_blank">Antalya Havalimanı Araç
+                    Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama"
+                    target="_blank">Ankara Şehir Araç Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi"
+                    target="_blank">Ankara
+                    YHT Garı Araç Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama"
+                    target="_blank">İstanbul Ataşehir Araç
+                    Kiralama</a></li>
               </ul>
             </div>
             <div class="branches-column">
               <ul>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama"
-                  target="_blank">Ankara Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama"
-                  target="_blank">Antalya Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama"
-                  target="_blank">Ankara Şehir Araç Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi" target="_blank">Ankara
-                  YHT Garı Araç Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama"
-                  target="_blank">İstanbul Ataşehir Araç
-                  Kiralama</a>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-havalimani-arac-kiralama"
+                    target="_blank">Ankara Havalimanı Araç
+                    Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/antalya-havalimani-arac-kiralama"
+                    target="_blank">Antalya Havalimanı Araç
+                    Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-sehir-arac-kiralama"
+                    target="_blank">Ankara Şehir Araç Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/ankara-yht-gari-subesi"
+                    target="_blank">Ankara
+                    YHT Garı Araç Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-atasehir-arac-kiralama"
+                    target="_blank">İstanbul Ataşehir Araç
+                    Kiralama</a></li>
               </ul>
             </div>
             <div class="branches-column">
               <ul>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-levent-arac-kiralama"
-                  target="_blank">İstanbul Levent Araç Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-havalimani-arac-kiralama"
-                  target="_blank">İstanbul Havalimanı Araç
-                  Kiralama</a>
-                <a class="branch-link"
-                  href="https://ziraatfilo.com.tr/tr/istanbul-sabiha-gokcen-havalimani-arac-kiralama" target="_blank">
-                  İstanbul Sabiha Gökçen Havalimanı Araç Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/ıstanbul-pendik-merkez-arac-kiralama"
-                  target="_blank">İstanbul Pendik Merkez Araç
-                  Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/izmir-havalimani-arac-kiralama"
-                  target="_blank">İzmir Adnan Menderes Havalimanı
-                  Araç Kiralama</a>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-levent-arac-kiralama"
+                    target="_blank">İstanbul Levent Araç Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/istanbul-havalimani-arac-kiralama"
+                    target="_blank">İstanbul Havalimanı Araç
+                    Kiralama</a></li>
+                <li><a class="branch-link"
+                    href="https://ziraatfilo.com.tr/tr/istanbul-sabiha-gokcen-havalimani-arac-kiralama" target="_blank">
+                    İstanbul Sabiha Gökçen Havalimanı Araç Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/ıstanbul-pendik-merkez-arac-kiralama"
+                    target="_blank">İstanbul Pendik Merkez Araç
+                    Kiralama</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/izmir-havalimani-arac-kiralama"
+                    target="_blank">İzmir Adnan Menderes Havalimanı
+                    Araç Kiralama</a></li>
               </ul>
             </div>
             <div class="branches-column">
               <ul>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/kayseri-kum-small-avm-subesi"
-                  target="_blank">Kayseri Araç Kiralama</a>
-                <a class="branch-link" href="https://ziraatfilo.com.trtradana-mersin-cukurova-uluslararasi-havalimani"
-                  target="_blank">
-                  ÇukurovaUluslararası Havalimanı</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/mugla-dalaman-havalimani"
-                  target="_blank">Muğla
-                  Dalaman Havalimanı</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/mugla-milas-bodrum-havalimani"
-                  target="_blank">Muğla Milas Bodrum Havalimanı</a>
-                <a class="branch-link" href="https://ziraatfilo.com.tr/tr/trabzon-uluslararasi-havalimani"
-                  target="_blank">Trabzon Uluslararası
-                  Havalimanı</a>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/kayseri-kum-small-avm-subesi"
+                    target="_blank">Kayseri Araç Kiralama</a></li>
+                <li><a class="branch-link"
+                    href="https://ziraatfilo.com.trtradana-mersin-cukurova-uluslararasi-havalimani" target="_blank">
+                    ÇukurovaUluslararası Havalimanı</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/mugla-dalaman-havalimani"
+                    target="_blank">Muğla
+                    Dalaman Havalimanı</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/mugla-milas-bodrum-havalimani"
+                    target="_blank">Muğla Milas Bodrum Havalimanı</a></li>
+                <li><a class="branch-link" href="https://ziraatfilo.com.tr/tr/trabzon-uluslararasi-havalimani"
+                    target="_blank">Trabzon Uluslararası
+                    Havalimanı</a></li>
               </ul>
             </div>
           </div>
@@ -539,7 +543,7 @@
             </div>
           </div>
           <div class="w-90 text-center">
-            <div class="mb-3">
+            <div class="social-media-icon-container">
               <a aria-label="X" class="btn btn-light btn-social mx-3" href="https://x.com/wrsturkey"
                 rel="noopener noreferrer" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
               <a aria-label="Instagram" class="btn btn-light btn-social mx-3" href="https://www.instagram.com/wrsturkey"

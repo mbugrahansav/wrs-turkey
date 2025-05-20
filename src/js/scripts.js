@@ -156,6 +156,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   });
 
+  document.getElementById('btn-contact').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('landing').style.display = 'none';
+    document.getElementById('page-top').style.display = 'block';
+    setTimeout(() => {
+      window.location.hash = 'contact';
+    }, 50);
+  });
+
   // Navbar dropdown için gerekli elementler
   const dropdown = document.querySelector('.dropdown');
   const dropdownToggle = document.querySelector('.dropdown-toggle');

@@ -13527,6 +13527,10 @@ p {
   #landing-header>h1 {
     font-size: 2rem !important;
   }
+
+  .page-section {
+    padding-top: 9vh !important;
+  }
 }
 
 

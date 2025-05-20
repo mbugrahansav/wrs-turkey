@@ -723,8 +723,6 @@ progress {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
 .row>* {
@@ -2322,7 +2320,7 @@ progress {
   }
 
   .container {
-    margin-bottom: 5rem !important;
+    margin-bottom: 2rem !important;
   }
 }
 
@@ -13284,10 +13282,6 @@ p {
     border-color: white;
   }
 
-  .navbar-dark .language-trigger svg {
-    color: white;
-  }
-
   .navbar-dark .language-trigger {
     border-color: white;
   }
@@ -13401,6 +13395,10 @@ p {
     width: 2rem !important;
     height: 2rem !important;
   }
+}
+
+.navbar-dark .language-trigger svg {
+  color: white;
 }
 
 /* mediascreens */
@@ -13651,6 +13649,7 @@ p {
 
 .branches-column>ul {
   list-style: none;
+  padding-right: 2rem;
 }
 
 .branch-link {

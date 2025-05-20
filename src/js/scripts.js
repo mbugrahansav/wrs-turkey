@@ -8,13 +8,11 @@ document.querySelectorAll('.language-selector').forEach(languageSelector => {
   const languageOptions = languageSelector.querySelectorAll('.language-option');
   const currentFlag = languageSelector.querySelector('.currentFlag');
 
-  // Dropdown toggle
   languageTrigger.addEventListener('click', (e) => {
     e.stopPropagation();
     languageSelector.classList.toggle('active');
   });
 
-  // Option click
   languageOptions.forEach(option => {
     option.addEventListener('click', () => {
       const selectedLang = option.getAttribute('data-lang');
@@ -34,7 +32,6 @@ document.querySelectorAll('.language-selector').forEach(languageSelector => {
   });
 });
 
-// Dışarı tıklanınca dropdown kapanır
 document.addEventListener('click', (event) => {
   document.querySelectorAll('.language-selector').forEach(languageSelector => {
     if (!languageSelector.contains(event.target)) {
@@ -93,7 +90,6 @@ function loadLanguage(lang) {
     });
 }
 
-// Diğer sayfalarda kullanılabilecek public API
 window.i18n = {
   changeLanguage: function (lang) {
     loadLanguage(lang);
@@ -109,12 +105,35 @@ window.i18n = {
   }
 };
 
+const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    setTimeout(function() {
+      document.querySelector('.navbar-toggler').click();
+    }, 50);
+  });
+});
+
+document.addEventListener('click', function(event) {
+  const navbarCollapse = document.getElementById('navbarResponsive');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  
+  if (navbarCollapse.classList.contains('show') && 
+      !navbarCollapse.contains(event.target) && 
+      event.target !== navbarToggler && 
+      !navbarToggler.contains(event.target)) {
+    
+    setTimeout(function() {
+      navbarToggler.click();
+    }, 10);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Önceki seçilen dil varsa, dil seçicisini güncelle
   updateLanguageSelector(currentLang);
 
-  // Dil dosyasını yükle ve içeriği güncelle
   loadLanguage(currentLang);
 
   console.log("DOM yüklendi");
@@ -165,46 +184,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   });
 
-  // Navbar dropdown için gerekli elementler
   const dropdown = document.querySelector('.dropdown');
   const dropdownToggle = document.querySelector('.dropdown-toggle');
 
-  // Form popup için gerekli elementler
   const popupOverlay = document.getElementById('popup-overlay');
   const closePopupBtn = document.getElementById('close-popup');
   const forms = document.querySelectorAll('.popup-form');
 
-  // Dropdown açılıp kapanması
   dropdownToggle.addEventListener('click', function (e) {
     e.preventDefault();
     dropdown.classList.toggle('dropdown-open');
   });
 
-  // Dropdown dışına tıklandığında menüyü kapat
   document.addEventListener('click', function (event) {
     if (!dropdown.contains(event.target)) {
       dropdown.classList.remove('dropdown-open');
     }
   });
 
-  // Dropdown öğelerine tıklandığında ilgili formu aç
   const dropdownItems = document.querySelectorAll('.dropdown-item');
   dropdownItems.forEach(item => {
     item.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // Önce dropdown'ı kapat
       dropdown.classList.remove('dropdown-open');
 
-      // İlgili form ID'sini al
       const formId = this.getAttribute('data-form');
 
-      // Tüm formları gizle
       forms.forEach(form => {
         form.classList.add('d-none');
       });
 
-      // İlgili formu göster
       const selectedForm = document.getElementById(formId);
       if (selectedForm) {
         selectedForm.classList.remove('d-none');
@@ -213,22 +223,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Popup kapatma tuşu
+
   closePopupBtn.addEventListener('click', function () {
     popupOverlay.classList.add('d-none');
 
-    // Tüm formları gizle
     forms.forEach(form => {
       form.classList.add('d-none');
     });
   });
 
-  // Popup dışına tıklandığında kapat
   popupOverlay.addEventListener('click', function (e) {
     if (e.target === popupOverlay) {
       popupOverlay.classList.add('d-none');
 
-      // Tüm formları gizle
       forms.forEach(form => {
         form.classList.add('d-none');
       });
@@ -250,7 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
   });
 
-  // Navbar Shrink Function
   function navbarShrink() {
     const navbar = document.getElementById('mainNav');
     const pageTop = document.getElementById('page-top');
@@ -283,17 +289,5 @@ document.addEventListener('DOMContentLoaded', () => {
       offset: 70
     });
   };
-
-  const navbarToggler = document.body.querySelector('.navbar-toggler');
-  const responsiveNavItems = [].slice.call(
-    document.querySelectorAll('#navbarResponsive .nav-link')
-  );
-  responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener('click', () => {
-      if (window.getComputedStyle(navbarToggler).display !== 'none') {
-        navbarToggler.click();
-      }
-    });
-  });
 
 });

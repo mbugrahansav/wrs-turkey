@@ -1,3 +1,29 @@
+const video = document.getElementById('intro-video');
+
+const isMobile = window.matchMedia('(max-width: 780px)').matches;
+const source = document.createElement('source');
+source.src = isMobile ? 'src/assets/video/wrs-turkey-packshot-mobile.mp4' : 'src/assets/video/wrs-turkey-packshot.mp4';
+source.type = 'video/mp4';
+
+video.appendChild(source);
+video.load();
+
+const mql = window.matchMedia('(max-width: 780px)');
+function updateVideoSrc(e) {
+  const isMobile = e.matches;
+  const source = document.createElement('source');
+  source.src = isMobile ? 'src/assets/video/wrs-turkey-packshot-mobile.mp4' : 'src/assets/video/wrs-turkey-packshot.mp4';
+  source.type = 'video/mp4';
+
+  video.innerHTML = ''; // önceki source'u temizle
+  video.appendChild(source);
+  video.load();
+}
+
+mql.addEventListener('change', updateVideoSrc); // tarayıcı boyutu değişince
+updateVideoSrc(mql); // ilk başta çağır
+
+
 function checkForSuccessHash() {
   if (window.location.hash === "#form-success") {
     const skipButton = document.querySelector('#skip-intro')

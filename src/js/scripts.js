@@ -1,4 +1,51 @@
-console.log("JS yüklendi");
+function checkForSuccessHash() {
+  if (window.location.hash === "#form-success") {
+    const managementButton = document.querySelector('#btn-management');
+    if (managementButton) {
+      managementButton.click();
+    }
+
+    setTimeout(() => {
+      showPopup();
+
+      history.replaceState(null, null, ' ');
+    }, 50);
+  }
+}
+
+function showPopup() {
+  const overlay = document.getElementById('popup-overlay');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function hidePopup() {
+  const overlay = document.getElementById('popup-overlay');
+  overlay.classList.remove('show');
+  document.body.style.overflow = 'auto';
+}
+
+document.getElementById('popup-overlay').addEventListener('click', function (e) {
+  if (e.target === this) {
+    hidePopup();
+  }
+});
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    hidePopup();
+  }
+});
+
+function openThankYouPopup() {
+  const popup = document.querySelector('#thank-you-popup');
+  if (popup) {
+    popup.style.display = 'block';
+  }
+}
+
+window.addEventListener('load', checkForSuccessHash);
+window.addEventListener('hashchange', checkForSuccessHash);
 
 let currentLang = localStorage.getItem('selectedLanguage') || "tr";
 loadLanguage(currentLang);
@@ -106,25 +153,25 @@ window.i18n = {
 };
 
 const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  
+
 navLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    setTimeout(function() {
+  link.addEventListener('click', function () {
+    setTimeout(function () {
       document.querySelector('.navbar-toggler').click();
     }, 50);
   });
 });
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
   const navbarCollapse = document.getElementById('navbarResponsive');
   const navbarToggler = document.querySelector('.navbar-toggler');
-  
-  if (navbarCollapse.classList.contains('show') && 
-      !navbarCollapse.contains(event.target) && 
-      event.target !== navbarToggler && 
-      !navbarToggler.contains(event.target)) {
-    
-    setTimeout(function() {
+
+  if (navbarCollapse.classList.contains('show') &&
+    !navbarCollapse.contains(event.target) &&
+    event.target !== navbarToggler &&
+    !navbarToggler.contains(event.target)) {
+
+    setTimeout(function () {
       navbarToggler.click();
     }, 10);
   }
@@ -135,8 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateLanguageSelector(currentLang);
 
   loadLanguage(currentLang);
-
-  console.log("DOM yüklendi");
 
   const hasSeenIntro = localStorage.getItem('hasSeenIntro');
   const videoContainer = document.getElementById('video-container');
@@ -187,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dropdown = document.querySelector('.dropdown');
   const dropdownToggle = document.querySelector('.dropdown-toggle');
 
-  const popupOverlay = document.getElementById('popup-overlay');
+  const popupOverlay = document.getElementById('form-popup-overlay');
   const closePopupBtn = document.getElementById('close-popup');
   const forms = document.querySelectorAll('.popup-form');
 

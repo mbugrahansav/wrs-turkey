@@ -1265,6 +1265,11 @@ progress {
     width: 100%;
   }
 
+  .custom-col-md-12 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+
   .offset-md-0 {
     margin-left: 0;
   }
@@ -4358,6 +4363,10 @@ fieldset:disabled .btn {
   color: var(--bs-navbar-brand-hover-color);
 }
 
+#landing .navbar-dark {
+  height: 9vh !important;
+}
+
 .navbar-dark {
   background: linear-gradient(to right,
       rgba(29, 66, 95, 1) 0%,
@@ -4366,12 +4375,6 @@ fieldset:disabled .btn {
       rgba(29, 66, 95, 0.4) 80%,
       rgba(29, 66, 95, 0) 100%);
   backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.navbar-dark .wrs-turkey-logo {
-  background-image: url("../assets/img/logos/wrs-turkey-white.png");
-  width: 240px;
 }
 
 #video-container {
@@ -4401,7 +4404,8 @@ fieldset:disabled .btn {
   display: inline-block;
   height: 2rem;
   padding: 0.4rem 0.5rem;
-  background: #09354B;
+  border: solid 1px #1C425D;
+  background: #1C425D;
   border-radius: 30px;
 }
 
@@ -4527,6 +4531,10 @@ fieldset:disabled .btn {
   border-radius: 4px;
 }
 
+.language-trigger svg {
+  color: white;
+}
+
 .language-trigger .dropdown-icon {
   width: 12px;
   height: 12px;
@@ -4630,7 +4638,7 @@ fieldset:disabled .btn {
 }
 
 .wrs-turkey-logo {
-  background-image: url("../assets/img/logos/wrs-turkey.png");
+  background-image: url("../assets/img/logos/wrs-turkey-white.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -4669,13 +4677,201 @@ fieldset:disabled .btn {
   transform: scale(1.03);
 }
 
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modern-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: linear-gradient(135deg, #1D425D 0%, #2a5a7a 100%);
+  color: #FFFFFF;
+  padding: 0;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(29, 66, 93, 0.4);
+  border: 2px solid #CAAB7C;
+  z-index: 9999;
+  max-width: 500px;
+  width: 90%;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  overflow: hidden;
+}
+
+.popup-overlay.show .modern-popup {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.success-icon {
+  background: rgba(202, 171, 124, 0.2);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 20px;
+  position: relative;
+  animation: pulse 2s infinite;
+  border: 2px solid #CAAB7C;
+}
+
+.success-icon::before {
+  content: "✓";
+  font-size: 40px;
+  font-weight: bold;
+  color: #1D425D;
+  background: #CAAB7C;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.popup-content {
+  padding: 0 30px 30px;
+  text-align: center;
+}
+
+.popup-title {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #CAAB7C;
+}
+
+.popup-message {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  opacity: 0.95;
+  color: #FFFFFF;
+}
+
+.company-info {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(202, 171, 124, 0.3);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  color: #CAAB7C;
+}
+
+.popup-close-btn {
+  background: #CAAB7C;
+  border: 2px solid #CAAB7C;
+  color: #1D425D;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.popup-close-btn:hover {
+  background: transparent;
+  border-color: #CAAB7C;
+  color: #CAAB7C;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(202, 171, 124, 0.3);
+}
+
+.popup-close-btn:active {
+  transform: translateY(0);
+}
+
+.close-x {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(202, 171, 124, 0.2);
+  border: 1px solid #CAAB7C;
+  color: #CAAB7C;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-x:hover {
+  background: #CAAB7C;
+  color: #1D425D;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+  .modern-popup {
+    width: 95%;
+    margin: 0 10px;
+  }
+
+  .popup-content {
+    padding: 0 20px 20px;
+  }
+
+  .popup-title {
+    font-size: 20px;
+  }
+
+  .popup-message {
+    font-size: 14px;
+  }
+}
+
 .sticky-logo img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
 }
 
-.popup-overlay {
+.form-popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -4688,7 +4884,7 @@ fieldset:disabled .btn {
   align-items: center;
 }
 
-.popup-content {
+.form-popup-content {
   background: white;
   padding: 20px;
   width: 90%;
@@ -13237,7 +13433,7 @@ p {
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.85rem;
-  color: #1C425D;
+  color: white;
   letter-spacing: 0.0625em;
 }
 
@@ -13250,7 +13446,12 @@ p {
   #mainNav {
     height: 9vh;
     border: none;
-    background-color: transparent;
+    background: linear-gradient(to right,
+        rgba(29, 66, 95, 1) 0%,
+        rgba(29, 66, 95, 0.95) 30%,
+        rgba(29, 66, 95, 0.8) 50%,
+        rgba(29, 66, 95, 0.4) 80%,
+        rgba(29, 66, 95, 0) 100%);
     transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
   }
 
@@ -13318,6 +13519,10 @@ p {
     gap: 10rem !important;
   }
 
+  #landing-header {
+    width: 60%;
+  }
+
   #landing-header>h1 {
     font-size: 2.8rem !important;
   }
@@ -13370,10 +13575,6 @@ p {
     font-size: 1.2rem !important;
   }
 
-  /* .features-box {
-    width: 50%;
-  } */
-
   .features-map-image>img {
     width: 75% !important;
   }
@@ -13401,7 +13602,24 @@ p {
   color: white;
 }
 
+.bg {
+  background-image: url(../assets/img/background/wrs-turkey-bg-2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
 /* mediascreens */
+
+@media (min-width: 992px) {
+  .card-container {
+    width: 25%;
+  }
+}
 
 @media (max-width: 1400px) {
   #landing .wrs-turkey-logo {
@@ -13442,15 +13660,6 @@ p {
 
 }
 
-@media (max-width: 1120px) {
-  .container {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-}
-
 @media (max-width: 1100px) {
 
   #mainNav .navbar-nav .nav-item .nav-link {
@@ -13467,6 +13676,10 @@ p {
 }
 
 @media (max-width: 980px) {
+
+  .sticky-logo {
+    width: 8rem !important;
+  }
 
   #mainNav {
     height: 8vh;
@@ -13504,16 +13717,54 @@ p {
   .features-map-image>img {
     width: 95% !important;
   }
+
+  .contact-info-heading {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    font-size: 0.7rem;
+  }
+
+  .contact-form-button {
+    margin-top: 0.5rem;
+  }
+
+  .about-container {
+    padding: 1rem !important;
+  }
+
+  .about-container>ul>li {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 780px) {
+
+  .sticky-logo {
+    width: 6.5rem !important;
+    padding: 6px 6px !important;
+  }
+
+  .bg {
+    background-image: url(../assets/img/background/wrs-turkey-bg-mobile.jpg) !important;
+  }
+
   .landing {
     background-image: url(../assets/img/background/wrs-turkey-bg-mobile.jpg) !important;
     justify-content: center;
   }
 
+  #landing-header {
+    width: 100% !important;
+    text-align: center;
+  }
+
   .landing-container {
     gap: 25rem !important;
+    margin-left: 4vw !important;
+    margin-right: 4vw !important;
   }
 
   .landing-buttons {
@@ -13528,6 +13779,33 @@ p {
 
   .page-section {
     padding-top: 9vh !important;
+  }
+
+  .about-container {
+    padding: 0.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .management-cards-container {
+    gap: 1rem;
+  }
+
+  .btn-xxl {
+    font-size: 0.9rem !important;
+    min-width: 17rem !important;
+  }
+}
+
+@media (max-width: 540px) {
+
+  .sticky-logo {
+    width: 5.5rem !important;
+    padding: 4px 7px !important;
+  }
+
+  #landing-header>h1 {
+    font-size: 1.5rem !important;
   }
 }
 
@@ -13654,7 +13932,7 @@ p {
 
 .branch-link {
   display: block;
-  min-height: 5rem;
+  min-height: 6rem;
   padding: 12px 15px;
   margin-bottom: 15px;
   color: #444;
@@ -13760,10 +14038,8 @@ p {
   font-weight: 600;
 }
 
-@media (min-width: 992px) {
-  .contact-info-container {
-    margin-top: -3.5rem;
-  }
+.contact-info-container {
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
 }
 
 .contact-info {
@@ -13771,33 +14047,7 @@ p {
 }
 
 .contact-form-button {
-  margin-top: 1.5rem;
-}
-
-@media (max-width: 980px) {
-
-  .contact-info-heading {
-    font-size: 1rem;
-  }
-
-  .contact-info {
-    font-size: 0.7rem;
-  }
-
-  .contact-form-button {
-    margin-top: 0.5rem;
-  }
-
-  .about-container {
-    margin: 0 !important;
-    max-width: 100% !important;
-    padding: 1rem;
-  }
-
-  .about-container>ul>li {
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-  }
+  margin-top: 1rem;
 }
 
 header.masthead {
@@ -14226,7 +14476,7 @@ section#contact .section-heading {
 }
 
 section#contact form#contactForm .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 section#contact form#contactForm .form-group input.form-control {
@@ -14356,8 +14606,12 @@ section#contact form#contactForm :-ms-input-placeholder {
   margin: 20px auto;
 }
 
+.management-cards-container {
+  justify-content: center;
+  text-align: center;
+}
+
 .integration-card {
-  background-color: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -14365,6 +14619,18 @@ section#contact form#contactForm :-ms-input-placeholder {
   height: 100%;
   position: relative;
   z-index: 1;
+}
+
+.integration-card-bg-1 {
+  background-color: #234a67bf;
+}
+
+.integration-card-bg-2 {
+  background-color: #1c425deb;
+}
+
+.integration-card-bg-3 {
+  background-color: #1c425deb;
 }
 
 .integration-card:hover {
@@ -14415,12 +14681,12 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: var(--dark-color);
+  color: white;
 }
 
 .integration-card p {
   text-align: center;
-  color: #666;
+  color: #cacaca;
   padding: 0 25px 20px;
   margin-bottom: 0;
 }
@@ -14454,10 +14720,4 @@ section#contact form#contactForm :-ms-input-placeholder {
   height: 100%;
   background: linear-gradient(135deg, rgba(201, 168, 117, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
   z-index: -1;
-}
-
-@media (min-width: 992px) {
-  .card-container {
-    width: 25%;
-  }
 }

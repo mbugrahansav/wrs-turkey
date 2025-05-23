@@ -4379,23 +4379,37 @@ fieldset:disabled .btn {
 
 #video-container {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  inset: 0;
+  background: #EFF3F5;
   z-index: 9999;
 }
 
-#video-container video {
+#video-container>video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #video-container.fade-out {
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
   pointer-events: none;
+}
+
+#skip-intro {
+  position: absolute;
+  bottom: 1vw;
+  right: 2vw;
+  padding: 7px 25px;
+  font-size: 14px;
+  background-color: #1d425dab;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10000;
 }
 
 .dropdown {
@@ -14046,6 +14060,11 @@ p {
   font-size: 0.9rem;
 }
 
+.contact-label {
+  color: white;
+  margin-bottom: 0.3rem;
+}
+
 .contact-form-button {
   margin-top: 1rem;
 }
@@ -14488,7 +14507,7 @@ section#contact form#contactForm .form-group-textarea {
 }
 
 section#contact form#contactForm .form-group-textarea textarea {
-  height: 100%;
+  height: 89%;
   min-height: 10rem;
 }
 

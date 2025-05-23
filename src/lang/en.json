@@ -1,4 +1,5 @@
 {
+  "skip_btn": "Skip",
   "nav_management": "Car Rental Management",
   "nav_features": "Features",
   "nav_locations": "Locations",
@@ -36,15 +37,17 @@
   "about_list_3": "As of <span class='highlight'>August 2019</span>, Ziraat Filo Management and Mobility Solutions Inc. has been operating under the umbrella of Ziraat GSYO. Today, ZiraatFİLO serves its customers through <span class='highlight'>14 branches in 8 cities</span> and continues its efforts to expand its service area and enhance customer satisfaction.",
   "about_list_4": "As <span class='highlight'>Turkey’s first domestic daily car rental brand</span>, ZiraatFİLO differentiates itself in the car rental sector with its friendly service approach, accessible pricing policy, strong vehicle fleet, and superior service quality.",
   "contact_heading": "CONTACT US",
-  "form_name": "Full Name *",
-  "form_email": "Email *",
-  "form_phone": "Phone *",
-  "form_message": "Your Message *",
+  "form_fullname": "Full Name",
+  "form_email": "Email",
+  "form_phone": "Phone",
+  "form_message": "Your Message",
+  "form_submit_lowercase": "Submit",
   "form_submit": "SUBMIT",
+
   "popup_message_thanks": "Thank you for contacting ZiraatFILO, Turkey's Leading Car Rental Company!",
   "popup_message_asap": "Our expert team will get back to you as soon as possible.",
-  "popup_message_wrs": "WRS TÜRKİYE",
-  "popup_message_corp": "KURUMSAL HİZMETLER",
+  "popup_message_wrs": "WRS TURKEY",
+  "popup_message_corp": "CORPORATION SERVICES",
   "contact_info_heading": "Contact Information",
   "contact_company": "Company Name: WRS Turkey Turizm A.Ş",
   "contact_address": "Address: Bulvar 216, A Block, No:4, Apt. 18, Gelincik Street, Barbaros Neighborhood, Atasehir, ISTANBUL, TURKEY",
@@ -60,7 +63,6 @@
   "form_broker_yetkili_telefon": "Contact Person Phone",
   "form_broker_gsm": "Mobile Phone",
   "form_broker_aciklama": "Description",
-  "form_broker_submit": "Submit",
   
   "form_subagency_title": "Sub-Agency System Request Form",
   "form_subagency_acente_adi": "Agency Name",
@@ -73,7 +75,6 @@
   "form_subagency_yetkili_telefon": "Contact Person Phone",
   "form_subagency_gsm": "Mobile Phone",
   "form_subagency_aciklama": "Description",
-  "form_subagency_submit": "Submit",
   
   "form_fleet_title": "Fleet Request Form",
   "form_fleet_firma_adi": "Company Name",
@@ -88,5 +89,10 @@
   "form_fleet_yetkili_telefon": "Contact Person Phone",
   "form_fleet_gsm": "Mobile Phone",
   "form_fleet_aciklama": "Description",
-  "form_fleet_submit": "Submit"
+
+  "form_rent_title": "Rent a Car",
+  "form_rent_fullname": "Full Name",
+  "form_rent_email": "Email",
+  "form_rent_phone": "Phone",
+  "form_rent_message": "Your Message"
 }

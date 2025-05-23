@@ -1,7 +1,9 @@
 function checkForSuccessHash() {
   if (window.location.hash === "#form-success") {
+    const skipButton = document.querySelector('#skip-intro')
     const managementButton = document.querySelector('#btn-management');
-    if (managementButton) {
+    if (skipButton && managementButton) {
+      skipButton.click();
       managementButton.click();
     }
 
@@ -183,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLanguage(currentLang);
 
-  const hasSeenIntro = localStorage.getItem('hasSeenIntro');
+  /* const hasSeenIntro = localStorage.getItem('hasSeenIntro');
   const videoContainer = document.getElementById('video-container');
   const video = document.getElementById('intro-video');
   const landing = document.getElementById('landing');
@@ -209,7 +211,33 @@ document.addEventListener('DOMContentLoaded', () => {
       enableNavbarShrink();
     });
     document.body.style.overflow = 'hidden';
+  } */
+
+  const videoContainer = document.getElementById('video-container');
+  const video = document.getElementById('intro-video');
+  const landing = document.getElementById('landing');
+
+  function showPage() {
+    videoContainer.classList.add('fade-out');
+    setTimeout(() => {
+      videoContainer.style.display = 'none';
+      landing.style.display = 'block';
+      document.body.style.overflow = 'auto';
+    }, 1000);
   }
+
+  video.addEventListener('ended', () => {
+    showPage();
+    enableNavbarShrink();
+  });
+
+  document.body.style.overflow = 'hidden';
+
+  document.getElementById('skip-intro').addEventListener('click', () => {
+    video.pause();
+    showPage();
+    enableNavbarShrink();
+  });
 
   document.getElementById('btn-management').addEventListener('click', function (e) {
     e.preventDefault();
@@ -285,21 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
         form.classList.add('d-none');
       });
     }
-  });
-
-  const input = document.querySelector("#phone");
-  if (!input) return;
-
-  const iti = window.intlTelInput(input, {
-    initialCountry: "auto",
-    geoIpLookup: callback => {
-      fetch('https://ipapi.co/json')
-        .then(res => res.json())
-        .then(data => callback(data.country_code))
-        .catch(() => callback("us"));
-    },
-    separateDialCode: true,
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
   });
 
   function navbarShrink() {

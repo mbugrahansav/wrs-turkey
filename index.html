@@ -24,8 +24,9 @@
 
 <body>
 
-  <div id="video-container" style="position: fixed; inset: 0; background: black; z-index: 9999;">
-    <video autoplay="" id="intro-video" muted="" playsinline="" style="width: 100%; height: 100%; object-fit: cover;">
+  <div id="video-container">
+    <button id="skip-intro" data-i18n="skip_btn"></button>
+    <video autoplay="" id="intro-video" muted="" playsinline="">
       <source src="./src/assets/video/wrs-turkey-packshot.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -120,7 +121,7 @@
                 <a href="#" class="dropdown-item" data-form="broker-form" data-i18n="form_broker"></a>
                 <a href="#" class="dropdown-item" data-form="subagency-form" data-i18n="form_sub_agency"></a>
                 <a href="#" class="dropdown-item" data-form="fleet-form" data-i18n="form_fill_fleet"></a>
-                <a href="#" class="dropdown-item" data-form="feedback-form" data-i18n="form_fill_rent"></a>
+                <a href="#" class="dropdown-item" data-form="rent-form" data-i18n="form_fill_rent"></a>
               </div>
             </div>
             <div class="language-selector">
@@ -240,7 +241,7 @@
                   </div>
                   <div class="col-12">
                     <button class="btn btn-primary btn-submit d-block ml-auto" type="submit"
-                      data-i18n="form_broker_submit"></button>
+                      data-i18n="form"></but_lowercaseton>
                   </div>
                 </div>
               </form>
@@ -297,7 +298,7 @@
                   </div>
                   <div class="col-12">
                     <button class="btn btn-primary btn-submit d-block ml-auto" type="submit"
-                      data-i18n="form_subagency_submit"></button>
+                      data-i18n="form_submit_lowercase"></button>
                   </div>
                 </div>
               </form>
@@ -363,7 +364,36 @@
                   </div>
                   <div class="col-12">
                     <button class="btn btn-primary btn-submit d-block ml-auto" type="submit"
-                      data-i18n="form_fleet_submit"></button>
+                      data-i18n="form_submit_lowercase"></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div id="rent-form" class="popup-form d-none">
+              <h4 data-i18n="form_rent_title"></h4>
+              <form action="https://formsubmit.co/melikbsav@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="http://127.0.0.1:8080/#form-success">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="fullame" class="form-label" data-i18n="form_rent_fullname"></label>
+                    <input class="form-control" type="text" name="ad_soyad" id="fullname" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label" data-i18n="form_rent_email"></label>
+                    <input class="form-control" type="email" name="email" id="email" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label" data-i18n="form_rent_phone"></label>
+                    <input class="form-control" type="tel" name="telefon" id="phone" required>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <label for="messageText" class="form-label" data-i18n="form_rent_message"></label>
+                    <textarea class="form-control" name="aciklama" id="messageText" rows="4"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary btn-submit d-block ml-auto" type="submit"
+                      data-i18n="form_submit_lowercase"></button>
                   </div>
                 </div>
               </form>
@@ -525,22 +555,25 @@
               <div class="row align-items-stretch mb-4">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <input class="form-control" id="name" name="ad_soyad" placeholder="Ad Soyad *" required=""
+                    <label class="contact-label" for="fullName" class="form-label" data-i18n="form_fullname"></label>
+                    <input class="form-control" id="fullName" name="ad_soyad" required=""
                       type="text">
                     </input>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="email" name="email" placeholder="Email *" required=""
+                    <label class="contact-label" for="email" class="form-label" data-i18n="form_email"></label>
+                    <input class="form-control" id="email" name="email" required=""
                       type="email" />
                   </div>
                   <div class="form-group mb-0">
-                    <input class="form-control" name="telefon" placeholder="Telefon *" required="" type="tel" />
+                    <label class="contact-label" for="phone" class="form-label" data-i18n="form_phone"></label>
+                    <input class="form-control" name="phone" required="" type="tel" />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group form-group-textarea mb-md-0">
-                    <textarea class="form-control" id="message" name="mesaj" placeholder="Mesajınız *"
-                      required=""></textarea>
+                    <label class="contact-label" for="messageText" class="form-label" data-i18n="form_message"></label>
+                    <textarea class="form-control" id="messageText" name="mesaj" required=""></textarea>
                   </div>
                 </div>
                 <div class="contact-form-button text-end">

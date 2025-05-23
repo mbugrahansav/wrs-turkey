@@ -1,4 +1,5 @@
 {
+  "skip_btn": "Geç",
   "nav_management": "Araç Kiralama Yönetimi",
   "nav_features": "Özelliklerimiz",
   "nav_locations": "Şubelerimiz",
@@ -36,15 +37,16 @@
   "about_list_3": "Ziraat Filo Yönetimi ve Mobilite Çözümler A.Ş, <span class='highlight'>2019 Ağustos</span> itibarıyla Ziraat GSYO çatısı altında faaliyet göstermektedir. Şu anda <span class='highlight'>8 ilde 14 şubesi</span> ile hizmet veren ZiraatFİLO, hizmet alanını genişletmek ve müşteri memnuniyetini artırmak için çalışmalarını sürdürmektedir.",
   "about_list_4": "Türkiye'nin <span class='highlight'>ilk yerli günlük araç kiralama markası</span> olan ZiraatFİLO, güler yüzlü hizmet anlayışı, ulaşılabilir fiyat politikası, güçlü araç filosu ve üstün hizmet kalitesi ile araç kiralama sektöründe kendine özgü bir fark yaratmaktadır.",
   "contact_heading": "BİZE ULAŞIN",
-  "form_name": "Ad Soyad *",
-  "form_email": "Email *",
-  "form_phone": "Telefon *",
-  "form_message": "Mesajınız *",
+  "form_fullname": "Ad Soyad",
+  "form_email": "Email",
+  "form_phone": "Telefon",
+  "form_message": "Mesajınız",
+  "form_submit_lowercase": "Gönder",
   "form_submit": "GÖNDER",
   "popup_message_thanks": "Türkiye'nin En Güçlü Araç Kiralama Şirketi ZiraatFİLO ile İletişime Geçtiğiniz İçin Teşekkür Ederiz!",
   "popup_message_asap": "Uzman Ekibimiz En Kısa Sürede Size Dönüş Yapacaktır.",
-  "popup_message_wrs": "WRS TURKEY",
-  "popup_message_corp": "CORPORATION SERVICES",
+  "popup_message_wrs": "WRS TÜRKİYE",
+  "popup_message_corp": "KURUMSAL HİZMETLER",
   "contact_info_heading": "İletişim Bilgileri",
   "contact_company": "Şirket Ünvanı: WRS Turkey Turizm A.Ş",
   "contact_address": "Adres: Barbaros Mah. Gelincik Sok. A Blok, Bulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL",
@@ -60,7 +62,6 @@
   "form_broker_yetkili_telefon": "Yetkili Telefon",
   "form_broker_gsm": "GSM",
   "form_broker_aciklama": "Açıklama",
-  "form_broker_submit": "Gönder",
   
   "form_subagency_title": "Alt Acenta Sistem Talep Formu",
   "form_subagency_acente_adi": "Acente Adı",
@@ -73,7 +74,6 @@
   "form_subagency_yetkili_telefon": "Yetkili Telefon",
   "form_subagency_gsm": "GSM",
   "form_subagency_aciklama": "Açıklama",
-  "form_subagency_submit": "Gönder",
   
   "form_fleet_title": "Filo Talep Formu",
   "form_fleet_firma_adi": "Firma Adı",
@@ -88,5 +88,10 @@
   "form_fleet_yetkili_telefon": "Yetkili Telefon",
   "form_fleet_gsm": "GSM",
   "form_fleet_aciklama": "Açıklama",
-  "form_fleet_submit": "Gönder"
+
+  "form_rent_title": "Araç Kiralama Formu",
+  "form_rent_fullname": "Ad Soyad",
+  "form_rent_email": "Email",
+  "form_rent_phone": "Telefon",
+  "form_rent_message": "Mesajınız"
 }

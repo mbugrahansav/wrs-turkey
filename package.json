@@ -20,5 +20,8 @@
   "homepage": "https://github.com/mbugrahansav/wrs-turkey#readme",
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "overrides": {
+    "braces": "3.0.3"
   }
 }

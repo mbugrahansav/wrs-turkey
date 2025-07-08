@@ -1,47 +1,3 @@
-const video = document.getElementById('intro-video');
-
-const isMobile = window.matchMedia('(max-width: 780px)').matches;
-const source = document.createElement('source');
-source.src = isMobile ? 'src/assets/video/wrs-turkey-packshot-mobile.mp4' : 'src/assets/video/wrs-turkey-packshot.mp4';
-source.type = 'video/mp4';
-
-video.appendChild(source);
-video.load();
-
-const mql = window.matchMedia('(max-width: 780px)');
-function updateVideoSrc(e) {
-  const isMobile = e.matches;
-  const source = document.createElement('source');
-  source.src = isMobile ? 'src/assets/video/wrs-turkey-packshot-mobile.mp4' : 'src/assets/video/wrs-turkey-packshot.mp4';
-  source.type = 'video/mp4';
-
-  video.innerHTML = ''; // önceki source'u temizle
-  video.appendChild(source);
-  video.load();
-}
-
-mql.addEventListener('change', updateVideoSrc); // tarayıcı boyutu değişince
-updateVideoSrc(mql); // ilk başta çağır
-
-
-function checkForSuccessHash() {
-  if (window.location.hash === "#form-success") {
-    const skipButton = document.querySelector('#skip-intro')
-    const managementButton = document.querySelector('#btn-management');
-    if (skipButton && managementButton) {
-      skipButton.click();
-      managementButton.click();
-    }
-
-    setTimeout(() => {
-      showPopup();
-
-      history.replaceState(null, null, ' ');
-    }, 50);
-  }
-}
-
-
 // Popup --------------------------------------------------------------------------
 
 /* function showPopup() {
@@ -74,11 +30,6 @@ function openThankYouPopup() {
     popup.style.display = 'block';
   }
 } */
-
-window.addEventListener('load', checkForSuccessHash);
-window.addEventListener('hashchange', checkForSuccessHash);
-
-
 
 
 
@@ -142,7 +93,7 @@ function updateLanguageSelector(lang) {
 }
 
 function loadLanguage(lang) {
-  fetch(`/src/lang/landing/${lang}.json`)
+  fetch(`/src/lang/car-rental/${lang}.json`)
     .then(res => res.json())
     .then(data => {
       for (const key in data) {
@@ -224,99 +175,6 @@ document.addEventListener('click', function (event) {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  updateLanguageSelector(currentLang);
-
-  loadLanguage(currentLang);
-
-  /* const hasSeenIntro = localStorage.getItem('hasSeenIntro');
-  const videoContainer = document.getElementById('video-container');
-  const video = document.getElementById('intro-video');
-  const landing = document.getElementById('landing');
-
-  function showPage() {
-    videoContainer.classList.add('fade-out');
-    setTimeout(() => {
-      videoContainer.style.display = 'none';
-      landing.style.display = 'block';
-      document.body.style.overflow = 'auto';
-    }, 1000);
-  }
-
-  if (hasSeenIntro) {
-    videoContainer.style.display = 'none';
-    landing.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    enableNavbarShrink();
-  } else {
-    localStorage.setItem('hasSeenIntro', 'true');
-    video.addEventListener('ended', () => {
-      showPage();
-      enableNavbarShrink();
-    });
-    document.body.style.overflow = 'hidden';
-  } */
-
-  const videoContainer = document.getElementById('video-container');
-  const video = document.getElementById('intro-video');
-  const landing = document.getElementById('landing');
-
-  function showPage() {
-    videoContainer.classList.add('fade-out');
-    setTimeout(() => {
-      videoContainer.style.display = 'none';
-      landing.style.display = 'block';
-      document.body.style.overflow = 'auto';
-    }, 1000);
-  }
-
-  video.addEventListener('ended', () => {
-    showPage();
-    enableNavbarShrink();
-  });
-
-  document.body.style.overflow = 'hidden';
-
-  document.getElementById('skip-intro').addEventListener('click', () => {
-    video.pause();
-    showPage();
-    enableNavbarShrink();
-  });
-
-
-
-
-
-  /* document.getElementById('btn-management').addEventListener('click', function (e) {
-    e.preventDefault();
-    document.getElementById('landing').style.display = 'none';
-    document.getElementById('page-top').style.display = 'block';
-    setTimeout(() => {
-      window.location.hash = 'management';
-    }, 50);
-  });
-
-  document.getElementById('btn-corp').addEventListener('click', function (e) {
-    e.preventDefault();
-    document.getElementById('landing').style.display = 'none';
-    document.getElementById('page-top').style.display = 'block';
-    setTimeout(() => {
-      window.location.hash = 'contact';
-    }, 50);
-  }); */
-
-  document.getElementById('btn-corp').addEventListener('click', () => {
-    window.location.href = '/wrs-corp/';
-  });
-
-  document.getElementById('btn-management').addEventListener('click', () => {
-    window.location.href = '/car-rental/';
-  });
-
-
-
-
-
 
   const dropdown = document.querySelector('.dropdown');
   const dropdownToggle = document.querySelector('.dropdown-toggle');

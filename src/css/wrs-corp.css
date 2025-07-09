@@ -4417,7 +4417,7 @@ fieldset:disabled .btn {
   position: relative;
   display: inline-block;
   height: 2rem;
-  padding: 0.4rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   border: solid 1px #1C425D;
   background: #1C425D;
   border-radius: 30px;
@@ -4426,7 +4426,7 @@ fieldset:disabled .btn {
 @media (max-width: 980px) {
 
   .wrs-turkey-logo {
-    background-image: url("../assets/img/logos/wrs-turkey-white.png") !important;
+    background-image: url("../assets/img/logos/wrs-turkey-gold.png") !important;
   }
 
   .dropdown {
@@ -4436,10 +4436,6 @@ fieldset:disabled .btn {
   .dropdown-toggle {
     color: black !important;
   }
-}
-
-#mainNav.navbar-shrink .dropdown {
-  background: white;
 }
 
 .dropdown-toggle {
@@ -4452,29 +4448,19 @@ fieldset:disabled .btn {
   transition: color 0.2s;
   color: white;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.75rem;
-}
-
-#mainNav.navbar-shrink .dropdown-toggle {
-  color: #1C425D;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
 }
 
 .dropdown:hover {
   background: transparent;
+  color: #1D425D;
   border: solid 1px #1C425D;
 }
 
-#mainNav.navbar-shrink .dropdown:hover {
-  background: transparent;
-  border: solid 1px white;
-}
-
 .dropdown:hover .dropdown-toggle {
-  color: #CAAC7C;
-}
-
-#mainNav.navbar-shrink .dropdown:hover .dropdown-toggle {
-  color: #CAAC7C;
+  color: #1D425D;
 }
 
 .dropdown-icon {
@@ -4531,7 +4517,7 @@ fieldset:disabled .btn {
   display: flex;
   align-items: center;
   background-color: transparent;
-  border: 0.1rem solid #e0e0e0;
+  border: 0.1rem solid #1D425D;
   border-radius: 30px;
   padding: 5px 8px;
   cursor: pointer;
@@ -4546,7 +4532,7 @@ fieldset:disabled .btn {
 }
 
 .language-trigger svg {
-  color: white;
+  color: #1D425D;
 }
 
 .language-trigger .dropdown-icon {
@@ -4651,7 +4637,7 @@ fieldset:disabled .btn {
 }
 
 .wrs-turkey-logo {
-  background-image: url("../assets/img/logos/wrs-turkey-white.png");
+  background-image: url("../assets/img/logos/wrs-turkey-gold.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -13445,13 +13431,13 @@ p {
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.85rem;
-  color: white;
+  color: #1D425D;
   letter-spacing: 0.0625em;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active,
 #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #CAAC7C !important;
+  color: white !important;
 }
 
 @media (min-width: 992px) {
@@ -13459,11 +13445,11 @@ p {
     height: 9vh;
     border: none;
     background: linear-gradient(to right,
-        rgba(29, 66, 95, 1) 0%,
-        rgba(29, 66, 95, 0.95) 30%,
-        rgba(29, 66, 95, 0.8) 50%,
-        rgba(29, 66, 95, 0.4) 80%,
-        rgba(29, 66, 95, 0) 100%);
+        rgba(202, 171, 124, 1) 0%,
+        rgba(220, 200, 170, 1) 85%,
+        rgba(235, 220, 190, 1) 90%,
+        rgba(245, 235, 215, 1) 95%,
+        rgba(255, 255, 255, 1) 100%);
     transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
   }
 
@@ -13484,15 +13470,7 @@ p {
   }
 
   #mainNav.navbar-shrink .wrs-turkey-logo {
-    background-image: url('../assets/img/logos/wrs-turkey-white.png');
-  }
-
-  #mainNav.navbar-shrink .language-trigger svg {
-    color: white;
-  }
-
-  #mainNav.navbar-shrink .language-trigger {
-    border-color: white;
+    background-image: url('../assets/img/logos/wrs-turkey-gold.png');
   }
 
   .navbar-dark .language-trigger {
@@ -13818,6 +13796,144 @@ p {
 
   #landing-header>h1 {
     font-size: 1.5rem !important;
+  }
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background: #FFFFFF;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(29, 66, 93, 0.15);
+  border: 2px solid rgba(202, 171, 124, 0.2);
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: all 0.6s ease;
+}
+
+.card.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card:nth-child(1).animate {
+  animation: bounceInLeft 0.8s ease-out;
+}
+
+.card:nth-child(2).animate {
+  animation: bounceInUp 0.8s ease-out 0.2s both;
+}
+
+.card:nth-child(3).animate {
+  animation: bounceInRight 0.8s ease-out 0.4s both;
+}
+
+.card ul {
+  list-style: none;
+}
+
+.card li {
+  color: #1D425D;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  border-bottom: 2px solid rgba(202, 171, 124, 0.3);
+  border-radius: 8px;
+  position: relative;
+}
+
+.card li::before {
+  content: "▸";
+  color: #CAAB7C;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.card li::before {
+  content: "▸";
+  color: #CAAB7C;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.card li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.3) rotate(-10deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(10px) scale(1.05) rotate(2deg);
+  }
+
+  70% {
+    transform: translateX(-5px) scale(0.98) rotate(-1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.3) rotate(5deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.08) rotate(-2deg);
+  }
+
+  70% {
+    transform: translateY(5px) scale(0.95) rotate(1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.3) rotate(10deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-10px) scale(1.05) rotate(-2deg);
+  }
+
+  70% {
+    transform: translateX(5px) scale(0.98) rotate(1deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
   }
 }
 

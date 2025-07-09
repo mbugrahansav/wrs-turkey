@@ -33,6 +33,23 @@ function openThankYouPopup() {
 
 
 
+  // Intersection Observer ile scroll animasyonu
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Tüm cardları observe et
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+
 
 
 // Lang --------------------------------------------------------------------------

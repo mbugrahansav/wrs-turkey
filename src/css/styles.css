@@ -13533,7 +13533,7 @@ p {
   }
 
   #landing-header {
-    width: 60%;
+    width: 80%;
   }
 
   #landing-header>h1 {
@@ -13772,6 +13772,7 @@ p {
   #landing-header {
     width: 100% !important;
     text-align: center;
+    margin-top: 2rem;
   }
 
   .landing-container {
@@ -13815,10 +13816,6 @@ p {
   .sticky-logo {
     width: 5.5rem !important;
     padding: 4px 7px !important;
-  }
-
-  #landing-header>h1 {
-    font-size: 1.5rem !important;
   }
 }
 

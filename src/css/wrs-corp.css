@@ -56,6 +56,7 @@
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 248, 249, 250;
   --bs-dark-rgb: 33, 37, 41;
+  --bs-darkblue-rgb: 29, 66, 93;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -4653,29 +4654,6 @@ fieldset:disabled .btn {
   max-width: 100%;
 }
 
-.sticky-logo {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  background-color: transparent;
-  padding: 6px 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 10rem;
-  height: auto;
-  cursor: pointer;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.sticky-logo:hover {
-  opacity: 0.95;
-  transform: scale(1.03);
-}
-
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -4862,12 +4840,6 @@ fieldset:disabled .btn {
   .popup-message {
     font-size: 14px;
   }
-}
-
-.sticky-logo img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
 }
 
 .form-popup-overlay {
@@ -9853,6 +9825,11 @@ fieldset:disabled .btn {
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
 
+.bg-darkblue {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-darkblue-rgb), var(--bs-bg-opacity)) !important;
+}
+
 .bg-black {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
@@ -13403,10 +13380,6 @@ p {
   border-radius: 100%;
 }
 
-#mainNav {
-  background-color: #212529;
-}
-
 #mainNav .navbar-toggler {
   color: white;
   padding: 0.75rem;
@@ -13444,13 +13417,8 @@ p {
   #mainNav {
     height: 9vh;
     border: none;
-    background: linear-gradient(to right,
-        rgba(202, 171, 124, 1) 0%,
-        rgba(220, 200, 170, 1) 85%,
-        rgba(235, 220, 190, 1) 90%,
-        rgba(245, 235, 215, 1) 95%,
-        rgba(255, 255, 255, 1) 100%);
-    transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    background: #CAAB7C;
+    transition: all 0.4s;
   }
 
   #mainNav .navbar-brand {
@@ -13465,7 +13433,6 @@ p {
 
   #mainNav.navbar-shrink {
     height: 7vh;
-    background-color: #09354B;
     transition: all 0.4s;
   }
 
@@ -13475,10 +13442,6 @@ p {
 
   .navbar-dark .language-trigger {
     border-color: white;
-  }
-
-  #mainNav.navbar-shrink .nav-link {
-    color: white !important;
   }
 
   #mainNav.navbar-shrink .navbar-brand {
@@ -13667,13 +13630,8 @@ p {
 
 @media (max-width: 980px) {
 
-  .sticky-logo {
-    width: 8rem !important;
-  }
-
   #mainNav {
     height: 8vh;
-    background-color: #09354B;
   }
 
   #mainNav .navbar-nav .nav-item .nav-link {
@@ -13732,11 +13690,6 @@ p {
 
 @media (max-width: 780px) {
 
-  .sticky-logo {
-    width: 6.5rem !important;
-    padding: 6px 6px !important;
-  }
-
   .bg {
     background-image: url(../assets/img/background/wrs-turkey-bg-mobile.jpg) !important;
   }
@@ -13788,12 +13741,6 @@ p {
 }
 
 @media (max-width: 540px) {
-
-  .sticky-logo {
-    width: 5.5rem !important;
-    padding: 4px 7px !important;
-  }
-
   #landing-header>h1 {
     font-size: 1.5rem !important;
   }
@@ -13807,7 +13754,6 @@ p {
 .card {
   flex: 1;
   background: #FFFFFF;
-  padding: 35px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(29, 66, 93, 0.15);
   border: 2px solid rgba(202, 171, 124, 0.2);
@@ -13834,6 +13780,8 @@ p {
 }
 
 .card ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -13842,30 +13790,10 @@ p {
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1.6;
-  margin-bottom: 15px;
-  padding: 15px 20px;
+  padding: 10px 11px;
   border-bottom: 2px solid rgba(202, 171, 124, 0.3);
   border-radius: 8px;
   position: relative;
-}
-
-.card li::before {
-  content: "▸";
-  color: #CAAB7C;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.card li::before {
-  content: "▸";
-  color: #CAAB7C;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.card li:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
 }
 
 @keyframes bounceInLeft {

@@ -13464,7 +13464,7 @@ p {
         rgba(29, 66, 95, 0.8) 50%,
         rgba(29, 66, 95, 0.4) 80%,
         rgba(29, 66, 95, 0) 100%);
-    transition: padding 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    transition: all 0.4s;
   }
 
   #mainNav .navbar-brand {

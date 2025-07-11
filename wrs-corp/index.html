@@ -9,7 +9,12 @@
   <meta content="" name="Simgesel Media" />
   <title>WRS Turkey</title>
   <!-- Favicon-->
-  <link href="./src/assets/favicon.ico" rel="icon" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="WRS Turkey" />
+  <link rel="manifest" href="../favicon/site.webmanifest" />
   <!-- Font Awesome 6 CDN (en az bu olmalı) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <!-- Google fonts-->
@@ -24,11 +29,6 @@
 
 <body>
   <div data-bs-offset="70" data-bs-spy="scroll" data-bs-target="#mainNav" id="page-top" tabindex="0">
-    <div class="sticky-logo" id="stickyLogo">
-      <a href="https://ziraatfilo.com.tr/" rel="noopener noreferrer" target="_blank">
-        <img alt="ZiraatFilo logo" src="../src/assets/img/logos/ziraatfilo-logo.png" />
-      </a>
-    </div>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
       <div class="container">
@@ -86,7 +86,7 @@
       </div>
     </nav>
     <!-- Main a -->
-    <section class="page-section" style="min-height: 50vh; background-color: #1D425D;">
+    <section class="page-section bg-drakblue" style="min-height: 50vh">
       <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-12">
           <h2 data-i18n="main_a_title" style="font-style: italic; color: white;"></h2>
@@ -316,7 +316,7 @@
     </section>
 
     <!-- about -->
-    <section class="page-section bg-light" id="features">
+    <section class="page-section bg-light py-5" id="features">
       <div class="container">
         <div class="features-section-title">
           <h2 class="section-heading" data-i18n="about_heading"></h2>
@@ -338,8 +338,10 @@
             </div>
           </div>
         </div>
-        
-        <div class="cards-container">
+      </div>
+    </section>
+    <section class="page-section bg-darkblue min-h-auto py-5">
+      <div class="cards-container">
           <div class="card">
             <ul>
               <li>Kurumsal Konaklama</li>
@@ -363,8 +365,6 @@
               <li>Yurtiçi ve Yurtdışı V.I.P Transfer</li>
             </ul>
           </div>
-        </div>
-      </div>
     </section>
 
     <!-- accommodation -->

@@ -1,7 +1,6 @@
 {
   "nav_about": "Hakkımızda",
-  "nav_corporation": "Kurumsal",
-  "nav_accommodation": "Konaklama",
+  "nav_accommodation": "Kurumsal Konaklama",
   "nav_meetings_events": "Toplantı ve Etkinlikler",
   "nav_security": "Güvenlik",
   "nav_references": "Referanslar",
@@ -36,10 +35,43 @@
   "accommodation_heading": "Kurumsal Konaklama",
   "accommodation_desc": "İş Seyahatlerinizde Hızlı ve Online Çözümler",
   "accommodation_title": "WRS Turkey Kurumsal Konaklama Sistemi",
-  "accommodation_paragraph": "WRS Turkey olarak, kurumsal konaklama hizmetimizi, iş dünyasının dinamik ve sürekli değişen ihtiyaçlarına özel olarak tasarlanmış, hızlı işlem kolaylığı, maliyet etkin ve konfor odaklı konaklama çözümleri bütünü olarak tanımlıyoruz. Amacımız, iş seyahatine çıkan her bir profesyonelin hızlı işlem yapmasını sağlamak ve şirketlerin bu süreçteki operasyonel yükünü en aza indirmektir. WRS Turkey olarak, kurumsal konaklama hizmetimizle sadece bir rezervasyon acentesi olmanın ötesine geçiyoruz. İşletmenizin kurumsal seyahat politikalarına tam uyum sağlayan, çalışanlarınızın verimliliğini artıran ve şirketinizin maliyetlerini optimize eden stratejik bir partner olmayı hedefliyoruz. İş seyahatlerinizde maksimum konfor ve verimlilik için WRS Turkey'in uzmanlığından faydalanın. Sistemimizin Önemli Yönleri için tıklayınız.",
+  "accommodation_list_1": "WRS Turkey olarak, kurumsal konaklama hizmetimizi, iş dünyasının dinamik ve sürekli değişen ihtiyaçlarına özel olarak tasarlanmış, hızlı işlem kolaylığı, maliyet etkin ve konfor odaklı konaklama çözümleri bütünü olarak tanımlıyoruz. Amacımız, iş seyahatine çıkan her bir profesyonelin hızlı işlem yapmasını sağlamak ve şirketlerin bu süreçteki operasyonel yükünü en aza indirmektir.",
+  "accommodation_list_2": "Kurumsal konaklama hizmetimizle sadece bir rezervasyon acentesi olmanın ötesine geçiyoruz. İşletmenizin kurumsal seyahat politikalarına tam uyum sağlayan, çalışanlarınızın verimliliğini artıran ve şirketinizin maliyetlerini optimize eden stratejik bir partner olmayı hedefliyoruz. İş seyahatlerinizde maksimum konfor ve verimlilik için WRS Turkey'in uzmanlığından faydalanın. Sistemimizin Önemli Yönleri için tıklayınız.",
+
+  "interlude_heading": "WRS Corp Kurumsal Konaklama Sisteminin Neden Daha İyi Olduğunu Öğrenin",
+  "interlude_desc": "Size nasıl yardımcı olabileceğimiz hakkında konuşmak, ürünlerimiz ve hizmetlerimiz hakkında bilgi almak için",
+
+  "accommodation_b_desc": "İş Seyahatini Basitleştirmek",
+  "accommodation_b_title": "7/24 Hareket Halindeyken",
+  "accommodation_b_paragraph": "WRS'nin entegre WRS Corp sistemi, iş seyahati yapanların ve seyahat düzenleyenlerin hayatlarını kolaylaştırmaya yardımcı olan mobil uygulamamızı içerir.  İster akıllı telefonda ister tablette olsun, WRS Corp uygulaması zamandan tasarruf sağlayan ve üretkenliği artıran temiz, sezgisel bir arayüz sunar. WRS'yi iş seyahati sağlayıcısı olarak kullanan kuruluşların çalışanları için mevcut olan WRS Corp, şirketinizin seyahat programına dijital bir ağ geçididir ve çok hızlı işlem yapmanızı sağlar.",
   
-  "locations_heading": "HAKKIMIZDA",
-  
+  "interlude_b_heading": "Çalışanlarınızın İş Seyehatlerini Basitleştirin",
+  "interlude_b_desc": "Onlara İhtiyaç Duydukları Dijital Araçları ve Kesintisiz Bir Kullanıcı Deneyimini Sunun",
+
+  "meetings_events_heading": "Toplantı ve Etkinlikler",
+  "meetings_events_desc": "Markanızı Öne Çıkaran Deneyimler",
+  "meetings_events_title": "WRS Turkey Kurumsal Etkinlik Sistemi",
+  "meetings_events_list_1": "WRS Turkey olarak kurumsal etkinlik hizmetimizi, şirketlerin hedefleri doğrultusunda, unutulmaz ve etkili deneyimler yaratan, uçtan uca stratejik etkinlik yönetimi çözümleri bütünü olarak tanımlıyoruz. Markanızın mesajını güçlendiren, katılımcılarınızla bağ kuran ve kurumsal hedeflerinize ulaşmanızı sağlayan etkinlikler tasarlıyor ve hayata geçiriyoruz.",
+  "meetings_events_list_2": "Biz sadece bir organizasyon firması değiliz; markanızın ruhunu anlayan, vizyonunu yansıtan ve her detayı titizlikle planlayan stratejik bir etkinlik ortağıyız. İster küçük bir ekip toplantısı, ister uluslararası bir konferans olsun, her etkinliği markanızın bir uzantısı olarak görüyor ve bu bilinçle hareket ediyoruz.",
+  "meetings_events_list_3": "WRS Turkey olarak kurumsal etkinlik hizmetimizle yalnızca bir dizi görevi yerine getirmekle kalmıyor, aynı zamanda markanızın değerini artıran, hedeflerinize ulaşmanıza yardımcı olan ve katılımcılarınız üzerinde kalıcı bir etki bırakan benzersiz deneyimler yaratıyoruz. İşletmenizin bir sonraki etkinliği için güvenilir ve yaratıcı bir ortağa ihtiyacınız varsa, WRS Turkey yanınızda. Kurumsal Etkinlikler Hizmetimizin Önemli Yönleri için tıklayınız.",
+
+  "meetings_events_b_desc": "Hedeflerinize Odaklanan Etkin Toplantı Çözümleri",
+  "meetings_events_b_title": "Stratejik Toplantı Yönetiminin (STY) önemi nedir?",
+  "meetings_events_b_list_1": "WRS Turkey olarak Stratejik Toplantı Yönetimi (STY) hizmetimizi, şirketlerin iş hedeflerine ulaşmalarını destekleyen, verimliliği artıran ve katılımcılar için anlamlı deneyimler yaratan, kapsamlı ve hedefe yönelik toplantı planlama ve uygulama süreci olarak tanımlıyoruz. Bu hizmet, sadece bir toplantı organize etmekten çok daha fazlasını ifade eder; her toplantının stratejik bir amaca hizmet etmesini ve belirlenen kurumsal hedeflere katkıda bulunmasını sağlarız.",
+  "meetings_events_b_list_2": "Toplantılarınızı, sıradan bir buluşma olmaktan çıkarıp, karar alma süreçlerini hızlandıran, iş birliğini güçlendiren ve somut sonuçlar üreten bir platforma dönüştürüyoruz. WRS Turkey olarak Stratejik Toplantı Yönetimi ( STY ) hizmetimizle, toplantılarınızı sadece bir araya gelme etkinliği olmaktan çıkarıp, şirketinizin büyüme ve gelişimine doğrudan katkıda bulunan stratejik bir yatırım haline getiriyoruz. İşletmenizin bir sonraki toplantısı için verimlilik, etki ve mükemmellik arıyorsanız, WRS Turkey sizin için doğru ortaktır. STY’nin Önemli Yönleri için tıklayınız.",
+
+  "interlude_c_heading": "Toplantılara ve Etkinliklere Sınırsız Bir Boyut Getirmek",
+  "interlude_c_desc": "Bilgi Edinmek ve Hedef Etkinlik Planlaması İçin Bizimle İletişime Geçin.",
+
+  "security_heading": "International SOS",
+  "security_desc": "Önceliğimiz Güvenlik ve Sağlık",
+  "security_title": "WRS Turkey Kurumsal Konaklama ve Uçuş Güvenliği",
+  "security_list_1": "WRS Turkey olarak, kurumsal konaklama ve uçuş güvenliğini, iş seyahatlerinizde çalışanlarınızın sağlığı, emniyeti ve huzuru için en üst düzeyde alınan önlemlerin ve uygulanan stratejilerin bütünü olarak tanımlıyoruz. Bu, sadece standart güvenlik protokollerine uymakla kalmayıp, proaktif bir yaklaşımla olası riskleri öngörmek, minimize etmek ve acil durumlara etkin bir şekilde yanıt vermek anlamına gelir.",
+  "security_list_2": "Bizim için güvenli bir seyahat, çalışanlarınızın gittikleri yerde güvende hissetmeleri, beklenmedik durumlar karşısında korunmaları ve seyahatlerinin her anında desteklendiğini bilmeleridir. Bu anlayışla, hem karadaki konaklamalarınızda hem de havadaki uçuşlarınızda en yüksek güvenlik standartlarını sağlamayı taahhüt ediyoruz.",
+  "security_list_3": "WRS Turkey olarak sunduğumuz kurumsal konaklama hizmetlerinde güvenlik, seçim kriterlerimizin temelini oluşturur.",
+  "security_list_4": "WRS Turkey olarak, kurumsal konaklama ve uçuş güvenliği hizmetimizle, şirketinizin çalışanlarının dünya genelindeki seyahatlerinde minimum risk, maksimum konfor ve tam destek almasını sağlıyoruz. Amacımız, iş seyahatlerinizin her aşamasında size ve çalışanlarınıza güven ve huzur sunmaktır.",
+  "security_list_5": "WRS Turkey International SOS hizmet detayları için tıklayınız.",
+
   "contact_heading": "BİZE ULAŞIN",
   "form_fullname": "Ad Soyad",
   "form_email": "Email",
@@ -51,12 +83,25 @@
   "popup_message_asap": "Uzman Ekibimiz Size En Kısa Sürede Dönüş Yapacaktır.",
   "popup_message_wrs": "WRS TÜRKİYE",
   "popup_message_corp": "KURUMSAL HİZMETLER",
+
   "contact_info_heading": "İletişim Bilgileri",
   "contact_company": "Şirket Ünvanı: WRS Turkey Turizm A.Ş",
-  "contact_address": "Adres: Barbaros Mah. Gelincik Sok. A Blok, Bulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL",
+  "contact_address": "Adres: Barbaros Mah. Gelincik Sok. A Blok\nBulvar 216, No:4 İç Kapı No:18 Ataşehir-İSTANBUL",
   "contact_mail": "Email: carrental@wrsturkey.com",
   "contact_tel": "Telefon: +90 850 840 07 99",
   "footer": "Copyright © Simgesel Media 2025",
+
+  "solutions_heading": "WRS Turkey Çözümler",
+  "solution_1": "Kurumsal Konaklama",
+  "solution_2": "Toplantı ve Etkinlikler",
+  "solution_3": "Güvenlik",
+
+  "our_corp_heading": "Şirketimiz",
+  "about_corp": "WRS Turkey Hakkında",
+
+  "support_heading": "Destek",
+  "emergency_tel": "Acil Numara",
+  "wrs_Corp": "WRS Corp",
 
   "form_broker_title": "Broker Sistem Talep Formu",
   "form_broker_firma_adi": "Firma Adı",

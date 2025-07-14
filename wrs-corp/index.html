@@ -43,7 +43,6 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" data-i18n="nav_about" href="#about"></a></li>
-            <li class="nav-item"><a class="nav-link" data-i18n="nav_corporation" href="#corporation"></a></li>
             <li class="nav-item"><a class="nav-link" data-i18n="nav_accommodation" href="#accommodation"></a></li>
             <li class="nav-item"><a class="nav-link" data-i18n="nav_meetings_events" href="#meetingsandevents"></a></li>
             <li class="nav-item"><a class="nav-link" data-i18n="nav_security" href="#security"></a></li>
@@ -51,7 +50,7 @@
           </ul>
           <div class="navbar-collapse-dropdowns">
             <div class="dropdown">
-              <button class="dropdown-toggle">
+              <button class="wrs-app-btn">
                 <span data-i18n="wrs_corp_app"></span>
               </button>
             </div>
@@ -86,11 +85,11 @@
       </div>
     </nav>
     <!-- Main a -->
-    <section class="page-section bg-drakblue" style="min-height: 50vh">
+    <section class="page-section bg-darkblue" style="min-height: 50vh">
       <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-12">
-          <h2 data-i18n="main_a_title" style="font-style: italic; color: white;"></h2>
-          <p data-i18n="main_a_desc" style="font-style: italic; color: white;"></p>
+          <h2 data-i18n="main_a_title" style="font-style: italic; color: #d3d3d3;"></h2>
+          <p data-i18n="main_a_desc" style="font-style: italic; color: #d3d3d3;"></p>
         </div>
         <div id="form-popup-overlay" class="form-popup-overlay d-none">
           <div class="form-popup-content">
@@ -316,7 +315,7 @@
     </section>
 
     <!-- about -->
-    <section class="page-section bg-light py-5" id="features">
+    <section class="page-section bg-light py-5" id="about">
       <div class="container">
         <div class="features-section-title">
           <h2 class="section-heading" data-i18n="about_heading"></h2>
@@ -340,39 +339,171 @@
         </div>
       </div>
     </section>
+
+    <!-- services cards -->
     <section class="page-section bg-darkblue min-h-auto py-5">
       <div class="cards-container">
-          <div class="card">
-            <ul>
-              <li>Kurumsal Konaklama</li>
-              <li>Yurtiçi ve Yurtdışı Uçak Bileti</li>
-              <li>Stratejik Toplantı Yönetimi (STY)</li>
-            </ul>
-          </div>
+        <div class="card">
+          <ul>
+            <li>Kurumsal Konaklama</li>
+            <li>Yurtiçi ve Yurtdışı Uçak Bileti</li>
+            <li>Stratejik Toplantı Yönetimi (STY)</li>
+          </ul>
+        </div>
 
-          <div class="card">
-            <ul>
-              <li>Yurtiçi ve Yurtdışı Kurumsal Etkinlikler</li>
-              <li>Seyehat Güvenliği ve Risk Yönetimi (International S.O.S)</li>
-              <li>Yurtiçi ve Yurtdışı Fuar Organizasyonu</li>
-            </ul>
-          </div>
+        <div class="card">
+          <ul>
+            <li>Yurtiçi ve Yurtdışı Kurumsal Etkinlikler</li>
+            <li>Seyehat Güvenliği ve Risk Yönetimi (International S.O.S)</li>
+            <li>Yurtiçi ve Yurtdışı Fuar Organizasyonu</li>
+          </ul>
+        </div>
 
-          <div class="card">
-            <ul>
-              <li>Araç Kiralama</li>
-              <li>Filo Kiralama</li>
-              <li>Yurtiçi ve Yurtdışı V.I.P Transfer</li>
-            </ul>
-          </div>
+        <div class="card">
+          <ul>
+            <li>Araç Kiralama</li>
+            <li>Filo Kiralama</li>
+            <li>Yurtiçi ve Yurtdışı V.I.P Transfer</li>
+          </ul>
+        </div>
     </section>
 
-    <!-- accommodation -->
-    <section class="page-section bg-light" id="features">
+    <!-- accommodation a -->
+    <section class="page-section" id="accommodation">
       <div class="container">
         <div class="features-section-title">
           <h2 class="section-heading" data-i18n="accommodation_heading"></h2>
-          <p data-i18n="accommodation_desc"></p>
+        </div>
+        <div class="row g-0 justify-content-center" style="margin-top: 5vh;">
+          <div class="features-map-image col-lg-6 custom-col-md-12 col-sm-12">
+            <img alt="..." src="../src/assets/img/features/wrs-turkey-map.png" />
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 features-box">
+            <div class="accommodation-container">
+              <h2 class="text-align-end" data-i18n="accommodation_title"></h2>
+              <p class="text-align-end" data-i18n="accommodation_desc"></p>
+              <ul>
+                <li data-i18n="accommodation_list_1"></li>
+                <li data-i18n="accommodation_list_2"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- interlude a -->
+    <section class="why-wrs page-section bg-darkblue min-h-auto">
+      <div class="container py-8">
+        <div class="features-section-title m-0">
+          <h2 class="section-heading" data-i18n="interlude_heading" style="color: white;"></h2>
+          <p data-i18n="interlude_desc" style="color: #d3d3d3;"></p>
+          <button class="contact-btn justify-self-center">
+            <span data-i18n="nav_contact"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- accommodation b -->
+    <section class="page-section bg-light" id="features">
+      <div class="container">
+        <div class="row g-0 justify-content-center" style="margin-top: 5vh;">
+          <div class="col-lg-6 col-md-12 col-sm-12 features-box">
+            <div class="accommodation-container">
+              <h2 class="" data-i18n="accommodation_b_title"></h2>
+              <p data-i18n="accommodation_b_desc"></p>
+              <ul>
+                <li data-i18n="accommodation_b_paragraph"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="features-map-image col-lg-6 custom-col-md-12 col-sm-12">
+            <img alt="..." src="../src/assets/img/features/wrs-turkey-map.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- interlude b -->
+    <section class="why-wrs page-section bg-darkblue min-h-auto">
+      <div class="container py-8">
+        <div class="features-section-title m-0">
+          <h2 class="section-heading" data-i18n="interlude_b_heading" style="color: white;"></h2>
+          <p data-i18n="interlude_b_desc" style="color: #d3d3d3;"></p>
+          <button class="contact-btn justify-self-center">
+            <span data-i18n="nav_contact"></span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- meetings & events a -->
+    <section class="page-section" id="meetingsandevents">
+      <div class="container">
+        <div class="features-section-title">
+          <h2 class="section-heading" data-i18n="meetings_events_heading"></h2>
+        </div>
+        <div class="row g-0 justify-content-center" style="margin-top: 5vh;">
+          <div class="features-map-image col-lg-6 custom-col-md-12 col-sm-12">
+            <img alt="..." src="../src/assets/img/features/wrs-turkey-map.png" />
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 features-box">
+            <div class="accommodation-container">
+              <h2 class="text-align-end" data-i18n="meetings_events_title"></h2>
+              <p class="text-align-end" data-i18n="meetings_events_desc"></p>
+              <ul>
+                <li data-i18n="meetings_events_list_1"></li>
+                <li data-i18n="meetings_events_list_2"></li>
+                <li data-i18n="meetings_events_list_3"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- meetings & events b -->
+    <section class="page-section bg-light" id="features">
+      <div class="container">
+        <div class="row g-0 justify-content-center" style="margin-top: 5vh;">
+          <div class="col-lg-6 col-md-12 col-sm-12 features-box">
+            <div class="accommodation-container">
+              <h2 class="" data-i18n="meetings_events_b_title"></h2>
+              <p data-i18n="meetings_events_b_desc"></p>
+              <ul>
+                <li data-i18n="meetings_events_b_list_1"></li>
+                <li data-i18n="meetings_events_b_list_2"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="features-map-image col-lg-6 custom-col-md-12 col-sm-12">
+            <img alt="..." src="../src/assets/img/features/wrs-turkey-map.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- interlude c -->
+    <section class="why-wrs page-section bg-darkblue min-h-auto">
+      <div class="container py-8">
+        <div class="features-section-title m-0">
+          <h2 class="section-heading" data-i18n="interlude_c_heading" style="color: white;"></h2>
+          <p data-i18n="interlude_c_desc" style="color: #d3d3d3;"></p>
+          <button class="contact-btn justify-self-center">
+            <span data-i18n="nav_contact"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- security -->
+    <section class="page-section py-5" id="security">
+      <div class="container">
+        <div class="features-section-title">
+          <h2 class="section-heading" data-i18n="security_heading"></h2>
+          <p data-i18n="security_desc"></p>
         </div>
         <div class="row g-0 justify-content-center" style="margin-top: 5vh;">
           <div class="features-map-image col-lg-6 custom-col-md-12 col-sm-12">
@@ -380,33 +511,20 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 features-box">
             <div class="features-container">
-              <h2 data-i18n="accommodation_title"></h2>
+              <h2 data-i18n="security_title"></h2>
               <ul>
-                <li data-i18n="accommodation_paragraph"></li>
+                <li data-i18n="security_list_1"></li>
+                <li data-i18n="security_list_2"></li>
+                <li data-i18n="security_list_3"></li>
+                <li data-i18n="security_list_4"></li>
+                <li data-i18n="security_list_5"></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- about-->
-    <section class="page-section bg-light" id="about">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="section-heading" data-i18n="about_heading"></h2>
 
-        </div>
-        <div class="about-container">
-          <h2 data-i18n="about_title"></h2>
-          <ul>
-            <li id="about_list_1"></li>
-            <li id="about_list_2"></li>
-            <li id="about_list_3"></li>
-            <li id="about_list_4"></li>
-          </ul>
-        </div>
-      </div>
-    </section>
     <!-- Contact-->
     <section class="page-section min-h-auto pt-0" id="contact">
       <div class="container mb-0">
@@ -446,13 +564,37 @@
               </div>
             </form>
           </div>
-          <div class="contact-info-container w-90">
-            <h3 class="section-heading contact-info-heading" data-i18n="contact_info_heading"></h3>
-            <div class="contact-info">
-              <span style="color: white;" data-i18n="contact_company"></span><br>
-              <span style="color: white;" data-i18n="contact_address"></span><br>
-              <span style="color: white;" data-i18n="contact_mail"></span><br>
-              <span style="color: white;" data-i18n="contact_tel"></span>
+          <div class="d-flex w-90 justify-content-between">
+            <div class="contact-info-container">
+              <h3 class="section-heading contact-info-heading" data-i18n="contact_info_heading"></h3>
+              <div class="contact-info">
+                <span style="color: white;" data-i18n="contact_company"></span><br>
+                <span style="color: white; white-space: pre-line;" data-i18n="contact_address"></span><br>
+                <span style="color: white;" data-i18n="contact_mail"></span><br>
+                <span style="color: white;" data-i18n="contact_tel"></span>
+              </div>
+            </div>
+            <div class="contact-info-container">
+              <h3 class="section-heading contact-info-heading" data-i18n="solutions_heading"></h3>
+              <div class="contact-info">
+                <a href="#accommodation"><span style="color: white;" data-i18n="solution_1"></span></a><br>
+                <a href="#meetingsandevents"><span style="color: white;" data-i18n="solution_2"></span></a><br>
+                <a href="#security"><span style="color: white;" data-i18n="solution_3"></span></a>
+              </div>
+            </div>
+            <div class="contact-info-container">
+              <h3 class="section-heading contact-info-heading" data-i18n="our_corp_heading"></h3>
+              <div class="contact-info">
+                <a href="#about"><span style="color: white;" data-i18n="about_corp"></span></a>
+              </div>
+            </div>
+            <div class="contact-info-container">
+              <h3 class="section-heading contact-info-heading" data-i18n="support_heading"></h3>
+              <div class="contact-info">
+                <span style="color: white;" data-i18n="nav_contact"></span><br>
+                <span style="color: white;" data-i18n="emergency_tel"></span><br>
+                <span style="color: white;" data-i18n="wrs_corp"></span>
+              </div>
             </div>
           </div>
           <div class="w-90 text-center">
@@ -469,6 +611,7 @@
         </div>
       </div>
     </section>
+
     <!-- Footer-->
     <footer class="footer" id="footer">
       <div class="container py-1">
@@ -477,6 +620,16 @@
     </footer>
   </div>
 
+  <div class="logo-marquee-fixed">
+    <div class="logo-marquee">
+      <div class="logo-track" id="logoTrack">
+        <img src="../src/assets/img/logos/wrs-turkey.png" alt="Logo 1" />
+        <img src="../src/assets/img/logos/wrs-turkey.png" alt="Logo 2" />
+        <img src="../src/assets/img/logos/wrs-turkey.png" alt="Logo 3" />
+        <img src="../src/assets/img/logos/wrs-turkey.png" alt="Logo 4" />
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -32,23 +32,80 @@ function openThankYouPopup() {
 } */
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById('logoTrack');
 
-  // Intersection Observer ile scroll animasyonu
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
+  const logoNames = [
+    'agrotv.jpg',
+    'alfa-tohum.jpg',
+    'allied-minerals.png',
+    'artmar.jpg',
+    'donas.jpg',
+    'ertanlar.jpg',
+    'fantom.png',
+    'hilleshog.png',
+    'indigo.jpg',
+    'kayseri-seker.jpg',
+    'kilicoglu-kiremit.jpg',
+    'kuzey-tohumculuk.jpg',
+    'KWS.jpg',
+    'lgtohum.jpg',
+    'likrom.jpg',
+    'limagrein.jpg',
+    'maribo.jpg',
+    'marka-tarim.png',
+    'netafim.jpg',
+    'safi-smart.jpg',
+    'sevanderhave.jpg',
+    'syngenta.jpg',
+    'taegu-tec.jpg',
+    'tessenderlo.jpg',
+    'ziraat-bankasi.jpg'
+  ];
 
-        // Tüm cardları observe et
-        document.querySelectorAll('.card').forEach(card => {
-            observer.observe(card);
-        });
+  track.innerHTML = '';
+
+  logoNames.forEach((logoName, index) => {
+    const img = document.createElement('img');
+    img.src = `../src/assets/img/references-logos/${logoName}`;
+    img.alt = `Reference Logo ${index + 1}`;
+    img.loading = 'lazy';
+
+    img.onerror = function () {
+      this.style.display = 'none';
+      console.warn(`Logo yüklenemedi: ${logoName}`);
+    };
+
+    track.appendChild(img);
+  });
+
+  const originalContent = track.innerHTML;
+  track.innerHTML = originalContent + originalContent;
+
+  track.addEventListener('animationiteration', function () {
+    console.log('Animation completed one cycle');
+  });
+});
+
+
+
+// card animations ----------------------------------------------------------------
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+});
+
+// Tüm cardları observe et
+document.querySelectorAll('.card').forEach(card => {
+  observer.observe(card);
+});
 
 
 
@@ -199,11 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupOverlay = document.getElementById('form-popup-overlay');
   const closePopupBtn = document.getElementById('close-popup');
   const forms = document.querySelectorAll('.popup-form');
-
-  dropdownToggle.addEventListener('click', function (e) {
-    e.preventDefault();
-    dropdown.classList.toggle('dropdown-open');
-  });
 
   document.addEventListener('click', function (event) {
     if (!dropdown.contains(event.target)) {

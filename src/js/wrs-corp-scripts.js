@@ -31,6 +31,26 @@ function openThankYouPopup() {
   }
 } */
 
+// Marquee ---------------------------------------------------------------------------
+
+const container = document.getElementById('page-top');
+const footer = document.querySelector('.footer')
+
+container.addEventListener('scroll', () => {
+  const scrollBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5;
+
+  if (scrollBottom) {
+    footer.style.display = 'block'
+  } else {
+    footer.style.display = 'none'
+  }
+});
+
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.getElementById('logoTrack');
@@ -81,10 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const originalContent = track.innerHTML;
   track.innerHTML = originalContent + originalContent;
-
-  track.addEventListener('animationiteration', function () {
-    console.log('Animation completed one cycle');
-  });
 });
 
 
@@ -182,18 +198,6 @@ function loadLanguage(lang) {
           });
         }
       }
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (data[key]) {
-          if (el.tagName === 'BUTTON') {
-            el.innerText = data[key];
-          } else {
-            el.textContent = data[key];
-          }
-        }
-      });
-
       window.i18nData = data;
     })
     .catch(err => {

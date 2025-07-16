@@ -108,18 +108,6 @@ function loadLanguage(lang) {
           });
         }
       }
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (data[key]) {
-          if (el.tagName === 'BUTTON') {
-            el.innerText = data[key];
-          } else {
-            el.textContent = data[key];
-          }
-        }
-      });
-
       window.i18nData = data;
     })
     .catch(err => {

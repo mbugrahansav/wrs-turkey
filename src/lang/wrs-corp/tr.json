@@ -6,8 +6,8 @@
   "nav_references": "Referanslar",
   "nav_contact": "Bize Ulaşın",
 
-  "main_a_title": "WRS'nin işinize güç katmasına izin verin",
-  "main_a_desc": "Rakipsiz kurumsal konaklama ve etkinlik yönetim hizmetleri",
+  "main_a_title": "WRS'NİN İŞİNİZE GÜÇ\n <span class='indent'></span> KATMASINA İZİN VERİN",
+  "main_a_desc": "''Rakipsiz kurumsal konaklama ve etkinlik yönetim hizmetleri''",
   "main_b_title": "2025 İş Seyehati ve Etkinlik Harcam Planlaması",
   "main_b_par": "İş seyahatleri ve etkinlik harcamaları, şirketlerin finansal sağlığı üzerinde önemli bir etkiye sahip olabilir. WRS Turkey olarak harcama planlarını; ARAC, AMEA, LATAM ve NORAM bölgeleri özelinde değerlendirerek harcama planları  yapmaktayız. Bu harcamaların etkin bir şekilde planlanması ve yönetilmesi, maliyetleri kontrol altında tutmak, bütçe aşımını önlemek ve yatırım getirisini (ROI) maksimize etmek için kritik öneme sahiptir. İşte dünya genelindeki iş seyahati ve etkinlik harcamaları için kapsamlı bir finansal planlama rehberi için tıklayınız.",
 
@@ -24,13 +24,18 @@
   "form_fill_fleet": "Filo Talep Formu",
   "form_fill_rent": "Araç Kiralama Formu",
 
+  "expand_hint": "devamını gör",
+
   "about_heading": "WRS Turkey Hakkında",
   "about_desc": "İş Dünyasının Konaklama Çözüm Ortağı",
   "about_title": "WRS Turkey Kurumsal Konaklama Sistemi",
-  "about_list_1": "Günümüz iş dünyasında, şirketler için iş seyahatleri ve kurumsal etkinlikler vazgeçilmez bir parçası haline gelmiştir. Bu süreçlerde çalışanların konforlu, hızlı, verimli ve bütçe dostu konaklama imkanlarına erişimi, şirketlerin genel başarısı için kritik öneme sahiptir. İşte tam da bu noktada WRS Turkey devreye girerek, kurumsal konaklama ihtiyaçlarınıza özel çözümler sunan öncü bir acenta olarak öne çıkmaktadır.",
-  "about_list_2": "WRS Turkey, işletmelerin ve profesyonellerin konaklama süreçlerini kolaylaştırmak, maliyetleri optimize etmek ve seyahat deneyimini en üst düzeye çıkarmak amacıyla kapsamlı hizmetler sunar. Geniş otel ağı ve sektördeki derin tecrübesi sayesinde, her ölçekten şirketin beklentilerini aşan çözümler sunmayı hedefler.",
-  "about_list_3": "WRS Turkey, sadece bir konaklama sistemi olmanın ötesine geçerek, şirketlerin kurumsal seyahat politikalarına tam uyum sağlayan, maliyet etkin ve yüksek kaliteli çözümler sunan bir stratejik ortak olmayı hedefler. İş seyahatlerinizin ve etkinliklerinizin sorunsuz geçmesi için WRS Turkey'in uzmanlığından faydalanabilirsiniz.",
-  "about_list_4": "Kurumsal konaklama ihtiyaçlarınız için WRS Turkey ile iletişime geçerek size özel çözümler hakkında bilgi alabilir ve iş süreçlerinizdeki verimliliği artırabilirsiniz. WRS Turkey'in Sunduğu Avantajlar için tıklayınız.",
+  "about_text_preview_1": "Günümüz iş dünyasında, şirketler için iş seyahatleri ve kurumsal etkinlikler vazgeçilmez bir parçası haline gelmiştir.",
+  "about_text_full_1": "Günümüz iş dünyasında, şirketler için iş seyahatleri ve kurumsal etkinlikler vazgeçilmez bir parçası haline gelmiştir. Bu süreçlerde çalışanların konforlu, hızlı, verimli ve bütçe dostu konaklama imkanlarına erişimi, şirketlerin genel başarısı için kritik öneme sahiptir. İşte tam da bu noktada WRS Turkey devreye girerek, kurumsal konaklama ihtiyaçlarınıza özel çözümler sunan öncü bir acenta olarak öne çıkmaktadır.",
+  "about_text_preview_2": "WRS Turkey, işletmelerin ve profesyonellerin konaklama süreçlerini kolaylaştırmak, maliyetleri optimize etmek ve seyahat deneyimini en üst düzeye çıkarmak amacıyla",
+  "about_text_full_2": "WRS Turkey, işletmelerin ve profesyonellerin konaklama süreçlerini kolaylaştırmak, maliyetleri optimize etmek ve seyahat deneyimini en üst düzeye çıkarmak amacıyla kapsamlı hizmetler sunar. Geniş otel ağı ve sektördeki derin tecrübesi sayesinde, her ölçekten şirketin beklentilerini aşan çözümler sunmayı hedefler.",
+  "about_text_preview_3": "WRS Turkey, sadece bir konaklama sistemi olmanın ötesine geçerek, şirketlerin kurumsal seyahat politikalarına tam uyum sağlayan, maliyet etkin ve yüksek kaliteli çözümler sunan",
+  "about_text_full_3": "WRS Turkey, sadece bir konaklama sistemi olmanın ötesine geçerek, şirketlerin kurumsal seyahat politikalarına tam uyum sağlayan, maliyet etkin ve yüksek kaliteli çözümler sunan bir stratejik ortak olmayı hedefler. İş seyahatlerinizin ve etkinliklerinizin sorunsuz geçmesi için WRS Turkey'in uzmanlığından faydalanabilirsiniz.",
+  "about_text_full_4": "Kurumsal konaklama ihtiyaçlarınız için WRS Turkey ile iletişime geçerek size özel çözümler hakkında bilgi alabilir ve iş süreçlerinizdeki verimliliği artırabilirsiniz. WRS Turkey'in Sunduğu Avantajlar için tıklayınız.",
   
   "accommodation_heading": "Kurumsal Konaklama",
   "accommodation_desc": "İş Seyahatlerinizde Hızlı ve Online Çözümler",

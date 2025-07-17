@@ -104,6 +104,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// calculate expanded card height --------------------------------------------------
+document.addEventListener('DOMContentLoaded', function () {
+  const listItems = document.querySelectorAll('.features-list li:not(.no-expand)');
+
+  listItems.forEach(li => {
+    const textPreview = li.querySelector('.text-preview');
+    const textFull = li.querySelector('.text-full');
+
+    li.addEventListener('mouseenter', function () {
+      textPreview.style.display = 'none';
+      textFull.style.display = 'block';
+
+      setTimeout(() => {
+        const fullHeight = li.scrollHeight;
+        this.style.height = fullHeight + 'px';
+      }, 10);
+    });
+
+    li.addEventListener('mouseleave', function () {
+      this.style.height = '80px';
+
+      setTimeout(() => {
+        textPreview.style.display = 'block';
+        textFull.style.display = 'none';
+      }, 300);
+    });
+  });
+});
+
+
 
 // card animations ----------------------------------------------------------------
 
@@ -226,84 +256,80 @@ window.i18n = {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
 
-const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-navLinks.forEach(link => {
-  link.addEventListener('click', function () {
-    setTimeout(function () {
-      document.querySelector('.navbar-toggler').click();
-    }, 50);
+  document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+    observer.observe(el);
   });
 });
 
-document.addEventListener('click', function (event) {
-  const navbarCollapse = document.getElementById('navbarResponsive');
-  const navbarToggler = document.querySelector('.navbar-toggler');
 
-  if (navbarCollapse.classList.contains('show') &&
-    !navbarCollapse.contains(event.target) &&
-    event.target !== navbarToggler &&
-    !navbarToggler.contains(event.target)) {
 
-    setTimeout(function () {
-      navbarToggler.click();
-    }, 10);
-  }
-});
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+  const navbarCollapse = document.getElementById('navbarResponsive');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      setTimeout(() => {
+        navbarToggler?.click();
+      }, 50);
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    if (navbarCollapse?.classList.contains('show') &&
+      !navbarCollapse.contains(event.target) &&
+      event.target !== navbarToggler &&
+      !navbarToggler?.contains(event.target)) {
+
+      setTimeout(() => {
+        navbarToggler?.click();
+      }, 10);
+    }
+  });
 
   const dropdown = document.querySelector('.dropdown');
-  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  if (dropdown) {
+    document.addEventListener('click', function (event) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('dropdown-open');
+      }
+    });
+  }
 
   const popupOverlay = document.getElementById('form-popup-overlay');
   const closePopupBtn = document.getElementById('close-popup');
   const forms = document.querySelectorAll('.popup-form');
 
-  document.addEventListener('click', function (event) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.classList.remove('dropdown-open');
-    }
-  });
-
-  const dropdownItems = document.querySelectorAll('.dropdown-item');
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      dropdown.classList.remove('dropdown-open');
-
-      const formId = this.getAttribute('data-form');
-
-      forms.forEach(form => {
-        form.classList.add('d-none');
-      });
-
-      const selectedForm = document.getElementById(formId);
-      if (selectedForm) {
-        selectedForm.classList.remove('d-none');
-        popupOverlay.classList.remove('d-none');
-      }
-    });
-  });
-
-
-  closePopupBtn.addEventListener('click', function () {
-    popupOverlay.classList.add('d-none');
-
+  function closePopup() {
+    popupOverlay?.classList.add('d-none');
     forms.forEach(form => {
       form.classList.add('d-none');
     });
-  });
+  }
 
-  popupOverlay.addEventListener('click', function (e) {
+  closePopupBtn?.addEventListener('click', closePopup);
+
+  popupOverlay?.addEventListener('click', function (e) {
     if (e.target === popupOverlay) {
-      popupOverlay.classList.add('d-none');
-
-      forms.forEach(form => {
-        form.classList.add('d-none');
-      });
+      closePopup();
     }
   });
 
@@ -320,24 +346,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function enableNavbarShrink() {
-    const pageTop = document.getElementById('page-top');
-    if (!pageTop) return;
-
+  const pageTop = document.getElementById('page-top');
+  if (pageTop) {
     pageTop.addEventListener('scroll', navbarShrink);
     navbarShrink();
   }
 
-  navbarShrink();
-
-  document.getElementById('page-top').addEventListener('scroll', navbarShrink);
-
-  const mainNav = document.body.querySelector('#mainNav');
-  if (mainNav) {
-    new bootstrap.ScrollSpy(document.getElementById('page-top'), {
+  const mainNav = document.querySelector('#mainNav');
+  if (mainNav && typeof bootstrap !== 'undefined') {
+    new bootstrap.ScrollSpy(pageTop, {
       target: '#mainNav',
       offset: 70
     });
-  };
-
+  }
 });

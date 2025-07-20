@@ -1,37 +1,24 @@
+const el = document.querySelector('.hover-expand-list');
+const height = getComputedStyle(el).height;
+el.style.maxHeight = height;
+
+
 // Popup --------------------------------------------------------------------------
 
-/* function showPopup() {
-  const overlay = document.getElementById('popup-overlay');
-  overlay.classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.addEventListener("click", function (e) {
+    if (e.target.id === "openPopup") {
+      document.getElementById("popup").classList.remove("hidden");
+    }
 
-function hidePopup() {
-  const overlay = document.getElementById('popup-overlay');
-  overlay.classList.remove('show');
-  document.body.style.overflow = 'auto';
-}
-
-document.getElementById('popup-overlay').addEventListener('click', function (e) {
-  if (e.target === this) {
-    hidePopup();
-  }
+    if (e.target.classList.contains("close-btn")) {
+      document.getElementById("popup").classList.add("hidden");
+    }
+  });
 });
 
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    hidePopup();
-  }
-});
 
-function openThankYouPopup() {
-  const popup = document.querySelector('#thank-you-popup');
-  if (popup) {
-    popup.style.display = 'block';
-  }
-} */
-
-// Marquee ---------------------------------------------------------------------------
+// Marquee --------------------------------------------------------------------------
 
 const container = document.getElementById('page-top');
 const footer = document.querySelector('.footer')
@@ -45,6 +32,118 @@ container.addEventListener('scroll', () => {
     footer.style.display = 'none'
   }
 });
+
+
+// Carousel ------------------------------------------------------------------------
+class ServiceCarousel {
+            constructor() {
+                this.carousel = document.getElementById('carousel');
+                this.items = document.querySelectorAll('.service-item');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                
+                this.totalItems = this.items.length;
+                this.currentIndex = 0;
+                this.itemsToShow = 5;
+                
+                this.init();
+            }
+            
+            init() {
+                this.updateCarousel();
+                this.bindEvents();
+                
+                // Auto-play (isteğe bağlı)
+                // this.startAutoPlay();
+            }
+            
+            updateCarousel() {
+                this.items.forEach((item, index) => {
+                    item.classList.remove('small', 'center');
+                    
+                    // Görünür itemları hesapla
+                    const visibleStart = this.currentIndex;
+                    const visibleEnd = (this.currentIndex + this.itemsToShow - 1) % this.totalItems;
+                    
+                    // Center item (3. sıradaki)
+                    const centerIndex = (this.currentIndex + 2) % this.totalItems;
+                    
+                    if (index === centerIndex) {
+                        item.classList.add('center');
+                    } else if (this.isVisible(index, visibleStart, visibleEnd)) {
+                        item.classList.add('small');
+                    }
+                });
+                
+                // Carousel pozisyonunu ayarla
+                const translateX = -(this.currentIndex * (140 + 20)) + (this.carousel.parentElement.offsetWidth / 2) - 350;
+                this.carousel.style.transform = `translateX(${translateX}px)`;
+            }
+            
+            isVisible(index, start, end) {
+                if (start <= end) {
+                    return index >= start && index <= end;
+                } else {
+                    return index >= start || index <= end;
+                }
+            }
+            
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.totalItems;
+                this.updateCarousel();
+            }
+            
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.totalItems) % this.totalItems;
+                this.updateCarousel();
+            }
+            
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateCarousel();
+            }
+            
+            bindEvents() {
+                this.nextBtn.addEventListener('click', () => this.next());
+                this.prevBtn.addEventListener('click', () => this.prev());
+                
+                // Klavye navigasyonu
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prev();
+                    if (e.key === 'ArrowRight') this.next();
+                });
+                
+                // Touch/Swipe desteği
+                let startX = 0;
+                this.carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                this.carousel.addEventListener('touchend', (e) => {
+                    const endX = e.changedTouches[0].clientX;
+                    const diff = startX - endX;
+                    
+                    if (Math.abs(diff) > 50) {
+                        if (diff > 0) {
+                            this.next();
+                        } else {
+                            this.prev();
+                        }
+                    }
+                });
+            }
+            
+            startAutoPlay(interval = 3000) {
+                setInterval(() => {
+                    this.next();
+                }, interval);
+            }
+        }
+        
+        // Carousel'ı başlat
+        document.addEventListener('DOMContentLoaded', () => {
+            new ServiceCarousel();
+        });
 
 
 
@@ -106,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // calculate expanded card height --------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  const listItems = document.querySelectorAll('.features-list li:not(.no-expand)');
+  const listItems = document.querySelectorAll('.hover-expand-list li:not(.no-expand)');
 
   listItems.forEach(li => {
     const textPreview = li.querySelector('.text-preview');
@@ -228,6 +327,7 @@ function loadLanguage(lang) {
           });
         }
       }
+      document.documentElement.lang = lang;
       window.i18nData = data;
     })
     .catch(err => {
@@ -264,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }, {
-    threshold: 0.1,
+    threshold: 0.2,
     rootMargin: '0px 0px -50px 0px'
   });
 

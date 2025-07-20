@@ -1,6 +1,6 @@
 // Popup --------------------------------------------------------------------------
 
-/* function showPopup() {
+function showPopup() {
   const overlay = document.getElementById('popup-overlay');
   overlay.classList.add('show');
   document.body.style.overflow = 'hidden';
@@ -29,11 +29,7 @@ function openThankYouPopup() {
   if (popup) {
     popup.style.display = 'block';
   }
-} */
-
-
-
-
+}
 
 // Lang --------------------------------------------------------------------------
 

@@ -35,11 +35,12 @@ function openThankYouPopup() {
 
 let currentLang = localStorage.getItem('selectedLanguage') || "tr";
 loadLanguage(currentLang);
+updateLanguageSelector(currentLang);
 
 document.querySelectorAll('.language-selector').forEach(languageSelector => {
   const languageTrigger = languageSelector.querySelector('.language-trigger');
   const languageOptions = languageSelector.querySelectorAll('.language-option');
-  const currentFlag = languageSelector.querySelector('.currentFlag');
+  const currentLangCode = languageSelector.querySelector('.currentLangCode');
 
   languageTrigger.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -49,10 +50,8 @@ document.querySelectorAll('.language-selector').forEach(languageSelector => {
   languageOptions.forEach(option => {
     option.addEventListener('click', () => {
       const selectedLang = option.getAttribute('data-lang');
-      const selectedFlag = option.querySelector('img').src;
-      const selectedLangName = option.querySelector('.language-code').textContent;
-
-      currentFlag.src = selectedFlag;
+      const selectedLangName = `(${option.getAttribute('data-lang').toLowerCase()})`;
+      currentLangCode.textContent = selectedLangName;
       languageSelector.classList.remove('active');
 
       loadLanguage(selectedLang);
@@ -75,15 +74,9 @@ document.addEventListener('click', (event) => {
 
 function updateLanguageSelector(lang) {
   document.querySelectorAll('.language-selector').forEach(languageSelector => {
-    const option = languageSelector.querySelector(`.language-option[data-lang="${lang}"]`);
-    if (option) {
-      const selectedFlag = option.querySelector('img').src;
-      const selectedLangName = option.querySelector('.language-code').textContent;
-      const currentFlag = languageSelector.querySelector('.currentFlag');
-
-      if (currentFlag) {
-        currentFlag.src = selectedFlag;
-      }
+    const currentLangCode = languageSelector.querySelector('.currentLangCode');
+    if (currentLangCode) {
+      currentLangCode.textContent = `(${lang.toLowerCase()})`;
     }
   });
 }
@@ -104,6 +97,7 @@ function loadLanguage(lang) {
           });
         }
       }
+      document.documentElement.lang = lang;
       window.i18nData = data;
     })
     .catch(err => {
@@ -224,31 +218,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!navbar || !pageTop) return;
 
-    if (pageTop.scrollTop === 0) {
+    if (window.scrollY === 0) {
       navbar.classList.remove('navbar-shrink');
     } else {
       navbar.classList.add('navbar-shrink');
     }
   }
 
-  function enableNavbarShrink() {
-    const pageTop = document.getElementById('page-top');
-    if (!pageTop) return;
-
-    pageTop.addEventListener('scroll', navbarShrink);
+  const pageTop = document.getElementById('page-top');
+  if (pageTop) {
+    window.addEventListener('scroll', navbarShrink);
     navbarShrink();
   }
 
-  navbarShrink();
-
-  document.getElementById('page-top').addEventListener('scroll', navbarShrink);
-
-  const mainNav = document.body.querySelector('#mainNav');
-  if (mainNav) {
-    new bootstrap.ScrollSpy(document.getElementById('page-top'), {
+  const mainNav = document.querySelector('#mainNav');
+  if (mainNav && typeof bootstrap !== 'undefined') {
+    new bootstrap.ScrollSpy(document.body, {
       target: '#mainNav',
       offset: 70
     });
-  };
+  }
 
 });

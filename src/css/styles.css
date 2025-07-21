@@ -112,12 +112,8 @@ body {
 
 #page-top {
   height: 100vh;
-  overflow-y: auto;
   scroll-behavior: smooth;
-}
-
-section {
-  overflow: auto;
+  scroll-padding-top: 56px;
 }
 
 hr {
@@ -660,7 +656,7 @@ progress {
 .container-sm {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
-  width: 100%;
+  width: 96%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: 2%;
@@ -4531,7 +4527,7 @@ fieldset:disabled .btn {
   display: flex;
   align-items: center;
   background-color: transparent;
-  border: 0.1rem solid #e0e0e0;
+  border: 1.3px solid #1D425D;
   border-radius: 30px;
   padding: 5px 8px;
   cursor: pointer;
@@ -4540,9 +4536,15 @@ fieldset:disabled .btn {
 }
 
 .language-trigger img {
-  width: 24px;
-  height: 16px;
-  border-radius: 4px;
+  margin-right: 4px;
+  width: 20px;
+  height: 18px;
+}
+
+.language-trigger span {
+  color: #ffffffd6;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .language-trigger svg {
@@ -14077,7 +14079,7 @@ header.landing {
   display: flex;
   align-items: center;
   color: #fff;
-  background-image: url("../assets/img/background/wrs-turkey-bg-2.jpg");
+  background-image: url("../assets/img/background/wrs-turkey-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;

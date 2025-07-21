@@ -114,13 +114,8 @@ body {
 
 #page-top {
   height: 100vh;
-  overflow-y: auto;
   scroll-behavior: smooth;
   scroll-padding-top: 56px;
-}
-
-section {
-  overflow: auto;
 }
 
 hr {
@@ -663,7 +658,7 @@ progress {
 .container-sm {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
-  width: 100%;
+  width: 96%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: 2%;
@@ -2309,7 +2304,7 @@ progress {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
   .form-control {
     font-size: 0.8rem;
   }
@@ -4125,7 +4120,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media(max-width: 980px) {
+@media(max-width: 991px) {
 
   .navbar>.container,
   .navbar>.container-fluid,
@@ -4216,7 +4211,7 @@ fieldset:disabled .btn {
   border-radius: 30px;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
 
   .wrs-turkey-logo {
     background-image: url("../assets/img/logos/wrs-turkey-gold.png") !important;
@@ -4247,9 +4242,8 @@ fieldset:disabled .btn {
 }
 
 .contact-btn {
-  margin-top: 15px;
-  width: 12vw;
-  height: 5vh;
+  margin-top: 1rem;
+  padding: 3px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4338,7 +4332,7 @@ fieldset:disabled .btn {
   display: flex;
   align-items: center;
   background-color: transparent;
-  border: 0.1rem solid #1D425D;
+  border: 1.3px solid #1D425D;
   border-radius: 30px;
   padding: 5px 8px;
   cursor: pointer;
@@ -4347,9 +4341,15 @@ fieldset:disabled .btn {
 }
 
 .language-trigger img {
-  width: 24px;
-  height: 16px;
-  border-radius: 4px;
+  margin-right: 4px;
+  width: 20px;
+  height: 18px;
+}
+
+.language-trigger span {
+  color: #0000009c;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .language-trigger svg {
@@ -4445,7 +4445,7 @@ fieldset:disabled .btn {
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
   .language-trigger {
     width: fit-content;
   }
@@ -4514,6 +4514,16 @@ fieldset:disabled .btn {
   100% {
     transform: scale(1);
   }
+}
+
+.two-col {
+  display: flex;
+  gap: 2rem;
+}
+
+.two-col p {
+  flex: 1;
+  margin: 0;
 }
 
 .company-info {
@@ -12995,7 +13005,7 @@ html {
 
 body {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 
 p {
@@ -13025,7 +13035,7 @@ p {
 
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
   .btn-xs {
     font-size: 0.8rem;
     font-weight: 700;
@@ -13374,7 +13384,7 @@ p {
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
 
   #mainNav {
     height: 8vh;
@@ -13402,10 +13412,6 @@ p {
 
   .navbar-toggler {
     margin-right: 1rem;
-  }
-
-  .hover-expand-container {
-    width: 100vw;
   }
 
   .contact-info-heading {
@@ -13460,10 +13466,6 @@ p {
 
   #landing-header>h1 {
     font-size: 2rem !important;
-  }
-
-  .page-section {
-    padding-top: 9vh !important;
   }
 
   .about-container {
@@ -13646,8 +13648,8 @@ p {
 }
 
 .hover-expand-container {
-  padding: 0 1rem;
   position: relative;
+  padding: 0.3rem;
 }
 
 .hover-expand-container h2 {
@@ -13742,8 +13744,6 @@ p {
 }
 
 .expand-hint {
-  position: absolute;
-  right: 1rem;
   font-size: 0.75rem;
   color: #666;
   opacity: 0.8;
@@ -13833,6 +13833,12 @@ p {
   }
 }
 
+@media (max-width: 480px) {
+  .two-col {
+    flex-direction: column;
+  }
+}
+
 .clickable-text {
   color: #007bff;
   text-decoration: underline;
@@ -13851,6 +13857,11 @@ p {
   justify-content: center;
 }
 
+.m-image {
+  position: sticky;
+  z-index: 2;
+}
+
 .m-image>img {
   width: 45%;
   object-fit: contain;
@@ -13859,7 +13870,6 @@ p {
 
 .l-image {
   position: sticky;
-  height: fit-content;
   z-index: 2;
 }
 
@@ -13870,10 +13880,26 @@ p {
   align-self: center;
 }
 
+.xl-image {
+  position: sticky;
+  z-index: 2;
+}
+
 .xl-image>img {
   width: 85%;
   object-fit: contain;
   align-self: center;
+}
+
+@media (max-width: 991px) {
+
+  .image {
+    order: -1;
+  }
+
+  .l-image>img {
+    width: 40%;
+  }
 }
 
 .slide-in-left {
@@ -14028,7 +14054,7 @@ p {
   font-size: medium;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
   .branch-link {
     margin-bottom: 1rem
   }
@@ -14095,23 +14121,21 @@ p {
 }
 
 .arrow-btn {
-  background: rgba(255, 255, 255, 0.2);
+  background: transparent;
   border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 20px;
-  color: white;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
 }
 
+.arrow-btn>img {
+  width: 150px;
+}
+
 .arrow-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
   transform: scale(1.1);
 }
 
@@ -14345,6 +14369,18 @@ header.masthead .masthead-heading {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+.main-header {
+  white-space: pre-line;
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 800;
+  color: #d3d3d3;
+}
+
+.main-desc {
+  white-space: pre-line; font-size: 1.3rem; font-style: italic; color: #d3d3d3;
+}
+
 @media (max-width: 768px) {
 
   header.masthead {
@@ -14358,9 +14394,6 @@ header.masthead .masthead-heading {
     background-position: center center;
     background-size: cover;
   }
-}
-
-@media (min-width: 768px) {
 
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
@@ -14373,6 +14406,27 @@ header.masthead .masthead-heading {
     font-weight: 700;
     line-height: 4.5rem;
   }
+
+  .main-header {
+    font-size: 2rem;
+  }
+
+  .main-desc {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 570px) {
+
+  .main-header {
+    font-size: 1.4rem;
+  }
+
+  .main-desc {
+    font-size: 0.8rem;
+  }
+  
 }
 
 #portfolio .portfolio-item {
@@ -14702,7 +14756,7 @@ header.masthead .masthead-heading {
   height: 2.75rem;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 991px) {
   section#contact form#contactForm .form-group {
     margin-bottom: 0.5rem !important;
   }
@@ -14837,7 +14891,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   width: 80px;
   height: 4px;
   background-color: var(--secondary-color);
-  margin: 20px auto;
+  margin: 20px auto 40px auto;
 }
 
 .section-title:after {

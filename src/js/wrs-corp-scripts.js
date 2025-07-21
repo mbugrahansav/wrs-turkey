@@ -18,18 +18,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Marquee --------------------------------------------------------------------------
+// Footer --------------------------------------------------------------------------
 
-const container = document.getElementById('page-top');
-const footer = document.querySelector('.footer')
+const footer = document.querySelector('.footer');
 
-container.addEventListener('scroll', () => {
-  const scrollBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5;
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const clientHeight = document.documentElement.clientHeight;
+  const scrollHeight = document.documentElement.scrollHeight;
+
+  const scrollBottom = scrollTop + clientHeight >= scrollHeight - 5;
 
   if (scrollBottom) {
-    footer.style.display = 'block'
+    footer.style.display = 'block';
   } else {
-    footer.style.display = 'none'
+    footer.style.display = 'none';
   }
 });
 
@@ -258,11 +261,12 @@ document.querySelectorAll('.card').forEach(card => {
 
 let currentLang = localStorage.getItem('selectedLanguage') || "tr";
 loadLanguage(currentLang);
+updateLanguageSelector(currentLang);
 
 document.querySelectorAll('.language-selector').forEach(languageSelector => {
   const languageTrigger = languageSelector.querySelector('.language-trigger');
   const languageOptions = languageSelector.querySelectorAll('.language-option');
-  const currentFlag = languageSelector.querySelector('.currentFlag');
+  const currentLangCode = languageSelector.querySelector('.currentLangCode');
 
   languageTrigger.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -272,10 +276,8 @@ document.querySelectorAll('.language-selector').forEach(languageSelector => {
   languageOptions.forEach(option => {
     option.addEventListener('click', () => {
       const selectedLang = option.getAttribute('data-lang');
-      const selectedFlag = option.querySelector('img').src;
-      const selectedLangName = option.querySelector('.language-code').textContent;
-
-      currentFlag.src = selectedFlag;
+      const selectedLangName = `(${option.getAttribute('data-lang').toLowerCase()})`;
+      currentLangCode.textContent = selectedLangName;
       languageSelector.classList.remove('active');
 
       loadLanguage(selectedLang);
@@ -298,15 +300,9 @@ document.addEventListener('click', (event) => {
 
 function updateLanguageSelector(lang) {
   document.querySelectorAll('.language-selector').forEach(languageSelector => {
-    const option = languageSelector.querySelector(`.language-option[data-lang="${lang}"]`);
-    if (option) {
-      const selectedFlag = option.querySelector('img').src;
-      const selectedLangName = option.querySelector('.language-code').textContent;
-      const currentFlag = languageSelector.querySelector('.currentFlag');
-
-      if (currentFlag) {
-        currentFlag.src = selectedFlag;
-      }
+    const currentLangCode = languageSelector.querySelector('.currentLangCode');
+    if (currentLangCode) {
+      currentLangCode.textContent = `(${lang.toLowerCase()})`;
     }
   });
 }
@@ -433,13 +429,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+
+  
   function navbarShrink() {
     const navbar = document.getElementById('mainNav');
     const pageTop = document.getElementById('page-top');
 
     if (!navbar || !pageTop) return;
 
-    if (pageTop.scrollTop === 0) {
+    if (window.scrollY === 0) {
       navbar.classList.remove('navbar-shrink');
     } else {
       navbar.classList.add('navbar-shrink');
@@ -448,13 +447,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const pageTop = document.getElementById('page-top');
   if (pageTop) {
-    pageTop.addEventListener('scroll', navbarShrink);
+    window.addEventListener('scroll', navbarShrink);
     navbarShrink();
   }
 
   const mainNav = document.querySelector('#mainNav');
   if (mainNav && typeof bootstrap !== 'undefined') {
-    new bootstrap.ScrollSpy(pageTop, {
+    new bootstrap.ScrollSpy(document.body, {
       target: '#mainNav',
       offset: 70
     });

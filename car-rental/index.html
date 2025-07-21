@@ -74,7 +74,8 @@
             </div>
             <div class="language-selector">
               <div class="language-trigger">
-                <img src="https://flagcdn.com/w320/tr.png" alt="Current Language Flag" class="currentFlag">
+                <img src="../src/assets/img/icons/lang-icon-white.png" alt="language-icon">
+                <span class="currentLangCode"></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                   class="dropdown-icon">
@@ -504,14 +505,12 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="contact-label" for="fullName" class="form-label" data-i18n="form_fullname"></label>
-                    <input class="form-control" id="fullName" name="ad_soyad" required=""
-                      type="text">
+                    <input class="form-control" id="fullName" name="ad_soyad" required="" type="text">
                     </input>
                   </div>
                   <div class="form-group">
                     <label class="contact-label" for="email" class="form-label" data-i18n="form_email"></label>
-                    <input class="form-control" id="email" name="email" required=""
-                      type="email" />
+                    <input class="form-control" id="email" name="email" required="" type="email" />
                   </div>
                   <div class="form-group mb-0">
                     <label class="contact-label" for="phone" class="form-label" data-i18n="form_phone"></label>
@@ -531,11 +530,11 @@
               </div>
             </form>
           </div>
-          <div class="contact-info-container w-90">
+          <div class="contact-info-container">
             <h3 class="section-heading contact-info-heading" data-i18n="contact_info_heading"></h3>
             <div class="contact-info">
               <span style="color: white;" data-i18n="contact_company"></span><br>
-              <span style="color: white;" data-i18n="contact_address"></span><br>
+              <span style="color: white; white-space: pre-line;" data-i18n="contact_address"></span><br>
               <span style="color: white;" data-i18n="contact_mail"></span><br>
               <span style="color: white;" data-i18n="contact_tel"></span>
             </div>

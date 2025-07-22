@@ -41,40 +41,6 @@ function checkForSuccessHash() {
   }
 }
 
-
-// Popup --------------------------------------------------------------------------
-
-/* function showPopup() {
-  const overlay = document.getElementById('popup-overlay');
-  overlay.classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-
-function hidePopup() {
-  const overlay = document.getElementById('popup-overlay');
-  overlay.classList.remove('show');
-  document.body.style.overflow = 'auto';
-}
-
-document.getElementById('popup-overlay').addEventListener('click', function (e) {
-  if (e.target === this) {
-    hidePopup();
-  }
-});
-
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    hidePopup();
-  }
-});
-
-function openThankYouPopup() {
-  const popup = document.querySelector('#thank-you-popup');
-  if (popup) {
-    popup.style.display = 'block';
-  }
-} */
-
 window.addEventListener('load', checkForSuccessHash);
 window.addEventListener('hashchange', checkForSuccessHash);
 
@@ -211,34 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadLanguage(currentLang);
 
-  /* const hasSeenIntro = localStorage.getItem('hasSeenIntro');
-  const videoContainer = document.getElementById('video-container');
-  const video = document.getElementById('intro-video');
-  const landing = document.getElementById('landing');
-
-  function showPage() {
-    videoContainer.classList.add('fade-out');
-    setTimeout(() => {
-      videoContainer.style.display = 'none';
-      landing.style.display = 'block';
-      document.body.style.overflow = 'auto';
-    }, 1000);
-  }
-
-  if (hasSeenIntro) {
-    videoContainer.style.display = 'none';
-    landing.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    enableNavbarShrink();
-  } else {
-    localStorage.setItem('hasSeenIntro', 'true');
-    video.addEventListener('ended', () => {
-      showPage();
-      enableNavbarShrink();
-    });
-    document.body.style.overflow = 'hidden';
-  } */
-
   const videoContainer = document.getElementById('video-container');
   const video = document.getElementById('intro-video');
   const landing = document.getElementById('landing');
@@ -262,30 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('skip-intro').addEventListener('click', () => {
     video.pause();
     showPage();
-    enableNavbarShrink();
   });
 
-
-
-
-
-  /* document.getElementById('btn-management').addEventListener('click', function (e) {
-    e.preventDefault();
-    document.getElementById('landing').style.display = 'none';
-    document.getElementById('page-top').style.display = 'block';
-    setTimeout(() => {
-      window.location.hash = 'management';
-    }, 50);
-  });
-
-  document.getElementById('btn-corp').addEventListener('click', function (e) {
-    e.preventDefault();
-    document.getElementById('landing').style.display = 'none';
-    document.getElementById('page-top').style.display = 'block';
-    setTimeout(() => {
-      window.location.hash = 'contact';
-    }, 50);
-  }); */
 
   document.getElementById('btn-corp').addEventListener('click', () => {
     window.location.href = '/wrs-corp/';
@@ -294,34 +210,5 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-management').addEventListener('click', () => {
     window.location.href = '/car-rental/';
   });
-
-
-
-  function navbarShrink() {
-    const navbar = document.getElementById('mainNav');
-    const pageTop = document.getElementById('page-top');
-
-    if (!navbar || !pageTop) return;
-
-    if (window.scrollY === 0) {
-      navbar.classList.remove('navbar-shrink');
-    } else {
-      navbar.classList.add('navbar-shrink');
-    }
-  }
-
-  const pageTop = document.getElementById('page-top');
-  if (pageTop) {
-    window.addEventListener('scroll', navbarShrink);
-    navbarShrink();
-  }
-
-  const mainNav = document.querySelector('#mainNav');
-  if (mainNav && typeof bootstrap !== 'undefined') {
-    new bootstrap.ScrollSpy(document.body, {
-      target: '#mainNav',
-      offset: 70
-    });
-  }
 
 });

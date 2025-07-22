@@ -116,7 +116,6 @@ body {
   height: 100vh;
   scroll-behavior: smooth;
   scroll-padding-top: 56px;
-  overflow-x: hidden;
 }
 
 hr {

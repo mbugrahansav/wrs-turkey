@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (popupContent) {
             popupContent.innerHTML = html;
             document.getElementById("popup").classList.remove("hidden");
+            document.getElementById("popupOverlay").classList.remove("hidden");
           } else {
             console.error("popup-content class'ına sahip element bulunamadı.");
           }
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (e.target.classList.contains("close-popup")) {
       document.getElementById("popup").classList.add("hidden");
+      document.getElementById("popupOverlay").classList.add("hidden");
     }
   });
 });

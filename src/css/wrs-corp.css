@@ -13831,13 +13831,15 @@ p {
   list-style: disc;
 }
 
-.hidden {
-  display: none;
+.top-line {
+  height: 3rem;
+  border-bottom: 1px solid #00000026;
+  margin-bottom: 0.5rem;
 }
 
 .popup {
   position: fixed;
-  top: 8%;
+  top: 10%;
   justify-self: center;
   height: 84vh;
   width: 50vw;
@@ -13845,6 +13847,51 @@ p {
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.popup-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content {
+  padding: 0 2rem 2rem 2rem;
+  overflow-y: auto;
+  flex: 1;
+  border-radius: inherit;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: none;
+  display: flex;
+  justify-self: end;
+  padding: 7px !important;
+}
+
+.close-btn>img {
+  width: 2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 991px) {
@@ -13857,7 +13904,7 @@ p {
   }
 }
 
-@media (max-width: 480px ) {
+@media (max-width: 480px) {
   .popup {
     width: 99vw
   }
@@ -13881,28 +13928,6 @@ p {
   .service-item.active .service-name {
     font-size: 13px !important;
   }
-}
-
-.popup-card {
-  overflow-y: auto;
-  height: 100%;
-}
-
-.popup-content {
-  padding: 2rem;
-}
-
-.close-btn {
-  position: fixed;
-  border: none;
-  background: none;
-  display: flex;
-  justify-self: end;
-  padding: 7px !important;
-}
-
-.close-btn>img {
-  width: 2.5rem;
 }
 
 .carousel-container {

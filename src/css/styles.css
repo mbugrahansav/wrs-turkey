@@ -112,12 +112,8 @@ body {
 
 #page-top {
   height: 100vh;
-  overflow-y: auto;
   scroll-behavior: smooth;
-}
-
-section {
-  overflow: auto;
+  scroll-padding-top: 56px;
 }
 
 hr {
@@ -401,7 +397,6 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
 }
 
 button:not(:disabled),
@@ -660,7 +655,7 @@ progress {
 .container-sm {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
-  width: 100%;
+  width: 96%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: 2%;
@@ -3365,8 +3360,8 @@ fieldset:disabled .btn {
 }
 
 .btn-landing {
-  background-color: rgba(202, 171, 124, 0.2);
-  border: 2px solid #CAAB7C;
+  background-color: #1d425d57;
+  border: 2px solid #1D425D;
   color: white;
   border-radius: 999px;
   letter-spacing: 0.05em;
@@ -3378,7 +3373,7 @@ fieldset:disabled .btn {
 }
 
 .btn-landing:hover {
-  background-color: rgba(202, 171, 124, 0.7);
+  background-color: #96B7CE;
 }
 
 .btn-info {
@@ -4529,30 +4524,36 @@ fieldset:disabled .btn {
 
 .language-trigger {
   display: flex;
-  align-items: center;
-  background-color: transparent;
-  border: 1px solid #e0e0e0;
-  border-radius: 30px;
-  padding: 7px 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    background-color: transparent;
+    border-left: 1.3px solid #1D425D;
+    padding: 5px 8px;
+    padding-left: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .language-trigger img {
-  width: 33px;
-  height: 22px;
-  border-radius: 4px;
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.language-trigger span {
+  margin-bottom: 1px;
+  color: #0000009c;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .language-trigger svg {
-  color: white;
+  color: black;
 }
 
 .language-trigger .dropdown-icon {
   width: 12px;
   height: 12px;
-  margin-left: 4px;
+  margin-left: 2px;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
@@ -4561,7 +4562,6 @@ fieldset:disabled .btn {
   position: absolute;
   top: 110%;
   right: 0;
-  width: 152%;
   background-color: white;
   border-radius: 7px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -13497,7 +13497,7 @@ p {
   }
 
   .navbar-dark .language-trigger {
-    border-color: white;
+    border-color: black;
   }
 
   #mainNav.navbar-shrink .nav-link {
@@ -13612,7 +13612,7 @@ p {
 }
 
 .navbar-dark .language-trigger svg {
-  color: white;
+  color: black;
 }
 
 .bg {
@@ -13761,11 +13761,11 @@ p {
   }
 
   .bg {
-    background-image: url(../assets/img/background/wrs-turkey-bg-mobile.jpg) !important;
+    background-image: url(../assets/img/background/wrs-landing-bg.png) !important;
   }
 
   .landing {
-    background-image: url(../assets/img/background/wrs-turkey-bg-mobile.jpg) !important;
+    background-image: url(../assets/img/background/wrs-landing-bg.png) !important;
     justify-content: center;
   }
 
@@ -13808,14 +13808,6 @@ p {
   .btn-xxl {
     font-size: 0.9rem !important;
     min-width: 17rem !important;
-  }
-}
-
-@media (max-width: 540px) {
-
-  .sticky-logo {
-    width: 5.5rem !important;
-    padding: 4px 7px !important;
   }
 }
 
@@ -14086,7 +14078,7 @@ header.landing {
   display: flex;
   align-items: center;
   color: #fff;
-  background-image: url("../assets/img/background/wrs-turkey-bg-2.jpg");
+  background-image: url("../assets/img/background/wrs-landing-bg.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -14097,6 +14089,10 @@ header.landing {
   display: grid;
   margin-left: 8vw;
   gap: 15rem;
+}
+
+#landing-header h1 {
+  color: #1D425D;
 }
 
 .landing-buttons {

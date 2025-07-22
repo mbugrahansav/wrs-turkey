@@ -41,7 +41,10 @@ function checkForSuccessHash() {
   }
 }
 
-function showPopup() {
+
+// Popup --------------------------------------------------------------------------
+
+/* function showPopup() {
   const overlay = document.getElementById('popup-overlay');
   overlay.classList.add('show');
   document.body.style.overflow = 'hidden';
@@ -70,18 +73,27 @@ function openThankYouPopup() {
   if (popup) {
     popup.style.display = 'block';
   }
-}
+} */
 
 window.addEventListener('load', checkForSuccessHash);
 window.addEventListener('hashchange', checkForSuccessHash);
 
+
+
+
+
+
+
+// Lang --------------------------------------------------------------------------
+
 let currentLang = localStorage.getItem('selectedLanguage') || "tr";
 loadLanguage(currentLang);
+updateLanguageSelector(currentLang);
 
 document.querySelectorAll('.language-selector').forEach(languageSelector => {
   const languageTrigger = languageSelector.querySelector('.language-trigger');
   const languageOptions = languageSelector.querySelectorAll('.language-option');
-  const currentFlag = languageSelector.querySelector('.currentFlag');
+  const currentLangCode = languageSelector.querySelector('.currentLangCode');
 
   languageTrigger.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -91,10 +103,8 @@ document.querySelectorAll('.language-selector').forEach(languageSelector => {
   languageOptions.forEach(option => {
     option.addEventListener('click', () => {
       const selectedLang = option.getAttribute('data-lang');
-      const selectedFlag = option.querySelector('img').src;
-      const selectedLangName = option.querySelector('.language-code').textContent;
-
-      currentFlag.src = selectedFlag;
+      const selectedLangName = `(${option.getAttribute('data-lang').toLowerCase()})`;
+      currentLangCode.textContent = selectedLangName;
       languageSelector.classList.remove('active');
 
       loadLanguage(selectedLang);
@@ -117,21 +127,15 @@ document.addEventListener('click', (event) => {
 
 function updateLanguageSelector(lang) {
   document.querySelectorAll('.language-selector').forEach(languageSelector => {
-    const option = languageSelector.querySelector(`.language-option[data-lang="${lang}"]`);
-    if (option) {
-      const selectedFlag = option.querySelector('img').src;
-      const selectedLangName = option.querySelector('.language-code').textContent;
-      const currentFlag = languageSelector.querySelector('.currentFlag');
-
-      if (currentFlag) {
-        currentFlag.src = selectedFlag;
-      }
+    const currentLangCode = languageSelector.querySelector('.currentLangCode');
+    if (currentLangCode) {
+      currentLangCode.textContent = `(${lang.toLowerCase()})`;
     }
   });
 }
 
 function loadLanguage(lang) {
-  fetch(`src/lang/${lang}.json`)
+  fetch(`/src/lang/landing/${lang}.json`)
     .then(res => res.json())
     .then(data => {
       for (const key in data) {
@@ -146,18 +150,7 @@ function loadLanguage(lang) {
           });
         }
       }
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (data[key]) {
-          if (el.tagName === 'BUTTON') {
-            el.innerText = data[key];
-          } else {
-            el.textContent = data[key];
-          }
-        }
-      });
-
+      document.documentElement.lang = lang;
       window.i18nData = data;
     })
     .catch(err => {
@@ -179,6 +172,13 @@ window.i18n = {
     return window.i18nData && window.i18nData[key] ? window.i18nData[key] : key;
   }
 };
+
+
+
+
+
+
+
 
 const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
@@ -265,7 +265,11 @@ document.addEventListener('DOMContentLoaded', () => {
     enableNavbarShrink();
   });
 
-  document.getElementById('btn-management').addEventListener('click', function (e) {
+
+
+
+
+  /* document.getElementById('btn-management').addEventListener('click', function (e) {
     e.preventDefault();
     document.getElementById('landing').style.display = 'none';
     document.getElementById('page-top').style.display = 'block';
@@ -274,72 +278,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
   });
 
-  document.getElementById('btn-contact').addEventListener('click', function (e) {
+  document.getElementById('btn-corp').addEventListener('click', function (e) {
     e.preventDefault();
     document.getElementById('landing').style.display = 'none';
     document.getElementById('page-top').style.display = 'block';
     setTimeout(() => {
       window.location.hash = 'contact';
     }, 50);
+  }); */
+
+  document.getElementById('btn-corp').addEventListener('click', () => {
+    window.location.href = '/wrs-corp/';
   });
 
-  const dropdown = document.querySelector('.dropdown');
-  const dropdownToggle = document.querySelector('.dropdown-toggle');
-
-  const popupOverlay = document.getElementById('form-popup-overlay');
-  const closePopupBtn = document.getElementById('close-popup');
-  const forms = document.querySelectorAll('.popup-form');
-
-  dropdownToggle.addEventListener('click', function (e) {
-    e.preventDefault();
-    dropdown.classList.toggle('dropdown-open');
-  });
-
-  document.addEventListener('click', function (event) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.classList.remove('dropdown-open');
-    }
-  });
-
-  const dropdownItems = document.querySelectorAll('.dropdown-item');
-  dropdownItems.forEach(item => {
-    item.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      dropdown.classList.remove('dropdown-open');
-
-      const formId = this.getAttribute('data-form');
-
-      forms.forEach(form => {
-        form.classList.add('d-none');
-      });
-
-      const selectedForm = document.getElementById(formId);
-      if (selectedForm) {
-        selectedForm.classList.remove('d-none');
-        popupOverlay.classList.remove('d-none');
-      }
-    });
+  document.getElementById('btn-management').addEventListener('click', () => {
+    window.location.href = '/car-rental/';
   });
 
 
-  closePopupBtn.addEventListener('click', function () {
-    popupOverlay.classList.add('d-none');
-
-    forms.forEach(form => {
-      form.classList.add('d-none');
-    });
-  });
-
-  popupOverlay.addEventListener('click', function (e) {
-    if (e.target === popupOverlay) {
-      popupOverlay.classList.add('d-none');
-
-      forms.forEach(form => {
-        form.classList.add('d-none');
-      });
-    }
-  });
 
   function navbarShrink() {
     const navbar = document.getElementById('mainNav');
@@ -347,31 +303,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!navbar || !pageTop) return;
 
-    if (pageTop.scrollTop === 0) {
+    if (window.scrollY === 0) {
       navbar.classList.remove('navbar-shrink');
     } else {
       navbar.classList.add('navbar-shrink');
     }
   }
 
-  function enableNavbarShrink() {
-    const pageTop = document.getElementById('page-top');
-    if (!pageTop) return;
-
-    pageTop.addEventListener('scroll', navbarShrink);
+  const pageTop = document.getElementById('page-top');
+  if (pageTop) {
+    window.addEventListener('scroll', navbarShrink);
     navbarShrink();
   }
 
-  navbarShrink();
-
-  document.getElementById('page-top').addEventListener('scroll', navbarShrink);
-
-  const mainNav = document.body.querySelector('#mainNav');
-  if (mainNav) {
-    new bootstrap.ScrollSpy(document.getElementById('page-top'), {
+  const mainNav = document.querySelector('#mainNav');
+  if (mainNav && typeof bootstrap !== 'undefined') {
+    new bootstrap.ScrollSpy(document.body, {
       target: '#mainNav',
       offset: 70
     });
-  };
+  }
 
 });

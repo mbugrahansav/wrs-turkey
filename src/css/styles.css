@@ -4525,30 +4525,30 @@ fieldset:disabled .btn {
 
 .language-trigger {
   display: flex;
-  align-items: center;
-  background-color: transparent;
-  border: 1.3px solid #1D425D;
-  border-radius: 30px;
-  padding: 5px 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    background-color: transparent;
+    border-left: 1.3px solid #1D425D;
+    padding: 5px 8px;
+    padding-left: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .language-trigger img {
   margin-right: 4px;
-  width: 20px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .language-trigger span {
-  color: #ffffffd6;
-  font-size: 15px;
+  margin-bottom: 1px;
+  color: #0000009c;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .language-trigger svg {
-  color: white;
+  color: black;
 }
 
 .language-trigger .dropdown-icon {
@@ -13498,7 +13498,7 @@ p {
   }
 
   .navbar-dark .language-trigger {
-    border-color: white;
+    border-color: black;
   }
 
   #mainNav.navbar-shrink .nav-link {
@@ -13613,7 +13613,7 @@ p {
 }
 
 .navbar-dark .language-trigger svg {
-  color: white;
+  color: black;
 }
 
 .bg {

@@ -116,6 +116,7 @@ body {
   height: 100vh;
   scroll-behavior: smooth;
   scroll-padding-top: 56px;
+  overflow-x: hidden;
 }
 
 hr {
@@ -4218,11 +4219,12 @@ fieldset:disabled .btn {
   }
 
   .dropdown {
-    background: white !important;
+    border: solid 1px #1C425D;
+    background: #1C425D;
   }
 
   .wrs-app-btn {
-    color: black !important;
+    color: white !important;
   }
 }
 
@@ -4332,28 +4334,28 @@ fieldset:disabled .btn {
   display: flex;
   align-items: center;
   background-color: transparent;
-  border: 1.3px solid #1D425D;
-  border-radius: 30px;
+  border-left: 1.3px solid #1D425D;
   padding: 5px 8px;
+  padding-left: 3rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .language-trigger img {
   margin-right: 4px;
-  width: 20px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .language-trigger span {
+  margin-bottom: 1px;
   color: #0000009c;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .language-trigger svg {
-  color: #1D425D;
+  color: black;
 }
 
 .language-trigger .dropdown-icon {
@@ -12800,6 +12802,10 @@ p {
   border-radius: 100%;
 }
 
+#mainNav {
+  background: #CAAB7C;
+}
+
 #mainNav .navbar-toggler {
   color: white;
   padding: 0.75rem;
@@ -12837,7 +12843,6 @@ p {
   #mainNav {
     height: 9vh;
     border: none;
-    background: #CAAB7C;
     transition: all 0.4s;
   }
 
@@ -13105,9 +13110,13 @@ p {
     color: white;
   }
 
+  .bg-custom {
+    margin-top: 64.7px !important;
+  }
+
   .navbar-collapse {
     padding: 1rem !important;
-    background-color: #09354B;
+    background-color: #CAAB7C;
   }
 
   .wrs-turkey-logo {

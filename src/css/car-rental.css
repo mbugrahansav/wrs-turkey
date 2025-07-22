@@ -4528,23 +4528,23 @@ fieldset:disabled .btn {
   display: flex;
   align-items: center;
   background-color: transparent;
-  border: 1.3px solid #1D425D;
-  border-radius: 30px;
+  border-left: 1.3px solid white;
   padding: 5px 8px;
+  padding-left: 3rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .language-trigger img {
   margin-right: 4px;
-  width: 20px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .language-trigger span {
-  color: #ffffffd6;
-  font-size: 15px;
+  margin-bottom: 1px;
+  color: white;
+  font-size: 14px;
   font-weight: 400;
 }
 

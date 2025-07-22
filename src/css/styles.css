@@ -3361,8 +3361,8 @@ fieldset:disabled .btn {
 }
 
 .btn-landing {
-  background-color: rgba(202, 171, 124, 0.2);
-  border: 2px solid #CAAB7C;
+  background-color: #1d425d57;
+  border: 2px solid #1D425D;
   color: white;
   border-radius: 999px;
   letter-spacing: 0.05em;
@@ -3374,7 +3374,7 @@ fieldset:disabled .btn {
 }
 
 .btn-landing:hover {
-  background-color: rgba(202, 171, 124, 0.7);
+  background-color: #96B7CE;
 }
 
 .btn-info {
@@ -13762,11 +13762,11 @@ p {
   }
 
   .bg {
-    background-image: url(../assets/img/background/wrs-turkey-bg-mobile.jpg) !important;
+    background-image: url(../assets/img/background/wrs-landing-bg.png) !important;
   }
 
   .landing {
-    background-image: url(../assets/img/background/wrs-turkey-bg-mobile.jpg) !important;
+    background-image: url(../assets/img/background/wrs-landing-bg.png) !important;
     justify-content: center;
   }
 
@@ -14079,7 +14079,7 @@ header.landing {
   display: flex;
   align-items: center;
   color: #fff;
-  background-image: url("../assets/img/background/wrs-turkey-bg.jpg");
+  background-image: url("../assets/img/background/wrs-landing-bg.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -14090,6 +14090,10 @@ header.landing {
   display: grid;
   margin-left: 8vw;
   gap: 15rem;
+}
+
+#landing-header h1 {
+  color: #1D425D;
 }
 
 .landing-buttons {

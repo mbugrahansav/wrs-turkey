@@ -161,5 +161,7 @@
   "form_rent_fullname": "Full Name",
   "form_rent_email": "Email",
   "form_rent_phone": "Phone",
-  "form_rent_message": "Your Message"
+  "form_rent_message": "Your Message",
+  "kvkk_link": "KVKK Privacy Notice",
+  "kvkk_notice": "For detailed information on the processing of your personal data, please see our <a href=\"/kvkk.html?from=wrs-corp\" target=\"_blank\" rel=\"noopener\">KVKK Privacy Notice (Turkish)</a>."
 }

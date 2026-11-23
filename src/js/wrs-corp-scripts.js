@@ -10,33 +10,47 @@ function getCurrentLang() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.body.addEventListener("click", function (e) {
-    if (e.target.id === "openPopup") {
-      e.preventDefault();
-      const lang = getCurrentLang();
-      const fileName = e.target.dataset.file;
-      const popupContent = document.querySelector(".popup-content");
+  const popup = document.getElementById('popup');
+  const overlay = document.getElementById('popupOverlay');
+  const content = popup?.querySelector('.popup-content');
+  let activeRequest;
 
-      fetch(`content/${fileName}-${lang}.html`)
-        .then(res => res.text())
-        .then(html => {
-          if (popupContent) {
-            popupContent.innerHTML = html;
-            document.getElementById("popup").classList.remove("hidden");
-            document.getElementById("popupOverlay").classList.remove("hidden");
-          } else {
-            console.error("popup-content class'ına sahip element bulunamadı.");
-          }
-        });
+  document.body.addEventListener('click', async function (e) {
+    if (e.target.closest('.close-popup')) {
+      activeRequest?.abort();
+      popup?.classList.add('hidden');
+      overlay?.classList.add('hidden');
+      return;
     }
 
-    if (e.target.classList.contains("close-popup")) {
-      document.getElementById("popup").classList.add("hidden");
-      document.getElementById("popupOverlay").classList.add("hidden");
+    const trigger = e.target.closest('[data-file]');
+    if (!trigger || !popup || !overlay || !content) return;
+    e.preventDefault();
+    activeRequest?.abort();
+    const request = new AbortController();
+    activeRequest = request;
+    const english = getCurrentLang() === 'en';
+    content.textContent = english ? 'Loading…' : 'Yükleniyor…';
+    content.setAttribute('aria-live', 'polite');
+    popup.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+
+    try {
+      const response = await fetch(`content/${trigger.dataset.file}-${getCurrentLang()}.html`, {
+        signal: request.signal
+      });
+      if (!response.ok) throw new Error(`Popup HTTP ${response.status}`);
+      const html = await response.text();
+      if (!request.signal.aborted) content.innerHTML = html;
+    } catch (error) {
+      if (request.signal.aborted) return;
+      content.textContent = english
+        ? 'The content could not be loaded. Please close this window and try again.'
+        : 'İçerik yüklenemedi. Lütfen bu pencereyi kapatıp tekrar deneyin.';
+      console.error('Popup content could not be loaded:', error);
     }
   });
 });
-
 
 
 // Footer --------------------------------------------------------------------------

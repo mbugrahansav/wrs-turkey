@@ -89,5 +89,7 @@
   "form_rent_fullname": "Ad Soyad",
   "form_rent_email": "Email",
   "form_rent_phone": "Telefon",
-  "form_rent_message": "Mesajınız"
+  "form_rent_message": "Mesajınız",
+  "kvkk_link": "KVKK Aydınlatma Metni",
+  "kvkk_notice": "Kişisel verilerinizin işlenmesine ilişkin detaylı bilgiye <a href=\"/kvkk.html?from=car-rental\" target=\"_blank\" rel=\"noopener\">KVKK Aydınlatma Metni</a> üzerinden ulaşabilirsiniz."
 }

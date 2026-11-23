@@ -1,0 +1,70 @@
+/* Shared privacy notice and footer layout. */
+.footer .footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+}
+.footer .footer-privacy-link {
+  display: inline-block;
+  color: #1d425d;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer .footer-privacy-link:hover { color: #8a6939; }
+.privacy-notice {
+  margin: 16px 0 0;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.privacy-notice a {
+  color: #caab7c;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.privacy-notice a:hover { color: #fff; }
+.footer-privacy-link:focus-visible, .privacy-notice a:focus-visible {
+  outline: 2px solid #caab7c;
+  outline-offset: 3px;
+}
+@media (max-width: 575.98px) {
+  .footer .footer-links { justify-content: center; column-gap: 16px; font-size: 0.75rem; }
+}
+
+/* Keep the rental footer items spaced away from the edges. */
+.footer .car-rental-footer-links {
+  justify-content: space-around;
+  gap: 4px 20px;
+  color: #1d425d;
+}
+.footer .car-rental-footer-links > a,
+.footer .car-rental-footer-links > span {
+  flex: 0 0 auto;
+}
+
+.form-success-dialog {
+  width: min(480px, calc(100% - 32px));
+  padding: 32px;
+  border: 2px solid #caab7c;
+  border-radius: 16px;
+  background: #1d425d;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat, Arial, sans-serif;
+}
+.form-success-dialog::backdrop { background: rgba(0, 0, 0, 0.6); }
+.form-success-dialog h2 { margin: 0 0 16px; color: #caab7c; }
+.form-success-dialog p { line-height: 1.6; }
+.form-success-dialog button {
+  margin-top: 12px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 6px;
+  background: #caab7c;
+  color: #1d425d;
+  font: inherit;
+  cursor: pointer;
+}
+.form-success-dialog button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }

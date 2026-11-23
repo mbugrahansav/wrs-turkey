@@ -25,6 +25,7 @@
     rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
   <link href="../src/css/car-rental.css" rel="stylesheet" />
+  <link href="../src/css/privacy.css?v=2" rel="stylesheet" />
 </head>
 
 <body>
@@ -155,7 +156,7 @@
             <div id="broker-form" class="popup-form d-none">
               <h4 data-i18n="form_broker_title"></h4>
               <form action="https://formsubmit.co/info@wrsturkey.com" method="POST">
-                <input type="hidden" name="_next" value="http://127.0.0.1:8080/#form-success">
+                <input type="hidden" name="_next" value="https://www.wrsturkey.com/car-rental/#form-success">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="companyName" class="form-label" data-i18n="form_broker_firma_adi"></label>
@@ -197,7 +198,7 @@
             <div id="subagency-form" class="popup-form d-none">
               <h4 data-i18n="form_subagency_title"></h4>
               <form action="https://formsubmit.co/info@wrsturkey.com" method="POST">
-                <input type="hidden" name="_next" value="http://127.0.0.1:8080/#form-success">
+                <input type="hidden" name="_next" value="https://www.wrsturkey.com/car-rental/#form-success">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="agencyName" class="form-label" data-i18n="form_subagency_acente_adi"></label>
@@ -254,7 +255,7 @@
             <div id="fleet-form" class="popup-form d-none">
               <h4 data-i18n="form_fleet_title"></h4>
               <form action="https://formsubmit.co/info@wrsturkey.com" method="POST">
-                <input type="hidden" name="_next" value="http://127.0.0.1:8080/#form-success">
+                <input type="hidden" name="_next" value="https://www.wrsturkey.com/car-rental/#form-success">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="companyName" class="form-label" data-i18n="form_fleet_firma_adi"></label>
@@ -320,7 +321,7 @@
             <div id="rent-form" class="popup-form d-none">
               <h4 data-i18n="form_rent_title"></h4>
               <form action="https://formsubmit.co/info@wrsturkey.com" method="POST">
-                <input type="hidden" name="_next" value="http://127.0.0.1:8080/#form-success">
+                <input type="hidden" name="_next" value="https://www.wrsturkey.com/car-rental/#form-success">
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="fullame" class="form-label" data-i18n="form_rent_fullname"></label>
@@ -498,7 +499,7 @@
         <div class="d-grid place-items-center">
           <div class="w-90">
             <form action="https://formsubmit.co/info@wrsturkey.com" id="contactForm" method="POST">
-              <input type="hidden" name="_next" value="http://127.0.0.1:8080/#form-success">
+              <input type="hidden" name="_next" value="https://www.wrsturkey.com/car-rental/#form-success">
               <div class="row align-items-stretch mb-4">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -520,6 +521,9 @@
                     <label class="contact-label" for="messageText" class="form-label" data-i18n="form_message"></label>
                     <textarea class="form-control" id="messageText" name="mesaj" required=""></textarea>
                   </div>
+                </div>
+                <div class="col-12">
+                  <p class="privacy-notice" data-i18n="kvkk_notice">Kişisel verilerinizin işlenmesine ilişkin detaylı bilgiye <a href="/kvkk.html?from=car-rental" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a> üzerinden ulaşabilirsiniz.</p>
                 </div>
                 <div class="contact-form-button text-end">
                   <button class="btn btn-primary btn-xs" data-i18n="form_submit" id="submitButton" type="submit">
@@ -552,9 +556,12 @@
       </div>
     </section>
     <!-- Footer-->
-    <footer class="footer" id="footer">
+    <footer class="footer" id="rental-footer">
       <div class="container py-1">
-        <div class="text-center">Copyright © Simgesel Media 2025</div>
+        <div class="footer-links car-rental-footer-links">
+          <a class="footer-privacy-link" href="/kvkk.html?from=car-rental" target="_blank" rel="noopener" data-i18n="kvkk_link">KVKK Aydınlatma Metni</a>
+          <span data-i18n="footer">Copyright © Simgesel Media 2025</span>
+        </div>
       </div>
     </footer>
   </div>
@@ -565,6 +572,7 @@
   <!-- Core theme JS-->
   <script src="/src/js/car-rental-scripts.js"></script>
 
+  <script src="/src/js/form-success.js"></script>
 </body>
 
 </html>

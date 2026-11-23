@@ -163,5 +163,5 @@
   "form_rent_phone": "Phone",
   "form_rent_message": "Your Message",
   "kvkk_link": "KVKK Privacy Notice",
-  "kvkk_notice": "For detailed information on the processing of your personal data, please see our <a href=\"/kvkk.html?from=wrs-corp\" target=\"_blank\" rel=\"noopener\">KVKK Privacy Notice (Turkish)</a>."
+  "kvkk_notice": "For detailed information on the processing of your personal data, please see our <a href=\"/kvkk.html\" target=\"_blank\" rel=\"noopener\">KVKK Privacy Notice (Turkish)</a>."
 }

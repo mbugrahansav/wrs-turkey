@@ -163,5 +163,5 @@
   "form_rent_phone": "Telefon",
   "form_rent_message": "Mesajınız",
   "kvkk_link": "KVKK Aydınlatma Metni",
-  "kvkk_notice": "Kişisel verilerinizin işlenmesine ilişkin detaylı bilgiye <a href=\"/kvkk.html?from=wrs-corp\" target=\"_blank\" rel=\"noopener\">KVKK Aydınlatma Metni</a> üzerinden ulaşabilirsiniz."
+  "kvkk_notice": "Kişisel verilerinizin işlenmesine ilişkin detaylı bilgiye <a href=\"/kvkk.html\" target=\"_blank\" rel=\"noopener\">KVKK Aydınlatma Metni</a> üzerinden ulaşabilirsiniz."
 }
